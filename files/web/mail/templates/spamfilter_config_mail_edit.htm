@@ -1,0 +1,97 @@
+<div class="panel-heading separator">
+    <h2><tmpl_var name="list_head_txt"></h2>
+    <p><tmpl_var name="list_desc_txt"></p>
+</div>
+
+<div class="panel-body">
+    <div class="panel panel-default">
+
+        <div class="container-fluid">
+            <fieldset id="wf_area_spamfilter_config">
+                <div class="wf_oneField form-group container-fluid">
+                    <label class="control-label col-md-2 wf_preField" for="module">
+                        {tmpl_var name='module_txt'}
+                    </label>
+                    <div class="col-md-3">
+                        <select class="selectize form-control" id="module" name="module">
+                            {tmpl_var name='module'}
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group wf_oneField">
+                    <label class="control-label col-md-2 wf_preField" for="maildir_path">{tmpl_var name='maildir_path_txt'}</label>
+                    <div class="col-md-6">
+                        <input class="form-control" type="text" id="maildir_path" name="maildir_path" value="{tmpl_var name='maildir_path'}" >
+                    </div>
+                </div>
+                <div class="form-group wf_oneField">
+                    <label class="control-label col-md-2 wf_preField" for="homedir_path">{tmpl_var name='homedir_path_txt'}</label>
+                    <div class="col-md-6">
+                        <input class="form-control" type="text" id="homedir_path" name="homedir_path" value="{tmpl_var name='homedir_path'}" >
+                    </div>
+                </div>
+                <div class="form-group wf_oneField">
+                    <label class="control-label col-md-2 wf_preField" for="mailuser_uid">{tmpl_var name='mailuser_uid_txt'}</label>
+                    <div class="col-md-6">
+                        <input class="form-control" type="text" id="mailuser_uid" name="mailuser_uid" value="{tmpl_var name='mailuser_uid'}" >
+                    </div>
+                </div>
+                <div class="form-group wf_oneField">
+                    <label class="control-label col-md-2 wf_preField" for="mailuser_gid">{tmpl_var name='mailuser_gid_txt'}</label>
+                    <div class="col-md-6">
+                        <input class="form-control" type="text" id="mailuser_gid" name="mailuser_gid" value="{tmpl_var name='mailuser_gid'}" >
+                    </div>
+                </div>
+                <div class="form-group wf_oneField">
+                    <label class="control-label col-md-2 wf_preField" for="mailuser_name">{tmpl_var name='mailuser_name_txt'}</label>
+                    <div class="col-md-6">
+                        <input class="form-control" type="text" id="mailuser_name" name="mailuser_name" value="{tmpl_var name='mailuser_name'}" >
+                    </div>
+                </div>
+                <div class="form-group wf_oneField">
+                    <label class="control-label col-md-2 wf_preField" for="mailuser_group">{tmpl_var name='mailuser_group_txt'}</label>
+                    <div class="col-md-6">
+                        <input class="form-control" type="text" id="mailuser_group" name="mailuser_group" value="{tmpl_var name='mailuser_group'}" >
+                    </div>
+                </div>
+                <div class="form-group wf_oneField">
+                    <label class="control-label col-md-2 wf_preField" for="relayhost" >{tmpl_var name='relayhost_txt'}</label>
+                    <div class="col-md-6">
+                        <input class="form-control" type="text" id="relayhost" name="relayhost" value="{tmpl_var name='relayhost'}" >
+                    </div>
+                </div>
+                <div class="form-group wf_oneField">
+                    <label class="control-label col-md-2 wf_preField" for="relayhost_user">{tmpl_var name='relayhost_user_txt'}</label>
+                    <div class="col-md-6">
+                        <input class="form-control" type="text" id="relayhost_user" name="relayhost_user" value="{tmpl_var name='relayhost_user'}" >
+                    </div>
+                </div>
+                <div class="form-group wf_oneField">
+                    <label class="control-label col-md-2 wf_preField" for="relayhost_password" >{tmpl_var name='relayhost_password_txt'}</label>
+                    <div class="col-md-6">
+                        <input class="form-control" type="text" id="relayhost_password" name="relayhost_password" value="{tmpl_var name='relayhost_password'}" >
+                    </div>
+                </div>
+                <div class="form-group wf_oneField">
+                    <label class="control-label col-md-2 wf_preField" for="mailbox_size_limit" >{tmpl_var name='mailbox_size_limit_txt'}</label>
+                    <div class="col-md-6">
+                        <input class="form-control" type="text" id="mailbox_size_limit" name="mailbox_size_limit" value="{tmpl_var name='mailbox_size_limit'}" >
+                    </div>
+                </div>
+                <div class="form-group wf_oneField">
+                    <label class="control-label col-md-2 wf_preField" for="message_size_limit">{tmpl_var name='message_size_limit_txt'}</label>
+                    <div class="col-md-6">
+                        <input class="form-control" type="text" id="message_size_limit" name="message_size_limit" value="{tmpl_var name='message_size_limit'}" >
+                    </div>
+                </div>
+            </fieldset>
+    
+            <input type="hidden" name="id" value="{tmpl_var name='id'}">
+    
+            <div class="wf_actions container-fluid">
+                <button class="positive btn" type="button" value="{tmpl_var name='btn_save_txt'}" onclick="submitForm('pageForm','mail/spamfilter_config_edit.php');"><span><span class="glyphicon glyphicon-ok"></span> <span>{tmpl_var name='btn_save_txt'}</span></button>
+                <button class="negative btn" type="button" value="{tmpl_var name='btn_cancel_txt'}" onclick="loadContent('mail/spamfilter_config_list.php');"><span><span class="glyphicon glyphicon-remove"></span> <span>{tmpl_var name='btn_cancel_txt'}</span></button>
+            </div>
+        </div>
+    </div>
+</div>

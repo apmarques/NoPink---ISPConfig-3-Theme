@@ -1,0 +1,54 @@
+<div class="panel-heading separator">
+    <h2><tmpl_var name="list_head_txt"></h2>
+    <p><tmpl_var name="list_desc_txt"></p>
+</div>
+
+<div class="panel-body">
+        <div class="panel panel-default">
+
+        <div class="panel-heading separator"><h4>Tools</h4></div>
+        <div class="gap"></div>
+        <div class="container-fluid form-group">
+            <label class="control-label col-md-2" for="server_id">{tmpl_var name='server_select_txt'}</label>
+            <div class="col-md-3">
+                <select class="selectize form-control" name="server_id" id="server_id" onChange="submitForm('pageForm','admin/software_update_list.php');">
+                    <tmpl_loop name="servers">
+                        <option value="{tmpl_var name='server_id'}" {tmpl_var name='selected'}>{tmpl_var name='server_name'}</option>
+                    </tmpl_loop>
+                </select>
+            </div>
+        </div>
+
+        <div class="panel-heading separator"><h4><tmpl_var name="list_head_txt"></h4></div>
+        <div class="container-fluid table-responsive">
+            <table class="table  table-hover">
+                <thead>
+                    <tr class="caption">
+                        <th class="tbl_col_installed" scope="col"><tmpl_var name="installed_txt"></th>
+                        <th class="tbl_col_update_title" scope="col"><tmpl_var name="update_title_txt"></th>
+                        <th class="tbl_col_version" scope="col"><tmpl_var name="version_txt"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tmpl_loop name="records">
+                        <tr>
+                            <td class="tbl_col_installed">{tmpl_var name="installed"}</td>
+                            <td class="tbl_col_update_title">{tmpl_var name="update_title"}</td>
+                            <td class="tbl_col_version">{tmpl_var name="version"}</td>
+                        </tr>
+                    </tmpl_loop>
+                    <tmpl_unless name="records">
+                        <tr class="tbl_row_noresults ">
+                            <td class="text-center" colspan="3">{tmpl_var name='no_updates_txt'}</td>
+                        </tr>
+                    </tmpl_unless>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td class="tbl_footer tbl_paging" colspan="3"></td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+    </div>
+</div>

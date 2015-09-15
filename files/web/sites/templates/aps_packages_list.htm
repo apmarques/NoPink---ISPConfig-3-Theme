@@ -1,0 +1,62 @@
+<div class="panel-heading separator">
+    <h2>{tmpl_var name="list_head_txt"}</h2>
+</div>
+
+<div class="panel-body">
+    <div class="panel panel-default">
+
+        <div class="panel-heading separator"><h4>{tmpl_var name="list_head_txt"} ({tmpl_var name='package_count'})</h4></div>
+        <div class="container-fluid table-responsive">
+            <table class="table table-striped ">
+                <thead>
+                    <tr class="caption">
+                        <th class="tbl_col_name" scope="col">{tmpl_var name='name_txt'}</th>
+                        <th class="tbl_col_version" scope="col">{tmpl_var name='version_txt'}</th>
+                        <th class="tbl_col_category" scope="col">{tmpl_var name='category_txt'}</th>
+                            <tmpl_if name='is_admin'>
+                                <th class="tbl_col_package_status" scope="col">{tmpl_var name='status_txt'}</th>
+                            </tmpl_if>
+                        <th class="tbl_col_limit" scope="col">&nbsp;</th>
+                    </tr>
+                </thead>
+                <tbody>
+                <tr class="filter">
+                    <td class="tbl_col_name"><input class="form-control"  type="text" name="search_name" value="{tmpl_var name='search_name'}" /></td>
+                    <td class="tbl_col_version"><input  class="form-control" type="text" name="search_version" value="{tmpl_var name='search_version'}" /></td>
+                    <td class="tbl_col_customerid"><select  class="selectize form-control" name="search_category" onChange="submitForm('pageForm','sites/aps_availablepackages_list.php');">{tmpl_var name='search_category'}</select></td>
+                    <tmpl_if name='is_admin'>
+                        <td class="tbl_col_status"><select  class="form-control" name="search_package_status" onChange="submitForm('pageForm','sites/aps_availablepackages_list.php');">{tmpl_var name='search_package_status'}</select></td>
+                    </tmpl_if>
+                    <td class="tbl_col_buttons">
+                        <button type="button" class="btn " name="Filter" id="Filter" value="{tmpl_var name='filter_txt'}"  data-toggle="tooltip" title="{tmpl_var name='filter_txt'}" onclick="submitForm('pageForm','sites/aps_availablepackages_list.php');"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
+                    </td>
+                </tr>
+                    <tmpl_loop name='records'>
+                        <tr>
+                            <td class="tbl_col_name"><a href="#" onclick="loadContent('sites/aps_packagedetails_show.php?id={tmpl_var name='id'}');">{tmpl_var name='name'}</a></td>
+                            <td class="tbl_col_version">{tmpl_var name='version'}-{tmpl_var name='release'}</td>
+                            <td class="tbl_col_category">{tmpl_var name='category'}</td>
+                                <tmpl_if name='is_admin'>
+                                    <td class="tbl_col_status"><a href="javascript:loadContentInto('status_content{tmpl_var name='__ROWNUM__'}', 'sites/aps_do_operation.php?action=change_status&id={tmpl_var name='id'}&phpsessid={tmpl_var name='phpsessid'}');"><span id="status_content{tmpl_var name='__ROWNUM__'}">{tmpl_var name='package_status'}</span></a></td>
+                                </tmpl_if>
+                            <td class="tbl_col_buttons"></td>
+                        </tr>
+                    </tmpl_loop>
+                    <tmpl_unless name="records">
+                        <tr class="tbl_row_noresults">
+                            <td class="text-center" colspan="5">{tmpl_var name='globalsearch_noresults_text_txt'}</td>
+                        </tr>
+                    </tmpl_unless>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td class="tbl_footer tbl_paging" colspan="5">{tmpl_var name='paging'}</td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+    </div>
+</div>
+<script>
+    $('.selectize').selectize();
+</script>

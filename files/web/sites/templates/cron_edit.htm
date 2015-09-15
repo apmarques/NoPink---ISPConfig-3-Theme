@@ -1,0 +1,98 @@
+<h2><tmpl_var name="list_head_txt"></h2>
+<p><tmpl_var name="list_desc_txt"></p>
+
+<div class=" container-fluid">
+
+    <legend>Cron Job</legend>
+    
+    <div class="form-group container-fluid">
+        <tmpl_if name="edit_disabled">
+            <label class="control-label col-md-2" for="parent_domain_id">{tmpl_var name='parent_domain_id_txt'}</label>
+            <div class="col-md-3">
+                <select class="selectize form-control" name="parent_domain_id" id="parent_domain_id" disabled="disabled">
+                    {tmpl_var name='parent_domain_id'}
+                </select>
+            </div>
+            <input type="hidden" name="parent_domain_id" value="{tmpl_var name='parent_domain_id_value'}" />
+            <tmpl_else>
+                <label class="control-label col-md-2" for="parent_domain_id">{tmpl_var name='parent_domain_id_txt'}</label>
+                <div class="col-md-3">
+                    <select class="selectize form-control" name="parent_domain_id" id="parent_domain_id">
+                        {tmpl_var name='parent_domain_id'}
+                    </select>
+                </div>
+        </tmpl_if>
+    </div>
+    <div class="form-group container-fluid">
+        <label class="control-label col-md-2" for="run_min">{tmpl_var name='run_min_txt'}</label>
+        <div class="col-md-6">
+            <input class="form-control" name="run_min" id="run_min" value="{tmpl_var name='run_min'}"  type="text"  />
+            <div class="help-block">e.g. *, */3, 10-20</div>
+        </div>
+    </div>
+    <div class="form-group container-fluid">
+        <label class="control-label col-md-2" for="run_hour">{tmpl_var name='run_hour_txt'}</label>
+        <div class="col-md-6">
+            <input class="form-control" name="run_hour" id="run_hour" value="{tmpl_var name='run_hour'}"  type="text"  />
+            <div class="help-block">e.g. *, */2, 0, 10-12</div>
+        </div>
+    </div>
+    <div class="form-group container-fluid">
+        <label class="control-label col-md-2" for="run_mday">{tmpl_var name='run_mday_txt'}</label>
+        <div class="col-md-6">
+            <input class="form-control" name="run_mday" id="run_mday" value="{tmpl_var name='run_mday'}"  type="text"  />
+            <div class="help-block">e.g. *, */4, 1-5</div>
+        </div>
+    </div>
+    <div class="form-group container-fluid">
+        <label class="control-label col-md-2" for="run_month">{tmpl_var name='run_month_txt'}</label>
+        <div class="col-md-6">
+            <input class="form-control" name="run_month" id="run_month" value="{tmpl_var name='run_month'}"  type="text"  />
+            <div class="help-block">e.g. *, 1-6</div>
+        </div>
+    </div>
+    <div class="form-group container-fluid">
+        <label class="control-label col-md-2" for="run_wday">{tmpl_var name='run_wday_txt'}</label>
+        <div class="col-md-6">
+            <input class="form-control" name="run_wday" id="run_wday" value="{tmpl_var name='run_wday'}"  type="text"  />
+            <div class="help-block">e.g. *, 0, 1-5</div>
+        </div>
+    </div>
+    <div class="form-group container-fluid">
+        <label class="control-label col-md-2" for="command">{tmpl_var name='command_txt'}</label>
+        <div class="col-md-6">
+            <input class="form-control" name="command" id="command" value="{tmpl_var name='command'}" type="text"  />
+            <div class="help-block">e.g. /var/www/clients/client1/myscript.sh or http://www.mydomain.com/path/script.php</div>
+        </div>
+    </div>
+    <div class="form-group container-fluid">
+        <label class="control-label col-md-2" for="active_cb">
+            {tmpl_var name='active_txt'}
+        </label>
+        <div class="col-md-10">
+            <div id="active_cb" class="checkbox check-success">
+                {tmpl_var name='active'}
+            </div>
+        </div>
+    </div>
+
+    <input type="hidden" name="id" value="{tmpl_var name='id'}">
+
+    <div class="container-fluid form-group">
+        <div class="col-md-offset-2">
+            <button class="positive btn " type="button" value="{tmpl_var name='btn_save_txt'}" onclick="submitForm('pageForm','sites/cron_edit.php');"><span><span class="glyphicon glyphicon-ok"></span> {tmpl_var name='btn_save_txt'}</span></button>
+            <button class="negative btn " type="button" value="{tmpl_var name='btn_cancel_txt'}" onclick="loadContent('sites/cron_list.php');"><span><span class="glyphicon glyphicon-remove"></span> {tmpl_var name='btn_cancel_txt'}</span></button>
+        </div>
+    </div>
+
+</div>
+
+
+<!-- switchery script -->
+<script>
+    var elems = Array.prototype.slice.call(document.querySelectorAll('.switchery'));
+    // Success color: #10CFBD
+    elems.forEach(function(html) {
+        var switchery = new Switchery(html, {color: '#10CFBD'});
+    });
+</script>

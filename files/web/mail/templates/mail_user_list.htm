@@ -1,0 +1,91 @@
+<div class="panel-heading separator">
+    <h2><tmpl_var name="list_head_txt"></h2>
+    <p><tmpl_var name="list_desc_txt"></p>
+</div>
+
+<div class="panel-body">
+    <div class="panel panel-default">
+
+    <div class="panel-heading separator"><h4>{tmpl_var name="toolsarea_head_txt"}</h4></div>
+    <div class="gap"></div>
+    <div class="container-fluid">
+        <tmpl_if name='datalog_changes_count' op='>' value='0'>
+        <div>
+            <div class="systemmonitor-state state-info">
+                <div class="status"></div>
+                <div class="statusMsg">
+                    {tmpl_var name="datalog_changes_txt"}
+                    <ul>
+                    <tmpl_loop name="datalog_changes">
+                        <li><strong>{tmpl_var name="text"}:</strong> {tmpl_var name="count"}</li>
+                    </tmpl_loop>
+                    </ul>
+                    {tmpl_var name="datalog_changes_end_txt"}
+                </div>
+            </div><br />
+        </div>
+        </tmpl_if>
+        <div class="container-fluid">
+            <div class="col-md-10">
+                <button class="btn" type="button" onclick="loadContent('mail/mail_user_edit.php');">
+                    <span><span class="glyphicon glyphicon-plus-sign"></span> {tmpl_var name="add_new_record_txt"}</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+        <div class="panel-heading separator"><h4><tmpl_var name="list_head_txt"></h4></div>
+        <div class="container-fluid table-responsive">
+            <table class="table table-striped ">
+                <thead>
+                    <tr class="caption">
+                        <th class="tbl_col_email" scope="col"><tmpl_var name="email_txt"></th>
+                <tmpl_if name="enable_custom_login"><th class="tbl_col_login" scope="col"><tmpl_var name="login_txt"></th></tmpl_if>
+                <th class="tbl_col_name" scope="col"><tmpl_var name="name_txt"></th>
+                        <th class="tbl_col_autoresponder" scope="col"><tmpl_var name="autoresponder_txt"></th>
+                        <th class="tbl_col_limit" scope="col">{tmpl_var name='search_limit'}</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="filter">
+                        <td class="tbl_col_email"><input class="form-control" type="text" name="search_email" value="{tmpl_var name='search_email'}" /></td>
+                        <tmpl_if name="enable_custom_login"><td class="tbl_col_login"><input class="form-control" type="text" name="search_login" value="{tmpl_var name='search_login'}" /></td></tmpl_if>
+                        <td class="tbl_col_name"><input class="form-control" type="text" name="search_name" value="{tmpl_var name='search_name'}" /></td>
+                        <td class="tbl_col_autoresponder"><select class="selectize form-control" name="search_autoresponder">{tmpl_var name='search_autoresponder'}</select></td>
+                        <td class="tbl_col_buttons">
+                            <button type="button" class="btn" name="Filter" id="Filter" value="{tmpl_var name='filter_txt'}" data-toggle="tooltip" title="{tmpl_var name='filter_txt'}" onclick="submitForm('pageForm','mail/mail_user_list.php');"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
+                        </td>
+                    </tr>
+                <tmpl_loop name="records">
+                    <tr>
+                        <td class="tbl_col_email"><a href="#" onclick="loadContent('mail/mail_user_edit.php?id={tmpl_var name='id'}');">{tmpl_var name="email"}</a></td>
+                        <tmpl_if name="enable_custom_login">
+                            <td class="tbl_col_login">
+                                <a href="#" onclick="loadContent('mail/mail_user_edit.php?id={tmpl_var name='id'}');">{tmpl_var name="login"}</a>
+                            </td>
+                        </tmpl_if>
+                        <td class="tbl_col_name"><a href="#" onclick="loadContent('mail/mail_user_edit.php?id={tmpl_var name='id'}');">{tmpl_var name="name"}</a></td>
+                        <td class="tbl_col_autoresponder"><a href="#" onclick="loadContent('mail/mail_user_edit.php?id={tmpl_var name='id'}');">{tmpl_var name="autoresponder"}</a></td>
+                        <td class="tbl_col_buttons">
+                            <tmpl_if name="mailboxlist_webmail_link">
+                                <a class=" btn" data-toggle="tooltip" title="{tmpl_var name='webmail_txt'}" href="mail/webmailer.php?id={tmpl_var name='id'}" target="webmail"><span class="glyphicon glyphicon-envelope"></span></a>
+                            </tmpl_if>
+                            <a class="btn" data-toggle="tooltip" title="{tmpl_var name='delete_txt'}" href="javascript: del_record('mail/mail_user_del.php?id={tmpl_var name='id'}&phpsessid={tmpl_var name='phpsessid'}','{tmpl_var name='delete_confirmation'}');"><span class="glyphicon glyphicon-remove"></span></a>
+                        </td>
+                    </tr>
+                </tmpl_loop>
+                <tmpl_unless name="records">
+                    <tr class="tbl_row_noresults">
+                        <td class="text-center" colspan="<tmpl_if name="enable_custom_login">5<tmpl_else>4</tmpl_if>">{tmpl_var name='globalsearch_noresults_text_txt'}</td>
+                    </tr>
+                </tmpl_unless>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td class="tbl_footer tbl_paging" colspan="<tmpl_if name="enable_custom_login">5<tmpl_else>4</tmpl_if>"><tmpl_var name="paging"></td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,57 @@
+<div class="panel-heading separator">
+    <h2><tmpl_var name="faq_faq_sections_txt"></h2>
+    <p><tmpl_var name="list_desc_txt"></p>
+</div>
+
+<div class="panel-body">
+    <div class="panel panel-default">
+
+        <div class="panel-heading separator"><h4>{tmpl_var name="toolsarea_head_txt"}</h4></div>
+        <div class="gap"></div>
+        <div class="container-fluid">
+            <div class="container-fluid">
+                <div class="col-md-10">
+                    <button class="btn" type="button" onclick="loadContent('help/faq_sections_edit.php');">
+                        <span><span class="glyphicon glyphicon-plus-sign"></span> {tmpl_var name="faq_new_section_txt"}</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="panel-heading separator"><h4><tmpl_var name="faq_sections_txt"></h4></div>
+        <div class="container-fluid table-responsive">
+            <table class="table table-striped ">
+                <thead>
+                    <tr class="caption">
+                        <th class="tbl_col_section_name" scope="col">{tmpl_var name="faq_section_name_txt"}</th>
+                        <th class="tbl_col_buttons" scope="col">{tmpl_var name="faq_delete_txt"}</th>
+                        <th class="tbl_col_buttons" scope="col">{tmpl_var name="faq_edit_txt"}</th>
+                    </tr>
+                </thead>
+                <tbody>
+                <tmpl_loop name="records">
+                    <tr>
+                        <td class="tbl_col_section_name"><b>{tmpl_var name='hfs_name'}</b></td>
+                        <td class="tbl_col_buttons">
+                            <a class="btn " data-toggle="tooltip" title="{tmpl_var name='faq_delete_txt'}" href="javascript: del_record('help/faq_sections_delete.php?id={tmpl_var name='id'}&phpsessid={tmpl_var name='phpsessid'}','{tmpl_var name='delete_confirmation'}');"><span class="glyphicon glyphicon-remove"></span></a>
+                        </td>
+                        <td class="tbl_col_buttons">
+                            <a class="btn " data-toggle="tooltip" title="{tmpl_var name='faq_edit_txt'}" href="javascript: loadContent('help/faq_sections_edit.php?id={tmpl_var name='id'}');"><span class="glyphicon glyphicon-pencil"></span></a>
+                        </td>
+                    </tr>
+                </tmpl_loop>
+                <tmpl_unless name="records">
+                    <tr class="tbl_row_noresults">
+                        <td class="text-center" colspan="3">{tmpl_var name='globalsearch_noresults_text_txt'}</td>
+                    </tr>
+                </tmpl_unless>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td class="tbl_footer tbl_paging" colspan="3"><tmpl_var name="paging"></td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+    </div>
+</div>

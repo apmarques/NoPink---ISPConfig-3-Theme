@@ -1,0 +1,40 @@
+<div class="panel-heading separator">
+    <h2><tmpl_var name="list_head_txt"></h2>
+    <p><tmpl_var name="list_desc_txt"></p>
+</div>
+<div class="panel-body">
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <div class="container-fluid ">
+                <tmpl_if name="msg">
+                    <div id="OKMsg"><tmpl_var name="msg"></div>
+                </tmpl_if>
+                <tmpl_if name="error">
+                    <div id="errorMsg"><tmpl_var name="error"></div>
+                </tmpl_if>
+                <legend>Language Complete</legend>
+
+                <div class="form-group container-fluid">
+                    <label class="col-md-2 control-label" for="lng_select">{tmpl_var name='language_select_txt'}</label>
+                    <div class="col-md-3">
+                        <select name="lng_select" id="language" class="selectize form-control flags">
+                            {tmpl_var name='language_option'}
+                        </select>
+                    </div>
+                </div>
+
+                <div class="container-fluid form-group">
+                    <div class="col-sm-offset-2">
+                        <button class="positive btn " type="button" value="{tmpl_var name='btn_save_txt'}" onclick="submitForm('pageForm','admin/language_complete.php');"><span><span class="glyphicon glyphicon-ok"></span> {tmpl_var name='btn_save_txt'}</span></button>
+                        <button class="negative btn " type="button" value="{tmpl_var name='btn_cancel_txt'}" onclick="loadContent('admin/language_list.php');"><span><span class="glyphicon glyphicon-remove"></span> {tmpl_var name='btn_cancel_txt'}</span></button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $('.selectize').selectize();
+</script>

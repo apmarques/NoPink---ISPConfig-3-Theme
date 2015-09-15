@@ -1,0 +1,70 @@
+<h2><tmpl_var name="list_head_txt"></h2>
+<p><tmpl_var name="list_desc_txt"></p>
+
+<div class="container-fluid ">
+
+    <div class="container-fluid form-group ">
+        <label class="control-label col-md-2 wf_preField" for="rulename" >{tmpl_var name='rulename_txt'}</label>
+        <div class="col-md-2">
+            <select class="selectize form-control" id="source" name="source"  >
+            {tmpl_var name='source'}
+            </select>
+        </div>
+        <div class="col-md-4">
+            <input class="form-control" type="text" id="rulename" name="rulename" value="{tmpl_var name='rulename'}"   >
+        </div>
+    </div>
+    <div class="container-fluid form-group ">
+        <label class="control-label col-md-2 wf_preField" for="searchterm">{tmpl_var name='source_txt'}</label>
+        <div class="col-md-2">
+            <select class="selectize form-control" id="op" name="op"  >
+                {tmpl_var name='op'}
+            </select>
+        </div>
+        <div class="col-md-4">
+            <input class="form-control" type="text" id="searchterm" name="searchterm" value="{tmpl_var name='searchterm'}"   >
+        </div>
+    </div>
+    <div class="container-fluid form-group">
+        <label class="control-label col-md-2 wf_preField" for="target" >{tmpl_var name='action_txt'}</label>
+        <div class="col-md-2">
+            <select class="selectize form-control" id="action" name="action" >
+                {tmpl_var name='action'}
+            </select>
+        </div>
+        <div class="col-md-4">
+            <input class="form-control" type="text" id="target" name="target" value="{tmpl_var name='target'}"   >
+        </div>
+    </div>
+    <div class="container-fluid form-group">
+        <label class="control-label col-md-2" for="active_cb">
+            {tmpl_var name='active_txt'}
+        </label>
+        <div class="col-md-10">
+            <div id="active_cb" class="checkbox check-success">
+                {tmpl_var name='active'}
+            </div>
+        </div>
+    </div>
+
+    <input type="hidden" name="id" value="{tmpl_var name='id'}">
+    <input name="mailuser_id" type="hidden" value="{tmpl_var name='mailuser_id'}">
+
+    <div class="container-fluid form-group ">
+        <div class="col-md-offset-2">
+            <button class="positive btn" type="button" value="{tmpl_var name='btn_save_txt'}" onclick="submitForm('pageForm','mail/mail_user_filter_edit.php');"><span><span class="glyphicon glyphicon-ok"></span> {tmpl_var name='btn_save_txt'}</span></button>
+            <button class="negative btn" type="button" value="{tmpl_var name='btn_cancel_txt'}" onclick="loadContent('mail/mail_user_edit.php?id={tmpl_var name='mailuser_id'}');"><span><span class="glyphicon glyphicon-remove"></span> {tmpl_var name='btn_cancel_txt'}</span></button>
+        </div>
+    </div>
+
+</div>
+
+
+<!-- switchery script -->
+<script>
+    var elems = Array.prototype.slice.call(document.querySelectorAll('.switchery'));
+    // Success color: #10CFBD
+    elems.forEach(function(html) {
+        var switchery = new Switchery(html, {color: '#10CFBD'});
+    });
+</script>

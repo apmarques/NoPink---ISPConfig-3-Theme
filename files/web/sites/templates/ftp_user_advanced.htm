@@ -1,0 +1,79 @@
+<h2><tmpl_var name="list_head_txt"></h2>
+<p><tmpl_var name="list_desc_txt"></p>
+
+<div class="container-fluid ">
+
+    <div class="form-group container-fluid">
+        <label class="control-label col-md-2" for="uid">{tmpl_var name='uid_txt'}</label>
+        <div class="col-md-6">
+            <input class="form-control" name="uid" id="uid" value="{tmpl_var name='uid'}"  type="text"  />
+        </div>
+    </div>
+    <div class="form-group container-fluid">
+        <label class="control-label col-md-2" for="gid">{tmpl_var name='gid_txt'}</label>
+        <div class="col-md-6">
+            <input class="form-control" name="gid" id="gid" value="{tmpl_var name='gid'}"  type="text"  />
+        </div>
+    </div>
+    <div class="form-group container-fluid">
+        <label class="control-label col-md-2" for="dir">{tmpl_var name='dir_txt'}</label>
+        <div class="col-md-6">
+            <input class="form-control" name="dir" id="dir" value="{tmpl_var name='dir'}"  type="text"  />
+        </div>
+    </div>
+    <div class="form-group container-fluid">
+        <label class="control-label col-md-2" for="quota_files">{tmpl_var name='quota_files_txt'}</label>
+        <div class="col-md-6">
+            <div class="input-group">
+                <input class="form-control" name="quota_files" id="quota_files" value="{tmpl_var name='quota_files'}"  type="text"  />
+                <div class="input-group-addon">{tmpl_var name='quota_files_unity_txt'}</div>
+            </div>
+        </div>
+    </div>
+    <div class="form-group container-fluid">
+        <label class="control-label col-md-2" for="ul_ratio">{tmpl_var name='ul_ratio_txt'}</label>
+        <div class="col-md-6">
+            <div class="input-group">
+                <input class="form-control" name="ul_ratio" id="ul_ratio" value="{tmpl_var name='ul_ratio'}"  type="text"  />
+                <div class="input-group-addon">kb/s</div>
+            </div>
+        </div>
+    </div>
+    <div class="form-group container-fluid">
+        <label class="control-label col-md-2" for="dl_ratio">{tmpl_var name='dl_ratio_txt'}</label>
+        <div class="col-md-6">
+            <div class="input-group">
+                <input class="form-control" name="dl_ratio" id="dl_ratio" value="{tmpl_var name='dl_ratio'}"  type="text"  />
+                <div class="input-group-addon">kb/s</div>
+            </div>
+        </div>
+    </div>
+    <div class="form-group container-fluid">
+        <label class="control-label col-md-2" for="ul_bandwidth">{tmpl_var name='ul_bandwidth_txt'}</label>
+        <div class="col-md-6">
+            <div class="input-group">
+                <input class="form-control" name="ul_bandwidth" id="ul_bandwidth" value="{tmpl_var name='ul_bandwidth'}"  type="text"  />
+                <div class="input-group-addon">kb/s</div>
+            </div>
+        </div>
+    </div>
+    <div class="form-group container-fluid">
+        <label class="control-label col-md-2" for="dl_bandwidth">{tmpl_var name='dl_bandwidth_txt'}</label>
+        <div class="col-md-6">
+            <div class="input-group">
+                <input class="form-control" name="dl_bandwidth" id="dl_bandwidth" value="{tmpl_var name='dl_bandwidth'}"  type="text"  />
+                <div class="input-group-addon">kb/s</div>
+            </div>
+        </div>
+    </div>
+
+    <input type="hidden" name="id" value="{tmpl_var name='id'}">
+
+    <div class="container-fluid form-group">
+        <div class="col-md-offset-2">
+            <button class="positive btn " type="button" value="{tmpl_var name='btn_save_txt'}" onclick="submitForm('pageForm','sites/ftp_user_edit.php');"><span><span class="glyphicon glyphicon-ok"></span> {tmpl_var name='btn_save_txt'}</span></button>
+            <button class="negative btn " type="button" value="{tmpl_var name='btn_cancel_txt'}" onclick="loadContent('sites/ftp_user_list.php');"><span><span class="glyphicon glyphicon-remove"></span> {tmpl_var name='btn_cancel_txt'}</span></button>
+        </div>
+    </div>
+
+</div>

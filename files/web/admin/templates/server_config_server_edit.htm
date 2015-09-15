@@ -1,0 +1,170 @@
+<h2><tmpl_var name="list_head_txt"></h2>
+<p><tmpl_var name="list_desc_txt"></p>
+
+<div class="container-fluid">
+
+    <div class="form-group container-fluid">
+        <label class="col-md-2 control-label" for="auto_network_configuration_cb">
+            {tmpl_var name='auto_network_configuration_txt'}
+        </label>
+        <div class="col-md-10">
+            <div id="auto_network_configuration_cb" class="checkbox check-success">
+                {tmpl_var name='auto_network_configuration'}
+                <span>{tmpl_var name='network_config_warning_txt'}</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group container-fluid">
+        <label class="col-md-2 control-label"  for="ip_address">{tmpl_var name='ip_address_txt'}</label>
+        <div class=" col-md-6">
+            <input class="form-control" name="ip_address" id="ip_address" value="{tmpl_var name='ip_address'}" type="text"  />
+        </div>
+    </div>
+
+    <div class="form-group container-fluid">
+        <label  class="col-md-2 control-label" for="netmask">{tmpl_var name='netmask_txt'}</label>
+        <div class=" col-md-6">
+            <input class="form-control" name="netmask" id="netmask" value="{tmpl_var name='netmask'}" type="text" />
+        </div>
+    </div>
+<!--<div class="ctrlHolder">
+<label for="v6_prefix">{tmpl_var name='v6_prefix_txt'}</label>
+<input name="v6_prefix" id="v6_prefix" value="{tmpl_var name='v6_prefix'}" size="15" maxlength="255" type="text" class="textInput formLengthIPv4" />
+   </div>
+   -->
+    <div class="form-group container-fluid">
+        <label  class="col-md-2 control-label" for="gateway">{tmpl_var name='gateway_txt'}</label>
+        <div class=" col-md-6">
+            <input class="form-control" name="gateway" id="gateway" value="{tmpl_var name='gateway'}" type="text"  />
+        </div>
+    </div>
+    <div class="form-group container-fluid">
+        <label  class="col-md-2 control-label" for="hostname">{tmpl_var name='hostname_txt'}</label>
+        <div class=" col-md-6">
+            <input class="form-control" name="hostname" id="hostname" value="{tmpl_var name='hostname'}"  type="text"  />
+        </div>
+    </div>
+    <div class="form-group container-fluid">
+        <label class="col-md-2 control-label"  for="nameservers">{tmpl_var name='nameservers_txt'}</label>
+        <div class=" col-md-6">
+            <input class="form-control" name="nameservers" id="nameservers" value="{tmpl_var name='nameservers'}"  type="text"  />
+            <div class="help-block">{tmpl_var name='nameservers_hint_txt'}</div>
+        </div>
+    </div>
+    <div class="form-group container-fluid">
+        <label class="col-md-2 control-label"  for="firewall">{tmpl_var name='firewall_txt'}</label>
+        <div class="col-md-3">
+            <select class="selectize form-control" name="firewall" id="firewall" >
+                {tmpl_var name='firewall'}
+            </select>
+        </div>
+    </div>
+    <div class="form-group container-fluid">
+        <label class="col-md-2 control-label"  for="loglevel">{tmpl_var name='loglevel_txt'}</label>
+        <div class="col-md-3">
+            <select class="selectize form-control" name="loglevel" id="loglevel" >
+                {tmpl_var name='loglevel'}
+            </select>
+        </div>
+    </div>
+    <div class="form-group container-fluid">
+        <label  class="col-md-2 control-label" for="admin_notify_events">{tmpl_var name='admin_notify_events_txt'}</label>
+        <div class="col-md-3">
+            <select class="selectize form-control" name="admin_notify_events" id="admin_notify_events" >
+                {tmpl_var name='admin_notify_events'}
+            </select>
+        </div>
+    </div>
+    <div class="form-group container-fluid">
+        <label  class="col-md-2 control-label" for="backup_dir">{tmpl_var name='backup_dir_txt'}</label>
+        <div class=" col-md-6">
+            <input class="form-control" name="backup_dir" id="backup_dir" value="{tmpl_var name='backup_dir'}" type="text" />
+        </div>
+    </div>
+    <div class="form-group container-fluid">
+        <label class="col-md-2 control-label"  for="backup_dir_is_mount_cb">
+            {tmpl_var name='backup_dir_is_mount_txt'}
+        </label>
+        <div class="col-md-10">
+            <div id="backup_dir_is_mount_cb" class="checkbox check-success">
+                {tmpl_var name='backup_dir_is_mount'}
+            </div>
+        </div>
+    </div>
+    <div class="form-group container-fluid">
+        <label  class="col-md-2 control-label" for="backup_mode">{tmpl_var name='backup_mode_txt'}</label>
+        <div class="col-md-3">
+            <select class="selectize form-control" name="backup_mode" id="backup_mode" >
+                {tmpl_var name='backup_mode'}
+            </select>
+        </div>
+    </div>
+    <div class="form-group container-fluid">
+        <label class="col-md-2 control-label"  for="monit_url">{tmpl_var name='monit_url_txt'}</label>
+        <div class=" col-md-6">
+            <input class="form-control" placeholder="ServerName" name="monit_url" id="monit_url" value="{tmpl_var name='monit_url'}"  type="text"  />
+            <div class="help-block">{tmpl_var name='monit_url_note_txt'} <a href="javascript:void(0);" class="addPlaceholder">[SERVERNAME]</a></div>
+        </div>
+    </div>
+    <div class="form-group container-fluid">
+        <label  class="col-md-2 control-label" for="monit_user">{tmpl_var name='monit_user_txt'}</label>
+        <div class=" col-md-6">
+            <input class="form-control" name="monit_user" id="monit_user" value="{tmpl_var name='monit_user'}"  type="text"  />
+        </div>
+    </div>
+    <div class="form-group container-fluid">
+        <label  class="col-md-2 control-label" for="monit_password">{tmpl_var name='monit_password_txt'}</label>
+        <div class=" col-md-6">
+            <input class="form-control" name="monit_password" id="monit_password" value="{tmpl_var name='monit_password'}"  type="text"  />
+        </div>
+    </div>
+    <div class="form-group container-fluid">
+        <label  class="col-md-2 control-label" for="munin_url">{tmpl_var name='munin_url_txt'}</label>
+        <div class=" col-md-6">
+            <input class="form-control" placeholder="ServerName" name="munin_url" id="munin_url" value="{tmpl_var name='munin_url'}" type="text"  />
+            <div class="help-block">{tmpl_var name='munin_url_note_txt'} <a href="javascript:void(0);" class="addPlaceholder">[SERVERNAME]</a></div>
+        </div>
+    </div>
+    <div class="form-group container-fluid">
+        <label  class="col-md-2 control-label" for="munin_user">{tmpl_var name='munin_user_txt'}</label>
+        <div class=" col-md-6">
+            <input class="form-control" name="munin_user" id="munin_user" value="{tmpl_var name='munin_user'}"  type="text" />
+        </div>
+    </div>
+    <div class="form-group container-fluid">
+        <label  class="col-md-2 control-label" for="munin_password">{tmpl_var name='munin_password_txt'}</label>
+        <div class=" col-md-6">
+            <input class="form-control" name="munin_password" id="munin_password" value="{tmpl_var name='munin_password'}" type="text"  />
+        </div>
+    </div>
+    <div class="form-group container-fluid">
+        <label  class="col-md-2 control-label" for="monitor_system_updates_cb">
+            {tmpl_var name='monitor_system_updates_txt'}
+        </label>
+        <div class="col-md-10">
+            <div id="monitor_system_updates_cb" class=" checkbox check-success ">
+                {tmpl_var name='monitor_system_updates'}
+            </div>
+        </div>
+    </div>
+
+    <input type="hidden" name="id" value="{tmpl_var name='id'}">
+
+    <div class="form-group container-fluid">
+        <div class="col-md-offset-2">
+            <button class="positive btn " type="button" value="{tmpl_var name='btn_save_txt'}" onclick="submitForm('pageForm','admin/server_config_edit.php');"><span><span class="glyphicon glyphicon-ok"></span> {tmpl_var name='btn_save_txt'}</span></button>
+            <button class="negative btn " type="button" value="{tmpl_var name='btn_cancel_txt'}" onclick="loadContent('admin/server_config_list.php');"><span><span class="glyphicon glyphicon-remove"></span> {tmpl_var name='btn_cancel_txt'}</span></button>
+        </div>
+    </div>
+
+</div>
+
+<!-- switchery script -->
+<script>
+    var elems = Array.prototype.slice.call(document.querySelectorAll('.switchery'));
+    // Success color: #10CFBD
+    elems.forEach(function(html) {
+        var switchery = new Switchery(html, {color: '#10CFBD'});
+    });
+</script>

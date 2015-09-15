@@ -1,0 +1,92 @@
+<h2><tmpl_var name="list_head_txt">Import plesk panel data</h2>
+<p><tmpl_var name="list_desc_txt"></p>
+
+<div class="container-fluid ">
+  
+    <legend>Plesk data import</legend>
+    
+    <div class="form-group container-fluid">
+        <label class="control-label col-md-2" for="dbhost">Plesk database hostname</label>
+        <div class="col-md-6">
+            <input class="form-control" id="dbhost" type="text" value="{tmpl_var name='dbhost'}" name="dbhost" />
+        </div>
+    </div>
+    <div class="form-group container-fluid">
+        <label class="control-label col-md-2" for="dbname">Plesk database name</label>
+        <div class="col-md-6">
+            <input class="form-control" id="dbname" type="text" value="{tmpl_var name='dbname'}" name="dbname" />
+        </div>
+    </div>
+    <div class="form-group container-fluid">
+        <label class="control-label col-md-2" for="dbuser">Plesk database user</label>
+        <div class="col-md-6">
+            <input class="form-control" id="dbuser" type="text" value="{tmpl_var name='dbuser'}" name="dbuser" />
+        </div>
+    </div>
+    <div class="form-group container-fluid">
+        <label class="control-label col-md-2" for="dbpassword">Plesk database password</label>
+        <div class="col-md-6">
+            <input class="form-control" id="dbpassword" type="text" value="{tmpl_var name='dbpassword'}" name="dbpassword" />
+        </div>
+    </div>
+    <div class="form-group container-fluid">
+        <label class="control-label col-md-2" for="webcontent">Web content backup file (on this server, optional)</label>
+        <div class="col-md-6">
+            <input class="form-control" id="webcontent" type="text" value="{tmpl_var name='webcontent'}" name="webcontent" />
+        </div>
+    </div>
+    <div class="form-group container-fluid">
+        <label class="control-label col-md-2" for="mailcontent">Maildir content backup file (on this server, optional)</label>
+        <div class="col-md-6">
+            <input class="form-control" id="mailcontent" type="text" value="{tmpl_var name='mailcontent'}" name="mailcontent" />
+        </div>
+    </div>
+
+    <div class="form-group container-fluid">
+        <label class="control-label col-md-2" for="start_cb">
+            Import all data (that can be imported)
+        </label>
+        <div class="col-md-10">
+            <div id="start_cb" class="checkbox check-success">
+                <input class="switchery" id="start" type="checkbox" value="1" name="start" checked/>
+            </div>
+        </div>
+    </div>
+    <div class="form-group container-fluid">
+        <label class="control-label col-md-2" for="dbdata_cb">
+            Import database contents (make sure the database user has the rights to do so)
+        </label>
+        <div class="col-md-10">
+            <div id="dbdata_cb" class="checkbox check-success">
+                <input class="switchery" id="dbdata" type="checkbox" value="1" name="dbdata" checked/>
+            </div>
+        </div>
+    </div>
+
+    <tmpl_if name="msg">
+        <div id="OKMsg"><p><tmpl_var name="msg"></p></div>
+    </tmpl_if>
+    <tmpl_if name="error">
+        <div id="errorMsg"><h3>ERROR</h3><ol><tmpl_var name="error"></ol></div>
+    </tmpl_if>
+
+    <input type="hidden" name="id" value="{tmpl_var name='id'}">
+
+    <div class="container-fluid form-group">
+        <div class="col-sm-offset-2">
+            <button class="positive btn " type="button" value="Import" onClick="submitForm('pageForm','tools/import_plesk.php');"><span><span class="glyphicon glyphicon-ok"></span> Start</span></button>
+            <button class="negative btn " type="button" value="Cancel" onClick="loadContent('tools/index.php');"><span><span class="glyphicon glyphicon-remove"></span> Cancel</span></button>
+        </div>
+    </div>
+  
+</div>
+
+
+<!-- switchery script -->
+<script>
+    var elems = Array.prototype.slice.call(document.querySelectorAll('.switchery'));
+    // Success color: #10CFBD
+    elems.forEach(function(html) {
+        var switchery = new Switchery(html, {color: '#10CFBD'});
+    });
+</script>

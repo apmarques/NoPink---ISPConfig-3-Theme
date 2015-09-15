@@ -1,0 +1,94 @@
+<h2><tmpl_var name="list_head_txt"></h2>
+<p><tmpl_var name="list_desc_txt"></p>
+
+<div class="container-fluid ">
+    
+            <div class="form-group container-fluid">
+                <label class="control-label col-md-2" for="server_id">{tmpl_var name='server_id_txt'}</label>
+                <div class="col-md-3">
+                    <select class="selectize form-control" name="server_id" id="server_id" >
+                        {tmpl_var name='server_id'}
+                    </select>
+                </div>
+            </div>
+            <div class="form-group container-fluid">
+                <label class="control-label col-md-2" for="table">{tmpl_var name='table_txt'}</label>
+                <div class="col-md-3">
+                    <select class="selectize form-control" name="table" id="table" >
+                        {tmpl_var name='table'}
+                    </select>
+                </div>
+            </div>
+            <div class="form-group container-fluid">
+                <label class="control-label col-md-2" for="protocol">{tmpl_var name='protocol_txt'}</label>
+                <div class="col-md-3">
+                    <select class="selectize form-control" name="protocol" id="protocol" >
+                        {tmpl_var name='protocol'}
+                    </select>
+                </div>
+            </div>
+            <div class="form-group container-fluid">
+                <label class="control-label col-md-2" for="singleport">{tmpl_var name='singleport_txt'}</label>
+                <div class="col-md-6">
+                    <input class="form-control" name="singleport" id="singleport" value="{tmpl_var name='singleport'}"  type="text"  />
+                </div>
+            </div>
+            <div class="form-group container-fluid">
+                <label class="control-label col-md-2" for="multiport">{tmpl_var name='multiport_txt'}</label>
+                <div class="col-md-6">
+                    <input class="form-control" name="multiport" id="multiport" value="{tmpl_var name='multiport'}"  type="text"  />
+                </div>
+            </div>
+            <div class="form-group container-fluid">
+                <label class="control-label col-md-2" for="destination_ip">{tmpl_var name='destination_ip_txt'}</label>
+                <div class="col-md-6">
+                    <input class="form-control" name="destination_ip" id="destination_ip" value="{tmpl_var name='destination_ip'}"  type="text"  />
+                </div>
+            </div>
+            <div class="form-group container-fluid">
+                <label class="control-label col-md-2" for="source_ip">{tmpl_var name='source_ip_txt'}</label>
+                <div class="col-md-6">
+                    <input class="form-control" name="source_ip" id="source_ip" value="{tmpl_var name='source_ip'}"  type="text"  />
+                </div>
+            </div>
+            <div class="form-group container-fluid">
+                <label class="control-label col-md-2" for="state">{tmpl_var name='state_txt'}</label>
+                <div class="col-md-6">
+                    <input class="form-control" name="state" id="state" value="{tmpl_var name='state'}"  type="text"  />
+                </div>
+            </div>
+            <div class="form-group container-fluid">
+                <label class="control-label col-md-2" for="target">{tmpl_var name='target_txt'}</label>
+                <div class="col-md-3">
+                    <select class="selectize form-control" name="target" id="target" >
+                        {tmpl_var name='target'}
+                    </select>
+                </div>
+            </div>
+            <div class="form-group container-fluid">
+                <label class="control-label col-md-2" for="active_cb">
+                    {tmpl_var name='active_txt'}
+                </label>
+                <div id="active_cb" class="checkbox check-success">
+                    {tmpl_var name='active'}
+                </div>
+            </div>
+        <input type="hidden" name="id" value="{tmpl_var name='id'}">
+    
+        <div class="container-fluid form-group">
+            <div class="col-md-offset-2">
+                <button class="positive btn " type="button" value="{tmpl_var name='btn_save_txt'}" onclick="submitForm('pageForm','admin/iptables_edit.php');"><span><span class="glyphicon glyphicon-ok"></span> {tmpl_var name='btn_save_txt'}</span></button>
+                <button class="negative btn " type="button" value="{tmpl_var name='btn_cancel_txt'}" onclick="loadContent('admin/iptables_list.php');"><span><span class="glyphicon glyphicon-remove"></span> {tmpl_var name='btn_cancel_txt'}</span></button>
+            </div>
+        </div>
+    
+</div>
+
+<!-- switchery script -->
+<script>
+    var elems = Array.prototype.slice.call(document.querySelectorAll('.switchery'));
+    // Success color: #10CFBD
+    elems.forEach(function(html) {
+        var switchery = new Switchery(html, {color: '#10CFBD'});
+    });
+</script>

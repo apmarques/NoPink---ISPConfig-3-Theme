@@ -1,0 +1,39 @@
+<h2><tmpl_var name="list_head_txt"></h2>
+<p><tmpl_var name="list_desc_txt"></p>
+
+<div class="container-fluid ">
+
+<legend>{tmpl_var name='message_txt'}</legend>
+
+    <div class="form-group container-fluid">
+        <label class="control-label col-md-2" for="recipient_id">{tmpl_var name='recipient_id_txt'}</label>
+        <div class="col-md-3">
+            <select class="selectize form-control" name="recipient_id" id="recipient_id" >
+                {tmpl_var name='recipient_id'}
+            </select>
+        </div>
+    </div>
+    <div class="form-group container-fluid">
+        <label class="control-label col-md-2" for="subject">{tmpl_var name='subject_txt'}</label>
+        <div class="col-md-6">
+            <input class="form-control" name="subject" id="subject" value="{tmpl_var name='subject'}" size="30" maxlength="255" type="text" />
+        </div>
+    </div>
+    <div class="form-group container-fluid">
+        <label class="control-label col-md-2" for="message">{tmpl_var name='message_txt'}</label>
+        <div class="col-md-6">
+            <textarea class="form-control" name="message" id="message">{tmpl_var name='message'}</textarea>
+        </div>
+    </div>
+
+    <input type="hidden" name="id" value="{tmpl_var name='id'}">
+    <input type="hidden" name="tstamp" value="{tmpl_var name='tstamp'}">
+
+    <div class="container-fluid form-group">
+        <div class="col-md-offset-2">
+            <button class="positive btn" type="button" value="{tmpl_var name='btn_save_txt'}" onclick="submitForm('pageForm','help/support_message_edit.php');"><span><span class="glyphicon glyphicon-ok"></span> {tmpl_var name='btn_save_txt'}</span></button>
+            <button class="negative btn" type="button" value="{tmpl_var name='btn_cancel_txt'}" onclick="loadContent('help/support_message_list.php');"><span><span class="glyphicon glyphicon-remove"></span> {tmpl_var name='btn_cancel_txt'}</span></button>
+        </div>
+    </div>
+
+</div>

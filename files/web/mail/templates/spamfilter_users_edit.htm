@@ -1,0 +1,60 @@
+<h2><tmpl_var name="list_head_txt"></h2>
+<p><tmpl_var name="list_desc_txt"></p>
+
+<div class="container-fluid ">
+
+    <div class="container-fluid form-group">
+        <label class="control-label col-md-2" for="server_id">{tmpl_var name='server_id_txt'}</label>
+        <div class="col-md-3">
+            <select class="selectize form-control" name="server_id" id="server_id" >
+                {tmpl_var name='server_id'}
+            </select>
+        </div>
+    </div>
+    <div class="container-fluid form-group">
+        <label class="control-label col-md-2" for="priority">{tmpl_var name='priority_txt'}</label>
+        <div class="col-md-3">
+            <select class="selectize form-control" name="priority" id="priority" >
+                {tmpl_var name='priority'}
+            </select>
+        </div>
+    </div>
+    <div class="container-fluid form-group">
+        <label class="control-label col-md-2" for="policy_id">{tmpl_var name='policy_id_txt'}</label>
+        <div class="col-md-3">
+            <select class="selectize form-control" name="policy_id" id="policy_id" >
+                {tmpl_var name='policy_id'}
+            </select>
+        </div>
+    </div>
+    <div class="container-fluid form-group">
+        <label class="control-label col-md-2" for="email">{tmpl_var name='email_txt'}</label>
+        <div class="col-md-6">
+            <input class="form-control" name="email" id="email" value="{tmpl_var name='email'}"  type="text"  />
+        </div>
+    </div>
+    <div class="container-fluid form-group">
+        <label class="control-label col-md-2" for="fullname">{tmpl_var name='fullname_txt'}</label>
+        <div class="col-md-6">
+            <input class="form-control" name="fullname" id="fullname" value="{tmpl_var name='fullname'}"  type="text"  />
+        </div>
+    </div>
+    <div class="container-fluid form-group">
+        <label class="control-label col-md-2" for="local">{tmpl_var name='local_txt'}</label>
+        <div class="col-md-3">
+            <select class="selectize form-control" name="local" id="local" >
+                {tmpl_var name='local'}
+            </select>
+        </div>
+    </div>
+
+    <input type="hidden" name="id" value="{tmpl_var name='id'}">
+
+    <div class="container-fluid form-group">
+        <div class="col-md-6">
+            <button class="positive btn" type="button" value="{tmpl_var name='btn_save_txt'}" onclick="submitForm('pageForm','mail/spamfilter_users_edit.php');"><span><span class="glyphicon glyphicon-ok"></span> {tmpl_var name='btn_save_txt'}</span></button>
+            <button class="negative btn" type="button" value="{tmpl_var name='btn_cancel_txt'}" onclick="loadContent('mail/spamfilter_users_list.php');"><span><span class="glyphicon glyphicon-remove"></span> {tmpl_var name='btn_cancel_txt'}</span></button>
+        </div>
+    </div>
+
+</div>

@@ -1,0 +1,63 @@
+<h2><tmpl_var name="list_head_txt"></h2>
+<p><tmpl_var name="list_desc_txt"></p>
+
+<div class="container-fluid ">
+
+    <legend>{tmpl_var name='circle_txt'}</legend>
+
+    <div class="form-group container-fluid">
+        <label class="control-label col-md-2" for="circle_name">{tmpl_var name='circle_name_txt'}*</label>
+        <div class="col-md-6">
+            <input class="form-control" name="circle_name" id="circle_name" value="{tmpl_var name='circle_name'}" type="text" />
+        </div>
+    </div>
+    <div class="form-group container-fluid">
+        <label class="control-label col-md-2" for="client_ids_cb">
+            {tmpl_var name='client_ids_txt'}
+        </label>
+        <div class="col-md-10">
+            <div id="client_ids_cb" class="checkbox check-success">
+                {tmpl_var name='client_ids'}
+            </div>
+        </div>
+    </div>
+    <div class="form-group container-fluid">
+        <label class="control-label col-md-2" for="description">{tmpl_var name='description_txt'}</label>
+        <div class="col-md-6">
+            <textarea class="form-control">{tmpl_var name='description'}</textarea>
+        </div>
+    </div>
+    <div class="form-group container-fluid">
+        <label class="control-label col-md-2" for="active_cb">
+            {tmpl_var name='active_txt'}
+        </label>
+        <div class="col-md-10">
+            <div id="active_cb" class="checkbox check-success">
+                {tmpl_var name='active'}
+            </div>
+        </div>
+    </div>
+    <div class="form-group container-fluid">
+        <label class="col-md-2 control-label">{tmpl_var name='required_fields_txt'}</label>
+    </div>
+            
+    <input type="hidden" name="id" value="{tmpl_var name='id'}">
+            
+    <div class="container-fluid form-group">
+        <div class="col-sm-offset-2">
+            <button class="positive btn " type="button" value="{tmpl_var name='btn_save_txt'}" onclick="submitForm('pageForm','client/client_circle_edit.php');"><span><span class="glyphicon glyphicon-ok"></span> {tmpl_var name='btn_save_txt'}</span></button>
+            <button class="negative btn " type="button" value="{tmpl_var name='btn_cancel_txt'}" onclick="loadContent('client/client_circle_list.php');"><span><span class="glyphicon glyphicon-remove"></span> {tmpl_var name='btn_cancel_txt'}</span></button>
+        </div>
+    </div>
+  
+</div>
+
+
+<!-- switchery script -->
+<script>
+    var elems = Array.prototype.slice.call(document.querySelectorAll('.switchery'));
+    // Success color: #10CFBD
+    elems.forEach(function(html) {
+        var switchery = new Switchery(html, {color: '#10CFBD'});
+    });
+</script>

@@ -1,0 +1,114 @@
+<h2><tmpl_var name="list_head_txt"></h2>
+<p><tmpl_var name="list_desc_txt"></p>
+
+<div class="container-fluid">
+    
+    <legend>Mailing List</legend>	
+    
+    <tmpl_if name="is_admin">
+        <div class="container-fluid form-group">
+            <label class="control-label col-md-2" for="client_group_id">{tmpl_var name='client_txt'}</label>
+            <div class="col-md-3">
+                <select class="selectize form-control" name="client_group_id" id="client_group_id" >
+                    {tmpl_var name='client_group_id'}
+                </select>
+            </div>
+        </div>
+    </tmpl_if>
+
+    <tmpl_if name="is_reseller">
+        <div class="container-fluid form-group">
+            <label class="control-label col-md-2" for="client_group_id">{tmpl_var name='client_txt'}</label>
+            <div class="col-md-3">
+                <select class="selectize form-control" name="client_group_id" id="client_group_id" >
+                    {tmpl_var name='client_group_id'}
+                </select>
+            </div>
+        </div>
+    </tmpl_if>
+
+    <tmpl_if name="edit_disabled">
+        <div class="container-fluid form-group">
+            <label class="control-label col-md-2" for="domain_disabled">{tmpl_var name='domain_txt'}</label>
+            <div class="col-md-3">
+                <select class="selectize form-control" name="domain_disabled" id="domain_disabled"  disabled="disabled">
+                    {tmpl_var name='domain_option'}
+                </select>
+            </div>
+            <input type="hidden" name="domain" value="{tmpl_var name='domain_value'}" />
+        </div>
+
+        <div class="container-fluid form-group">
+            <label class="control-label col-md-2" for="listname_disabled">{tmpl_var name='listname_txt'}</label>
+            <div class="col-md-6">
+                <input class="form-control" name="listname_disabled" id="listname_disabled" value="{tmpl_var name='listname'}"  type="text"  disabled="disabled" />
+                <input type="hidden" name="listname" value="{tmpl_var name='listname_value'}" />
+            </div>
+        </div>
+        <div class="container-fluid form-group">
+            <label class="control-label col-md-2" for="email_disabled">{tmpl_var name='email_txt'}</label>
+            <div class="col-md-6">
+                <input class="form-control" name="email_disabled" id="email_disabled" value="{tmpl_var name='email'}"  type="text"  disabled="disabled" />
+                <input type="hidden" name="email" value="{tmpl_var name='email_value'}" />
+            </div>
+        </div>
+        <tmpl_else>
+            <div class="container-fluid form-group">
+                <label class="control-label col-md-2" for="domain">{tmpl_var name='domain_txt'}</label>
+                <div class="col-md-3">
+                    <select class="selectize form-control" name="domain" id="domain" >
+                        {tmpl_var name='domain_option'}
+                    </select>
+                </div>
+            </div>
+            <div class="container-fluid form-group">
+                <label class="control-label col-md-2" for="listname">{tmpl_var name='listname_txt'}</label>
+                <div class="col-md-6">
+                    <input class="form-control" name="listname" id="listname" value="{tmpl_var name='listname'}"  type="text"  />
+                </div>
+            </div>
+            <div class="container-fluid form-group">
+                <label class="control-label col-md-2" for="email">{tmpl_var name='email_txt'}</label>
+                <div class="col-md-6">
+                    <input class="form-control" name="email" id="email" value="{tmpl_var name='email'}"  type="text"  />
+                </div>
+            </div>
+    </tmpl_if>
+    <div class="container-fluid form-group">
+        <label class="control-label col-md-2" for="password">{tmpl_var name='password_txt'}</label>
+        <div class="col-md-6">
+            <div class="input-group">
+                <input class="form-control" name="password" id="password" value="{tmpl_var name='password'}"  type="password"  autocomplete="off" onkeyup="pass_check(this.value);checkPassMatch('password','repeat_password');" />
+                <div class="input-group-addon"><a href="javascript:void(0);" onclick="generatePassword('password','repeat_password');">{tmpl_var name='generate_password_txt'}</a></div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid form-group">
+        <label class="control-label col-md-2" for="passBar">{tmpl_var name='password_strength_txt'}</label>
+        <div class="col-md-6">
+            <div class="input-group">
+                <div id="passBar"></div> <span> </span>
+                <span class="help-block"><span id="passText">&nbsp;</span></span>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid form-group">
+        <label class="control-label col-md-2" for="repeat_password">{tmpl_var name='repeat_password_txt'}</label>
+        <div class="col-md-6">
+            <input class="form-control" name="repeat_password" id="repeat_password" value="" size="15" maxlength="100" type="password" autocomplete="off" onkeyup="checkPassMatch('password','repeat_password');" />
+        </div>
+    </div>
+    
+    <div id="confirmpasswordError" style="display:none;" class="alert alert-warning">{tmpl_var name='password_mismatch_txt'}</div>
+    <div id="confirmpasswordOK" style="display:none;" class="alert alert-success">{tmpl_var name='password_match_txt'}</div>
+
+    <input type="hidden" name="id" value="{tmpl_var name='id'}">
+
+    <div class="container-fluid form-group">
+        <div class="col-md-offset-2">
+            <button class="positive  btn" type="button" value="{tmpl_var name='btn_save_txt'}" onclick="submitForm('pageForm','mail/mail_mailinglist_edit.php');"><span><span class="glyphicon glyphicon-ok"></span> {tmpl_var name='btn_save_txt'}</span></button>
+            <button class="negative  btn" type="button" value="{tmpl_var name='btn_cancel_txt'}" onclick="loadContent('mail/mail_mailinglist_list.php');"><span><span class="glyphicon glyphicon-remove"></span> {tmpl_var name='btn_cancel_txt'}</span></button>
+        </div>
+    </div>
+
+</div>

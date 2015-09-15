@@ -1,0 +1,56 @@
+<div class="panel-heading separator">
+    <h2><tmpl_var name="list_head_txt"></h2>
+</div>
+
+<div class="panel-body">
+    <div class="panel panel-default">
+
+        <div class="panel-heading separator"><h4><tmpl_var name="list_head_txt"></h4></div>
+        <div class="container-fluid table-responsive">
+            <table class="table table-striped ">
+                <thead>
+                    <tr class="caption">
+                        <th class="tbl_col_email" scope="col"><tmpl_var name="email_txt"></th>
+                        <th class="tbl_col_name" scope="col"><tmpl_var name="name_txt"></th>
+                        <th class="tbl_col_used_sort" scope="col"><tmpl_var name="used_txt"></th>
+                        <th class="tbl_col_quota" scope="col"><tmpl_var name="quota_txt"></th>
+                        <th class="tbl_col_percentage_sort" scope="col"><tmpl_var name="percentage_txt"></th>
+                        <th class="tbl_col_limit" scope="col">{tmpl_var name='search_limit'}</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="filter">
+                        <td class="tbl_col_email"><input  class="form-control" type="text" name="search_email" value="{tmpl_var name='search_email'}" /></td>
+                        <td class="tbl_col_name"><input  class="form-control" type="text" name="search_system_user" value="{tmpl_var name='search_name'}" /></td>
+                        <td class="tbl_col_used">&nbsp;</td>
+                        <td class="tbl_col_quota">&nbsp;</td>
+                        <td class="tbl_col_percentage">&nbsp;</td>
+                        <td class="tbl_col_buttons">
+                            <button type="button" class="btn" name="Filter" id="Filter" value="{tmpl_var name='filter_txt'}" data-toggle="tooltip" title="{tmpl_var name='filter_txt'}" onclick="submitForm('pageForm','mail/user_quota_stats.php');"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
+                        </td>
+                    </tr>
+                    <tmpl_loop name="records">
+                        <tr>
+                            <td class="tbl_col_email"><a href="#" onclick="loadContent('mail/mail_user_edit.php?id={tmpl_var name='id'}');">{tmpl_var name="email"}</a></td>
+                            <td class="tbl_col_name"><a href="#" onclick="loadContent('mail/mail_user_edit.php?id={tmpl_var name='id'}');">{tmpl_var name="name"}</a></td>
+                            <td class="tbl_col_used"><a href="#" onclick="loadContent('mail/mail_user_edit.php?id={tmpl_var name='id'}');">{tmpl_var name="used"}</a></td>
+                            <td class="tbl_col_quota"><a href="#" onclick="loadContent('mail/mail_user_edit.php?id={tmpl_var name='id'}');">{tmpl_var name="quota"}</a></td>
+                            <td class="tbl_col_percentage"><a href="#" onclick="loadContent('mail/mail_user_edit.php?id={tmpl_var name='id'}');">{tmpl_var name="percentage"}</a></td>
+                            <td class="tbl_col_buttons"></td>
+                        </tr>
+                    </tmpl_loop>
+                    <tmpl_unless name="records">
+                        <tr class="tbl_row_noresults">
+                            <td class="text-center" colspan="6">{tmpl_var name='globalsearch_noresults_text_txt'}</td>
+                        </tr>
+                    </tmpl_unless>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td class="tbl_footer tbl_paging" colspan="6"><tmpl_var name="paging"></td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,68 @@
+<h2><tmpl_var name="list_head_txt"></h2>
+<p><tmpl_var name="list_desc_txt"></p>
+
+<div class="container-fluid ">
+
+    
+            <!--
+                  <div class="container-fluid form-group">
+                    <label class="control-label col-md-2" for="server_id">{tmpl_var name='server_id_txt'}</label>
+                    <select class="selectize form-control" name="server_id" id="server_id" >
+                                                    {tmpl_var name='server_id'}
+                                            </select>
+                  </div>
+            -->
+    <div class="container-fluid form-group">
+        <label class="control-label col-md-2" for="rid">{tmpl_var name='rid_txt'}</label>
+        <div class="col-md-3">
+            <select class="selectize form-control" name="rid" id="rid" >
+                {tmpl_var name='rid'}
+            </select>
+        </div>
+    </div>
+    <div class="container-fluid form-group">
+        <label class="control-label col-md-2" for="email">{tmpl_var name='email_txt'}</label>
+        <div class="col-md-6">
+            <input class="form-control" name="email" id="email" value="{tmpl_var name='email'}"  type="text"  />
+        </div>
+    </div>
+    <div class="container-fluid form-group">
+        <label class="control-label col-md-2" for="priority">{tmpl_var name='priority_txt'}</label>
+        <div class="col-md-3">
+            <select class="selectize form-control" name="priority" id="priority" >
+                {tmpl_var name='priority'}
+            </select>
+        </div>
+    </div>
+    <div class="container-fluid form-group">
+        <label class="control-label col-md-2" for="active_cb">
+            {tmpl_var name='active_txt'}
+        </label>
+        <div class="col-md-10">
+            <div id="active_cb" class="checkbox check-success">
+                {tmpl_var name='active'}
+            </div>
+        </div>
+    </div>
+
+    <input type="hidden" name="id" value="{tmpl_var name='id'}">
+    <input type="hidden" name="wb" value="{tmpl_var name='wb'}">
+
+    <div class="container-fluid form-group ">
+        <div class="col-md-offset-2">
+            <button class="positive btn" type="button" value="{tmpl_var name='btn_save_txt'}" onclick="submitForm('pageForm','mail/spamfilter_whitelist_edit.php');"><span><span class="glyphicon glyphicon-ok"></span> {tmpl_var name='btn_save_txt'}</span></button>
+            <button class="negative btn" type="button" value="{tmpl_var name='btn_cancel_txt'}" onclick="loadContent('mail/spamfilter_whitelist_list.php');"><span><span class="glyphicon glyphicon-remove"></span> {tmpl_var name='btn_cancel_txt'}</span></button>
+        </div>
+    </div>
+
+</div>
+
+
+<!-- switchery script -->
+<script>
+    var elems = Array.prototype.slice.call(document.querySelectorAll('.switchery'));
+    // Success color: #10CFBD
+    elems.forEach(function(html) {
+        var switchery = new Switchery(html, {color: '#10CFBD'});
+    });
+</script>

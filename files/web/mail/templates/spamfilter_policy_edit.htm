@@ -1,0 +1,78 @@
+<h2><tmpl_var name="list_head_txt"></h2>
+<p><tmpl_var name="list_desc_txt"></p>
+
+<div class="container-fluid ">
+
+    <div class="container-fluid form-group">
+        <label class="control-label col-md-2" for="policy_name">{tmpl_var name='policy_name_txt'}</label>
+        <div class="col-md-6">
+            <input class="form-control" name="policy_name" id="policy_name" value="{tmpl_var name='policy_name'}"  type="text"  />
+        </div>
+    </div>
+    <div class="container-fluid form-group">
+        <label class="control-label col-md-2" for="virus_lover">{tmpl_var name='virus_lover_txt'}</label>
+        <div class="col-md-3">
+            <select class="selectize form-control" name="virus_lover" id="virus_lover" >
+                {tmpl_var name='virus_lover'}
+            </select>
+        </div>
+    </div>
+    <div class="container-fluid form-group">
+        <label class="control-label col-md-2" for="spam_lover">{tmpl_var name='spam_lover_txt'}</label>
+        <div class="col-md-3">
+            <select class="selectize form-control" name="spam_lover" id="spam_lover" >
+                {tmpl_var name='spam_lover'}
+            </select>
+        </div>
+    </div>
+    <div class="container-fluid form-group">
+        <label class="control-label col-md-2" for="banned_files_lover">{tmpl_var name='banned_files_lover_txt'}</label>
+        <div class="col-md-3">
+            <select class="selectize form-control" name="banned_files_lover" id="banned_files_lover" >
+                {tmpl_var name='banned_files_lover'}
+            </select>
+        </div>
+    </div>
+    <div class="container-fluid form-group">
+        <label class="control-label col-md-2" for="bad_header_lover">{tmpl_var name='bad_header_lover_txt'}</label>
+        <div class="col-md-3">
+            <select class="selectize form-control" name="bad_header_lover" id="bad_header_lover" >
+                {tmpl_var name='bad_header_lover'}
+            </select>
+        </div>
+    </div>
+    <div class="container-fluid form-group">
+        <label class="control-label col-md-2" for="bypass_virus_checks">{tmpl_var name='bypass_virus_checks_txt'}</label>
+        <div class="col-md-3">
+            <select class="selectize form-control" name="bypass_virus_checks" id="bypass_virus_checks" >
+                {tmpl_var name='bypass_virus_checks'}
+            </select>
+        </div>
+    </div>
+    <div class="container-fluid form-group">
+        <label class="control-label col-md-2" for="bypass_banned_checks">{tmpl_var name='bypass_banned_checks_txt'}</label>
+        <div class="col-md-3">
+            <select class="selectize form-control" name="bypass_banned_checks" id="bypass_banned_checks" >
+                {tmpl_var name='bypass_banned_checks'}
+            </select>
+        </div>
+    </div>
+    <div class="container-fluid form-group">
+        <label class="control-label col-md-2" for="bypass_header_checks">{tmpl_var name='bypass_header_checks_txt'}</label>
+        <div class="col-md-3">
+            <select class="selectize form-control" name="bypass_header_checks" id="bypass_header_checks" >
+                {tmpl_var name='bypass_header_checks'}
+            </select>
+        </div>
+    </div>
+
+    <input type="hidden" name="id" value="{tmpl_var name='id'}">
+
+    <div class=" container-fluid form-group">
+        <div class="col-md-offset-2">
+            <button class="positive btn" type="button" value="{tmpl_var name='btn_save_txt'}" onclick="submitForm('pageForm','mail/spamfilter_policy_edit.php');"><span><span class="glyphicon glyphicon-ok"></span> {tmpl_var name='btn_save_txt'}</span></button>
+            <button class="negative btn" type="button" value="{tmpl_var name='btn_cancel_txt'}" onclick="loadContent('mail/spamfilter_policy_list.php');"><span><span class="glyphicon glyphicon-remove"></span> {tmpl_var name='btn_cancel_txt'}</span></button>
+        </div>
+    </div>
+
+</div>

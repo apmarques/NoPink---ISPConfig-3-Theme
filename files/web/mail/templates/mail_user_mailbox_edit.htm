@@ -1,0 +1,145 @@
+<h2><tmpl_var name="list_head_txt"></h2>
+<p><tmpl_var name="list_desc_txt"></p>
+
+<div class="container-fluid ">
+
+    <div class="container-fluid form-group">
+        <label class="control-label col-md-2" for="name">{tmpl_var name='name_txt'}</label>
+        <div class="col-md-6">
+            <input class="form-control" name="name" id="name" value="{tmpl_var name='name'}"  type="text"  />
+            <div class="help-block">{tmpl_var name='name_optional_txt'}</div>
+        </div>
+    </div>
+    <div class="container-fluid form-group">
+        <label class="control-label col-md-2" for="email_local_part">{tmpl_var name='email_txt'} Alias</label>
+        <div class="col-md-6">
+            <div class="input-group">
+                <input class="form-control" type="text" id="email_local_part" name="email_local_part"  value="{tmpl_var name='email_local_part'}"  />
+                <div class="input-group-addon">@</div>
+                    <select class="form-control" name="email_domain" id="email_domain" >
+                        {tmpl_var name='email_domain'}
+                    </select>
+                </div>
+            </div>
+        </div>
+    <tmpl_if name="enable_custom_login">
+        <div class="container-fluid form-group">
+            <label class="control-label col-md-2" for="login">{tmpl_var name='login_txt'}</label>
+            <div class="col-md-6">
+                <input class="form-control" type="text" id="login" name="login"  value="{tmpl_var name='login'}"  />
+            </div>
+        </div>
+    </tmpl_if>
+    <div class="container-fluid form-group">
+        <label class="control-label col-md-2" for="password">{tmpl_var name='password_txt'}</label>
+        <div class="col-md-6">
+            <div class="input-group">
+                <input class="form-control" name="password" id="password" value="{tmpl_var name='password'}"  type="password"  autocomplete="off" onkeyup="pass_check(this.value);checkPassMatch('password','repeat_password');" />
+                <div class="input-group-addon"><a href="javascript:void(0);" onclick="generatePassword('password','repeat_password');">{tmpl_var name='generate_password_txt'}</a></div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid form-group">
+        <label class="control-label col-md-2" for="passBar">{tmpl_var name='password_strength_txt'}</label>
+        <div class="col-md-6">
+            <div class="input-group">
+                <div id="passBar"></div>
+                <span class="help-block"><span id="passText">&nbsp;</span></span>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid form-group">
+        <label class="control-label col-md-2" for="repeat_password">{tmpl_var name='repeat_password_txt'}</label>
+        <div class="col-md-6">
+            <input class="form-control" name="repeat_password" id="repeat_password" value=""  type="password"  autocomplete="off" onkeyup="checkPassMatch('password','repeat_password');" />
+        </div>
+    </div>
+
+    <div id="confirmpasswordError" style="display:none;" class="alert alert-warning">{tmpl_var name='password_mismatch_txt'}</div>
+    <div id="confirmpasswordOK" style="display:none;" class="alert alert-success">{tmpl_var name='password_match_txt'}</div>
+
+    <div class="container-fluid form-group">
+        <label class="control-label col-md-2" for="quota">{tmpl_var name='quota_txt'}</label>
+        <div class="col-md-6">
+            <div class="input-group">
+                <input class="form-control" name="quota" id="quota" value="{tmpl_var name='quota'}"  type="text"  />
+                <div class="input-group-addon">MB</div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid form-group">
+        <label class="control-label col-md-2" for="name">{tmpl_var name='cc_txt'}</label>
+        <div class="col-md-6">
+            <input class="form-control" name="cc" id="cc" value="{tmpl_var name='cc'}"  type="text"  />
+            <div class="help-block">{tmpl_var name='name_optional_txt'} {tmpl_var name='cc_note_txt'}</div>
+        </div>
+    </div>
+    <div class="container-fluid form-group">
+        <label class="control-label col-md-2" for="policy">{tmpl_var name='policy_txt'}</label>
+        <div class="col-md-3">
+            <select class="selectize form-control" name="policy" id="policy" >
+                {tmpl_var name='policy'}
+            </select>
+        </div>
+    </div>
+    <div class="container-fluid form-group">
+        <label class="control-label col-md-2" for="postfix_cb">
+            {tmpl_var name='postfix_txt'}
+        </label>
+        <div class="col-md-10">
+            <div id="postfix_cb" class="checkbox check-success">
+                {tmpl_var name='postfix'}
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid form-group">
+        <label class="control-label col-md-2" for="disablesmtp_cb">
+            {tmpl_var name='disablesmtp_txt'}
+        </label>
+        <div class="col-md-10">
+            <div id="disablesmtp_cb" class="checkbox check-success">
+                {tmpl_var name='disablesmtp'}
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid form-group">
+        <label class="control-label col-md-2" for="disableimap_cb">
+            {tmpl_var name='disableimap_txt'}
+        </label>
+        <div class="col-md-10">
+            <div id="disableimap_cb" class="checkbox check-success">
+                {tmpl_var name='disableimap'}
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid form-group">
+        <label class="control-label col-md-2" for="disablepop3_cb">
+            {tmpl_var name='disablepop3_txt'}
+        </label>
+        <div class="col-md-10">
+            <div id="disablepop3_cb" class="checkbox check-success">
+                {tmpl_var name='disablepop3'}
+            </div>
+        </div>
+    </div>
+
+    <input type="hidden" name="id" value="{tmpl_var name='id'}">
+
+    <div class="container-fluid form-group ">
+        <div class="col-md-offset-2">
+            <button class="positive btn" type="button" value="{tmpl_var name='btn_save_txt'}" onclick="submitForm('pageForm','mail/mail_user_edit.php');"><span><span class="glyphicon glyphicon-ok"></span> {tmpl_var name='btn_save_txt'}</span></button>
+            <button class="negative btn" type="button" value="{tmpl_var name='btn_cancel_txt'}" onclick="loadContent('mail/mail_user_list.php');"><span><span class="glyphicon glyphicon-remove"></span> {tmpl_var name='btn_cancel_txt'}</span></button>
+        </div>
+    </div>
+
+</div>
+
+
+<!-- switchery script -->
+<script>
+    var elems = Array.prototype.slice.call(document.querySelectorAll('.switchery'));
+    // Success color: #10CFBD
+    elems.forEach(function(html) {
+        var switchery = new Switchery(html, {color: '#10CFBD'});
+    });
+</script>

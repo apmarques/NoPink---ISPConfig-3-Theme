@@ -1,0 +1,48 @@
+<h2><tmpl_var name="list_head_txt"></h2>
+<p><tmpl_var name="list_desc_txt"></p>
+
+<div class="container-fluid ">
+
+            <div class="form-group container-fluid">
+                <label class="control-label col-md-2" for="use_domain_module_cb">
+                    {tmpl_var name='use_domain_module_txt'}
+                </label>
+                <div class="col-md-10">
+                    <div id="use_domain_module_cb" class="check-success checkbox">
+                        {tmpl_var name='use_domain_module'}
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group container-fluid">
+                {tmpl_var name='use_domain_module_hint'}
+            </div>
+            <div class="form-group container-fluid">
+                <label class="control-label col-md-2" for="new_domain_html">
+                    {tmpl_var name='new_domain_txt'}
+                </label>
+                <div class="col-md-6">
+                    <textarea class="form-control">{tmpl_var name='new_domain_html'}</textarea>
+                </div>
+            </div>
+
+        <input type="hidden" name="id" value="{tmpl_var name='id'}">
+
+        <div class="container-fluid form-group">
+            <div class="col-sm-offset-2">
+                <button class="positive btn " type="button" value="{tmpl_var name='btn_save_txt'}" onclick="submitForm('pageForm','admin/system_config_edit.php');"><span><span class="glyphicon glyphicon-ok"></span> {tmpl_var name='btn_save_txt'}</span></button>
+                <button class="negative btn " type="button" value="{tmpl_var name='btn_cancel_txt'}" onclick="loadContent('admin/users_list.php');"><span><span class="glyphicon glyphicon-remove"></span> {tmpl_var name='btn_cancel_txt'}</span></button>
+            </div>
+        </div>
+  
+</div>
+
+
+<!-- switchery script -->
+<script>
+    var elems = Array.prototype.slice.call(document.querySelectorAll('.switchery'));
+    // Success color: #10CFBD
+    elems.forEach(function(html) {
+        var switchery = new Switchery(html, {color: '#10CFBD'});
+    });
+</script>

@@ -1,0 +1,193 @@
+<h2><tmpl_var name="list_head_txt"></h2>
+<p><tmpl_var name="list_desc_txt"></p>
+
+<div class="container-fluid ">
+
+ <legend>DNS Zone</legend>
+    
+    <tmpl_if name="is_admin">
+        <div class="form-group container-fluid">
+            <tmpl_if name="edit_disabled">
+                <label class="control-label col-md-2" for="server_id_disabled">{tmpl_var name='server_id_txt'}</label>
+                <div class="col-md-3">
+                    <select class="selectize form-control" name="server_id_disabled" id="server_id_disabled" disabled="disabled">
+                        {tmpl_var name='server_id'}
+                    </select>
+                </div>
+                <input type="hidden" name="server_id" value="{tmpl_var name='server_id_value'}" />
+                <tmpl_else>
+                    <label class="control-label col-md-2" for="server_id">{tmpl_var name='server_id_txt'}</label>
+                    <div class="col-md-3">
+                        <select class="selectize form-control" name="server_id" id="server_id" >
+                            {tmpl_var name='server_id'}
+                        </select>
+                    </div>
+            </tmpl_if>
+        </div>
+        <div class="form-group container-fluid">
+            <label class="control-label col-md-2" for="client_group_id">{tmpl_var name='client_txt'}</label>
+            <div class="col-md-3">
+                <select class="selectize form-control" name="client_group_id" id="client_group_id" >
+                    {tmpl_var name='client_group_id'}
+                </select>
+            </div>
+        </div>
+    </tmpl_if>
+    <tmpl_if name="is_reseller">
+        <div class="form-group container-fluid">
+            <label class="control-label col-md-2" for="client_group_id">{tmpl_var name='client_txt'}</label>
+            <div class="col-md-3">
+                <select class="selectize form-control" name="client_group_id" id="client_group_id" >
+                    {tmpl_var name='client_group_id'}
+                </select>
+            </div>
+        </div>
+    </tmpl_if>
+    <div class="form-group container-fluid">
+        <label class="control-label col-md-2" for="origin">{tmpl_var name='origin_txt'}</label>
+        <div class="col-md-6">
+            <input class="form-control" name="origin" id="origin" value="{tmpl_var name='origin'}"  type="text"  />
+            <div class="help-block">{tmpl_var name='eg_domain_tld'}</div>
+        </div>
+    </div>
+    <div class="form-group container-fluid">
+        <label class="control-label col-md-2" for="ns">{tmpl_var name='ns_txt'}</label>
+        <div class="col-md-6">
+            <input class="form-control" name="ns" id="ns" value="{tmpl_var name='ns'}"  type="text"  />
+            <div class="help-block">{tmpl_var name='eg_ns1_domain_tld'}</div>
+        </div>
+    </div>
+    <div class="form-group container-fluid">
+        <label class="control-label col-md-2" for="mbox">{tmpl_var name='mbox_txt'}</label>
+        <div class="col-md-6">
+            <input class="form-control" name="mbox" id="mbox" value="{tmpl_var name='mbox'}"  type="text"  />
+            <div class="help-block">{tmpl_var name='eg_webmaster_domain_tld'}</div>
+        </div>
+    </div>
+    <div class="form-group container-fluid">
+        <label class="control-label col-md-2" for="refresh">{tmpl_var name='refresh_txt'}</label>
+        <div class="col-md-6">
+            <div class="input-group">
+                <input class="form-control" name="refresh" id="refresh" value="{tmpl_var name='refresh'}"  type="text"  />
+                <div class="input-group-addon">{tmpl_var name='seconds_txt'}</div>
+            </div>
+        </div>
+    </div>
+    <div class="form-group container-fluid">
+        <label class="control-label col-md-2" for="retry">{tmpl_var name='retry_txt'}</label>
+        <div class="col-md-6">
+            <div class="input-group">
+                <input class="form-control" name="retry" id="retry" value="{tmpl_var name='retry'}"  type="text" />
+                <div class="input-group-addon">{tmpl_var name='seconds_txt'}</div>
+            </div>
+        </div>
+    </div>
+    <div class="form-group container-fluid">
+        <label class="control-label col-md-2" for="expire">{tmpl_var name='expire_txt'}</label>
+        <div class="col-md-6">
+            <div class="input-group">
+                <input class="form-control" name="expire" id="expire" value="{tmpl_var name='expire'}"  type="text" />
+                <div class="input-group-addon">{tmpl_var name='seconds_txt'}</div>
+            </div>
+        </div>
+    </div>
+    <div class="form-group container-fluid">
+        <label class="control-label col-md-2" for="minimum">{tmpl_var name='minimum_txt'}</label>
+        <div class="col-md-6">
+            <div class="input-group">
+                <input class="form-control" name="minimum" id="minimum" value="{tmpl_var name='minimum'}"  type="text"  />
+                <div class="input-group-addon">{tmpl_var name='seconds_txt'}</div>
+            </div>
+        </div>
+    </div>
+    <div class="form-group container-fluid">
+        <label class="control-label col-md-2" for="ttl">{tmpl_var name='ttl_txt'}</label>
+        <div class="col-md-6">
+            <div class="input-group">
+                <input class="form-control" name="ttl" id="ttl" value="{tmpl_var name='ttl'}"  type="text" />
+                <div class="input-group-addon">{tmpl_var name='seconds_txt'}</div>
+            </div>
+        </div>
+    </div>
+    <div class="form-group container-fluid">
+        <label class="control-label col-md-2" for="xfer">{tmpl_var name='xfer_txt'}</label>
+        <div class="col-md-6">
+            <input class="form-control" name="xfer" id="xfer" value="{tmpl_var name='xfer'}"  type="text"  />
+        </div>
+    </div>
+    <div class="form-group container-fluid">
+        <label class="control-label col-md-2" for="also_notify">{tmpl_var name='also_notify_txt'}</label>
+        <div class="col-md-6">
+            <input class="form-control" name="also_notify" id="also_notify" value="{tmpl_var name='also_notify'}"  type="text"  />
+        </div>
+    </div>
+    <div class="form-group container-fluid">
+        <label class="control-label col-md-2" for="update_acl">{tmpl_var name='update_acl_txt'}</label>
+        <div class="col-md-6">
+            <input class="form-control" name="update_acl" id="update_acl" value="{tmpl_var name='update_acl'}"  type="text"  />
+        </div>
+    </div>
+
+    <div class="form-group container-fluid">
+        <label class="col-md-2 control-label" for="active_cb">
+            {tmpl_var name='active_txt'}
+        </label>
+        <div class="col-md-10">
+            <div id="active_cb" class=" checkbox check-success">
+                {tmpl_var name='active'}
+            </div>
+        </div>
+    </div>
+            
+    <input type="hidden" name="id" value="{tmpl_var name='id'}">
+    <input class="form-control" name="serial" type="hidden" value="{tmpl_var name='serial'}">
+        
+    <div class="container-fluid form-group">
+        <div class="col-md-offset-2">
+            <button class="positive btn" type="button" value="{tmpl_var name='btn_save_txt'}" onclick="submitForm('pageForm','dns/dns_soa_edit.php');"><span><span class="glyphicon glyphicon-ok"></span> {tmpl_var name='btn_save_txt'}</span></button>
+            <button class="negative btn" type="button" value="{tmpl_var name='btn_cancel_txt'}" onclick="loadContent('dns/dns_soa_list.php');"><span><span class="glyphicon glyphicon-remove"></span> {tmpl_var name='btn_cancel_txt'}</span></button>
+        </div>
+    </div>
+
+</div>
+
+
+<script type="text/javascript" src="../../js/jquery.ispconfigsearch.js"></script>
+<script language="JavaScript" type="text/javascript">
+    jQuery('#xfer').ispconfigSearch({
+        dataSrc: '/dns/ajax_get_json.php?type=get_ipv4',
+        resultsLimit: '$ <tmpl_var name="globalsearch_resultslimit_of_txt"> % <tmpl_var name="globalsearch_resultslimit_results_txt">',
+        ResultsTextPrefix: '<tmpl_var name="globalsearch_suggestions_text_txt">',
+        noResultsText: '<tmpl_var name="globalsearch_noresults_text_txt">',
+        noResultsLimit: '<tmpl_var name="globalsearch_noresults_limit_txt">',
+        minChars: 0,
+        cssPrefix: 'df-',
+        fillSearchField: true,
+        fillSearchFieldWith: 'fill_text',
+        searchFieldWatermark: '',
+        resultBoxPosition: 'e'
+    });
+    jQuery('#also_notify').ispconfigSearch({
+        dataSrc: '/dns/ajax_get_json.php?type=get_ipv4',
+        resultsLimit: '$ <tmpl_var name="globalsearch_resultslimit_of_txt"> % <tmpl_var name="globalsearch_resultslimit_results_txt">',
+        ResultsTextPrefix: '<tmpl_var name="globalsearch_suggestions_text_txt">',
+        noResultsText: '<tmpl_var name="globalsearch_noresults_text_txt">',
+        noResultsLimit: '<tmpl_var name="globalsearch_noresults_limit_txt">',
+        minChars: 0,
+        cssPrefix: 'df-',
+        fillSearchField: true,
+        fillSearchFieldWith: 'fill_text',
+        searchFieldWatermark: '',
+        resultBoxPosition: 'e'
+    });
+</script>
+
+
+<!-- switchery script -->
+<script>
+    var elems = Array.prototype.slice.call(document.querySelectorAll('.switchery'));
+    // Success color: #10CFBD
+    elems.forEach(function(html) {
+        var switchery = new Switchery(html, {color: '#10CFBD'});
+    });
+</script>

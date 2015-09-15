@@ -1,0 +1,42 @@
+<div class="panel-heading separator">
+    <h2><tmpl_var name="list_head_txt"></h2>
+    <p><tmpl_var name="list_desc_txt"></p>
+</div>
+
+<div class="panel-body">
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <div class="container-fluid">
+                <legend>Language Add</legend>
+                    <div class="form-group container-fluid">
+                        <label class="col-md-2 control-label" for="language">{tmpl_var name='language_select_txt'}</label>
+                        <div class="col-md-3">
+                            <select name="lng_select" id="language" class="selectize form-control flags">
+                                {tmpl_var name='language_option'}
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group container-fluid">
+                        <label class="col-md-2 control-label" for="lng_new">{tmpl_var name='language_new_txt'}</label>
+                        <div class="col-md-6">
+                            <input class="form-control" name="lng_new" id="lng_new" value="" type="text" />
+                            <div class="help-block">{tmpl_var name='language_new_hint_txt'}</div>
+                        </div>
+                    </div>
+
+                <input type="hidden" name="id" value="{tmpl_var name='id'}">
+
+                <div class="container-fluid form-groupo">
+                    <div class="col-sm-offset-2">
+                        <button class="positive btn " type="button" value="{tmpl_var name='btn_save_txt'}" onclick="submitForm('pageForm','admin/language_add.php');"><span><span class="glyphicon glyphicon-ok"></span> {tmpl_var name='btn_save_txt'}</span></button>
+                        <button class="negative btn " type="button" value="{tmpl_var name='btn_cancel_txt'}" onclick="loadContent('admin/language_list.php');"><span><span class="glyphicon glyphicon-remove"></span> {tmpl_var name='btn_cancel_txt'}</span></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $('.selectize').selectize();
+</script>

@@ -1,0 +1,52 @@
+<ul class="menu-items">
+    <tmpl_loop name="nav_top">
+        <tmpl_if name="active">
+
+            <li class="open">
+                <a href="javascript:;">
+                    <span class="title">
+                        <tmpl_var name="title">
+                    </span>
+                    <span class="arrow"></span>
+                </a>
+                <ul style="display: block;" class="sub-menu" id="sideNav"><!-- AJAX SubMenus CONTENT --></ul>
+            </li>
+
+        <tmpl_else>
+            <li class="">
+                <a href="#" onclick="capp('<tmpl_var name="module">')" >
+                    <span class="title">
+                        <tmpl_var name="title">
+                    </span>
+                </a>
+            </li>
+        </tmpl_if>
+    </tmpl_loop>
+</ul>
+
+<script language="JavaScript" type="text/javascript">
+    jQuery(document).ready(function() {
+        loadSideNav();
+    });
+</script>
+
+<!-- IMPORTANT NOTE:
+
+    This jquery needs to be here so the Menus work. I'm not entirely sure
+    why this actually works. Because there shouldn't be the need to include
+    a jquery library again each time the menu is loaded. But it is working.
+
+    If the jquery library is removed the menus won't work, but that makes it
+    so every other jquery plugin can be moved to the main document and only be
+    called once, instead of each time the menus are loaded.
+
+    TLDR: It's working as it is, for no apparent reason.
+
+    Please feel free to point out my mistake, as it would be most helpfull.
+ -->
+<script src="assets/plugins/jquery/jquery-1.11.1.min.js" type="text/javascript"></script>
+<script src="assets/plugins/jquery-scrollbar/jquery.scrollbar.min.js"></script>
+<script src="pages/js/pages-custom.js"></script><!-- pages-custom.js is different from pages.js so mobile menu works properly -->
+<script type="text/javascript" src="js/scrigo2.js.php"></script>
+<script src="assets/plugins/selectize/selectize.js" type="text/javascript"></script>
+

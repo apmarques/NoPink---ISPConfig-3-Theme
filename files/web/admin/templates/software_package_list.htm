@@ -1,0 +1,62 @@
+<div class="panel-heading separator">
+    <h2><tmpl_var name="list_head_txt"></h2>
+    <p><tmpl_var name="list_desc_txt"></p>
+</div>
+
+<div class="panel-body">
+        <div class="panel panel-default">
+
+        <div class="panel-heading separator"><h4>{tmpl_var name="toolsarea_head_txt"}</h4></div>
+        <div class="gap"></div>
+        <div class="container-fluid">
+            <div class="container-fluid">
+                <div class="col-md-10">
+                    <button class="btn" type="button" onclick="loadContent('admin/software_package_list.php?action=repoupdate');">
+                        <span><span class="glyphicon glyphicon-refresh"></span> {tmpl_var name="repoupdate_txt"}</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="panel-heading separator"><h4><tmpl_var name="list_head_txt"></h4></div>
+        <div class="container-fluid table-responsive">
+            <table class="table table-striped ">
+                <thead>
+                    <tr class="caption">
+                        <th class="tbl_col_installed" scope="col"><tmpl_var name="installed_txt"></th>
+                        <th class="tbl_col_package_title" scope="col"><tmpl_var name="package_title_txt"></th>
+                        <th class="tbl_col_package_description" scope="col"><tmpl_var name="package_description_txt"></th>
+                        <th class="tbl_col_package_id" scope="col"><tmpl_var name="package_id_txt"></th>
+                        <th class="tbl_col_limit" scope="col">{tmpl_var name='search_limit'}</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tmpl_loop name="records">
+                        <tmpl_if name="has_packages">
+                        <tr>
+                            <td class="tbl_col_installed">{tmpl_var name="installed"}</td>
+                            <td class="tbl_col_package_title">{tmpl_var name="package_title"}</td>
+                            <td class="tbl_col_package_description">{tmpl_var name="package_description"}</td>
+                            <td class="tbl_col_package_id">ispapp{tmpl_var name="package_id"}</td>
+                            <td class="tbl_col_buttons">
+                                <a class="btn" data-toggle="tooltip" title="{tmpl_var name='edit_txt'}" href="javascript: loadContent('admin/software_package_edit.php?id={tmpl_var name='package_id'}');"><span class="glyphicon glyphicon-pencil"></span></a>
+                                <a class="btn" data-toggle="tooltip" title="{tmpl_var name='delete_txt'}" href="javascript: del_record('admin/software_package_del.php?software_update_inst_id={tmpl_var name='software_update_inst_id'}','{tmpl_var name='delete_confirmation'}');"><span class="glyphicon glyphicon-remove"></span></a>
+                            </td>
+                        </tr>
+                        </tmpl_if>
+                    </tmpl_loop>
+                    <tmpl_unless name="records">
+                        <tr class="tbl_row_noresults">
+                            <td class="text-center" colspan="5">{tmpl_var name='no_packages_txt'}</td>
+                        </tr>
+                    </tmpl_unless>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td class="tbl_footer tbl_paging" colspan="5"></td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,32 @@
+<h2><tmpl_var name="list_head_txt"></h2>
+<p><tmpl_var name="list_desc_txt"></p>
+
+
+<div class="form-group container-fluid">
+    <label class="control-label col-md-2" for="default_group">{tmpl_var name='default_group_txt'}</label>
+    <div class="col-md-3">
+        <select class="selectize form-control" name="default_group" id="default_group">
+            {tmpl_var name='default_group'}
+        </select>
+    </div>
+</div>
+
+<div class="form-group container-fluid">
+    <label class="col-md-2 control-label" for="checkbox1">
+        {tmpl_var name='groups_txt'}
+    </label>
+    <div class="col-md-10">
+        <div id="checkbox1" class=" checkbox check-success">
+            {tmpl_var name='groups'}
+        </div>
+    </div>
+</div>
+
+<input type="hidden" name="id" value="{tmpl_var name='id'}">
+
+<div class="form-group container-fluid">
+<div class="col-md-offset-2">
+    <button class="positive btn" type="button" value="{tmpl_var name='btn_save_txt'}" onclick="submitForm('pageForm','admin/users_edit.php');"><span><span class="glyphicon glyphicon-ok"></span> {tmpl_var name='btn_save_txt'}</span></button>
+    <button class="negative btn" type="button" value="{tmpl_var name='btn_cancel_txt'}" onclick="loadContent('admin/users_list.php');"><span><span class="glyphicon glyphicon-remove"></span> {tmpl_var name='btn_cancel_txt'}</span></button>
+</div>
+</div>

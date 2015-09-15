@@ -1,0 +1,124 @@
+<div class="panel-heading separator">
+    <h2><tmpl_var name="list_head_txt"></h2>
+    <p><tmpl_var name="list_desc_txt"></p>
+</div>
+
+<tmpl_if name="error">
+    <div id="errorMsg"><h3>ERROR</h3><ol><tmpl_var name="error"></ol></div>
+</tmpl_if>
+
+<div class="panel-body">
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <div class="container-fluid ">
+
+            <legend><tmpl_var name="dns_zone_txt"></legend>
+
+                <div class="form-group container-fluid">
+                    <label class="control-label col-md-2" for="template_id">{tmpl_var name='template_id_txt'}</label>
+                    <div class="col-md-3">
+                        <select class="selectize form-control" name="template_id" id="template_id" onChange="submitForm('pageForm','dns/dns_wizard.php')">
+                            {tmpl_var name='template_id_option'}
+                        </select>
+                    </div>
+                </div>
+                <tmpl_if name="is_admin">
+                    <div class="form-group container-fluid">
+                        <label class="control-label col-md-2" for="server_id">{tmpl_var name='server_id_txt'}</label>
+                        <div class="col-md-3">
+                            <select class="selectize form-control" name="server_id" id="server_id" >
+                                {tmpl_var name='server_id'}
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group container-fluid">
+                        <label class="control-label col-md-2" for="client_group_id">{tmpl_var name='client_txt'}</label>
+                        <div class="col-md-3">
+                            <select class="selectize form-control" name="client_group_id" id="client_group_id" >
+                                {tmpl_var name='client_group_id'}
+                            </select>
+                        </div>
+                    </div>
+                </tmpl_if>
+                <tmpl_if name="is_reseller">
+                    <div class="form-group container-fluid">
+                        <label class="control-label col-md-2" for="client_group_id">{tmpl_var name='client_txt'}</label>
+                        <div class="col-md-3">
+                            <select class="selectize form-control" name="client_group_id" id="client_group_id" >
+                                {tmpl_var name='client_group_id'}
+                            </select>
+                        </div>
+                    </div>
+                </tmpl_if>
+                <tmpl_if name="DOMAIN_VISIBLE">
+                    <div class="form-group container-fluid">
+                        <label class="control-label col-md-2" for="domain">{tmpl_var name='domain_txt'}</label>
+                        <div class="col-md-6">
+                            <input class="form-control" name="domain" id="domain" value="{tmpl_var name='domain'}"  type="text"/>
+                        </div>
+                    </div>
+                </tmpl_if>
+                <tmpl_if name="IP_VISIBLE">
+                    <div class="form-group container-fluid">
+                        <label class="control-label col-md-2" for="ip">{tmpl_var name='ip_txt'}</label>
+                        <div class="col-md-6">
+                            <input class="form-control" name="ip" id="ip" value="{tmpl_var name='ip'}"  type="text" />
+                        </div>
+                    </div>
+                </tmpl_if>
+                <tmpl_if name="NS1_VISIBLE">
+                    <div class="form-group container-fluid">
+                        <label class="control-label col-md-2" for="ns1">{tmpl_var name='ns1_txt'}</label>
+                        <div class="col-md-6">
+                            <input class="form-control" name="ns1" id="ns1" value="{tmpl_var name='ns1'}"  type="text"/>
+                        </div>
+                    </div>
+                </tmpl_if>
+                <tmpl_if name="NS2_VISIBLE">
+                    <div class="form-group container-fluid">
+                        <label class="control-label col-md-2" for="ns2">{tmpl_var name='ns2_txt'}</label>
+                        <div class="col-md-6">
+                            <input class="form-control" name="ns2" id="ns2" value="{tmpl_var name='ns2'}"  type="text"  />
+                        </div>
+                    </div>
+                </tmpl_if>
+                <tmpl_if name="EMAIL_VISIBLE">
+                    <div class="form-group container-fluid">
+                        <label class="control-label col-md-2" for="email">{tmpl_var name='email_txt'}</label>
+                        <div class="col-md-6">
+                            <input class="form-control" name="email" id="email" value="{tmpl_var name='email'}"  type="text" />
+                        </div>
+                    </div>
+                </tmpl_if>
+
+                <input type="hidden" name="create" value="0" />
+
+                <div class="container-fluid form-group">
+                    <div class="col-md-offset-2">
+                        <button class="positive btn " type="button" value="{tmpl_var name='btn_save_txt'}" name="btn_create" onclick="document.pageForm.create.value=1; submitForm('pageForm','dns/dns_wizard.php');"><span><span class="glyphicon glyphicon-ok"></span> {tmpl_var name='btn_save_txt'}</span></button>
+                        <button class="negative btn " type="button" value="{tmpl_var name='btn_cancel_txt'}" onclick="loadContent('dns/dns_soa_list.php');"><span><span class="glyphicon glyphicon-remove"></span> {tmpl_var name='btn_cancel_txt'}</span></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script type="text/javascript" src="../../js/jquery.ispconfigsearch.js"></script>
+
+<script language="JavaScript" type="text/javascript">
+    jQuery('#ip').ispconfigSearch({
+        dataSrc: '/dns/ajax_get_json.php?type=get_ipv4',
+        resultsLimit: '$ <tmpl_var name="globalsearch_resultslimit_of_txt"> % <tmpl_var name="globalsearch_resultslimit_results_txt">',
+        ResultsTextPrefix: '<tmpl_var name="globalsearch_suggestions_text_txt">',
+        noResultsText: '<tmpl_var name="globalsearch_noresults_text_txt">',
+        noResultsLimit: '<tmpl_var name="globalsearch_noresults_limit_txt">',
+        minChars: 0,
+        cssPrefix: 'df-',
+        fillSearchField: true,
+        fillSearchFieldWith: 'fill_text',
+        searchFieldWatermark: '',
+        resultBoxPosition: 'e'
+    });
+</script>

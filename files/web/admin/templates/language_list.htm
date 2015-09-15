@@ -1,0 +1,53 @@
+<div class="panel-heading separator">
+    <h2><tmpl_var name="list_head_txt"></h2>
+    <p><tmpl_var name="list_desc_txt"></p>
+</div>
+
+<div class="panel-body">
+        <div class="panel panel-default">
+
+        <div class="panel-heading separator"><h4>Tools</h4></div>
+        <div class="gap"></div>
+        <div class="container-fluid">
+            <div class="container-fluid form-group">
+                <label class="col-lg-2 col-md-3 control-label" for="language">{tmpl_var name='language_select_txt'}</label>
+                <div class="col-lg-3 col-md-4">
+                    <select name="lng_select" id="language" class="selectize form-control flags" onChange="submitForm('pageForm','admin/language_list.php');">
+                        {tmpl_var name='language_option'}
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <div class="panel-heading separator"><h4><tmpl_var name="list_head_txt"></h4></div>
+        <div class="container-fluid table-responsive">
+            <table class="table table-hover">
+                <thead>
+                    <tr class="caption">
+                        <th class="tbl_col_module" scope="col"><tmpl_var name="module_txt"></th>
+                        <th class="tbl_col_lang_file" scope="col"><tmpl_var name="lang_file_txt"></th>
+                        <th class="tbl_col_limit" scope="col"><tmpl_var name="lang_file_date_txt"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tmpl_loop name="records">
+                        <tr>
+                            <td class="tbl_col_module"><a href="#" onclick="loadContent('admin/language_edit.php?lang_file={tmpl_var name="lang_file"}&module={tmpl_var name="module"}&lang={tmpl_var name="lang"}');">{tmpl_var name="module"}</a></td>
+                            <td class="tbl_col_lang_file"><a href="#" onclick="loadContent('admin/language_edit.php?lang_file={tmpl_var name="lang_file"}&module={tmpl_var name="module"}&lang={tmpl_var name="lang"}');">{tmpl_var name="lang_file"}</a></td>
+                            <td><a href="#" onclick="loadContent('admin/language_edit.php?lang_file={tmpl_var name="lang_file"}&module={tmpl_var name="module"}&lang={tmpl_var name="lang"}');">{tmpl_var name="lang_file_date"}</a></td>
+                        </tr>
+                    </tmpl_loop>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td class="tbl_footer tbl_paging" colspan="3"><tmpl_var name="paging"></td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+    </div>
+</div>
+
+<script>
+    $('.selectize').selectize();
+</script>

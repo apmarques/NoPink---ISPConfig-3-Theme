@@ -1,0 +1,39 @@
+<div class="panel panel-default">
+	<div class="panel-heading" role="tab" id="headingThree">
+		<h4 class="panel-title">
+			<a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+				{tmpl_var name='mailquota_txt'}
+			</a>
+		</h4>
+	</div>
+	<div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+		<div class="panel-body">
+			<div class="table-responsive container-fluid col-md-12">
+				<table class="table table-bordered">
+					<thead>
+					<tr>
+					  <td>{tmpl_var name='email_txt'}</td>
+					  <td>{tmpl_var name='name_txt'}</td>
+					  <td>{tmpl_var name='used_txt'}</td>
+					  <td>{tmpl_var name='quota_txt'}</td>
+					</tr>
+					</thead>
+				<tmpl_if name="has_mailquota">
+				<tmpl_loop name='mailquota'>
+					<tr>
+					  <td style="color:{tmpl_var name='display_colour'}">{tmpl_var name='email'}</td>
+					  <td style="color:{tmpl_var name='display_colour'}">{tmpl_var name='name'}</td>
+					  <td style="color:{tmpl_var name='display_colour'}">{tmpl_var name='used'}</td>
+					  <td style="color:{tmpl_var name='display_colour'}">{tmpl_var name='quota'}</td>
+					</tr>
+				</tmpl_loop>
+				<tmpl_else>
+				<tr>
+				  <td colspan="4">{tmpl_var name='no_email_accounts_txt'}</td>
+				</tr>
+				</tmpl_if>
+				</table>
+			</div>
+		</div>
+	</div>
+</div>

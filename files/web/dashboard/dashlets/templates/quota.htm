@@ -1,0 +1,39 @@
+<div class="panel panel-default">
+	<div class="panel-heading" role="tab" id="headingTwo">
+		<h4 class="panel-title">
+			<a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+				{tmpl_var name='quota_txt'}
+			</a>
+		</h4>
+	</div>
+	<div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+		<div class="panel-body">
+			<div class="table-responsive container-fluid col-md-12">
+				<table class="table table-bordered">
+					<thead>
+					<tr>
+					  <td>{tmpl_var name='domain_txt'}</td>
+					  <td>{tmpl_var name='used_txt'}</td>
+					  <td>{tmpl_var name='soft_txt'}</td>
+					  <td>{tmpl_var name='hard_txt'}</td>
+					</tr>
+					</thead>
+				<tmpl_if name="has_quota">
+				<tmpl_loop name='quota'>
+					<tr>
+					  <td style="color:{tmpl_var name='display_colour'}">{tmpl_var name='domain'}</td>
+					  <td style="color:{tmpl_var name='display_colour'}">{tmpl_var name='used'}</td>
+					  <td style="color:{tmpl_var name='display_colour'}">{tmpl_var name='soft'}</td>
+					  <td style="color:{tmpl_var name='display_colour'}">{tmpl_var name='hard'}</td>
+					</tr>
+				</tmpl_loop>
+				<tmpl_else>
+				<tr>
+				  <td colspan="4">{tmpl_var name='no_sites_txt'}</td>
+				</tr>
+				</tmpl_if>
+				</table>
+			</div>
+		</div>
+	</div>
+</div>

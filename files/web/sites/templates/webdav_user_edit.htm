@@ -1,0 +1,104 @@
+<h2><tmpl_var name="list_head_txt"></h2>
+<p><tmpl_var name="list_desc_txt"></p>
+
+<div class=" container-fluid ">
+
+    <div class="form-group container-fluid">
+        <tmpl_if name="edit_disabled">
+            <label class="control-label col-md-2" for="parent_domain_id">{tmpl_var name='parent_domain_id_txt'}</label>
+            <div class="col-md-3">
+                <select class="selectize form-control" name="parent_domain_id" id="parent_domain_id" disabled="disabled">
+                    {tmpl_var name='parent_domain_id'}
+                </select>
+            </div>
+            <input type="hidden" name="parent_domain_id" value="{tmpl_var name='parent_domain_id_value'}" />
+            <tmpl_else>
+                <label class="control-label col-md-2" for="parent_domain_id">{tmpl_var name='parent_domain_id_txt'}</label>
+                <div class="col-md-3">
+                    <select class="selectize form-control" name="parent_domain_id" id="parent_domain_id" >
+                        {tmpl_var name='parent_domain_id'}
+                    </select>
+                </div>
+        </tmpl_if>
+    </div>
+
+    <div class="form-group container-fluid">
+        <label class="control-label col-md-2" for="username">{tmpl_var name='username_txt'}</label>
+        <div class="col-md-6">
+            <div class="input-group">
+                <div class="input-group-addon">{tmpl_var name='username_prefix'}</div>
+                <input class="form-control" name="username" id="username" value="{tmpl_var name='username'}"  type="text" class=" formLengthFourth" <tmpl_if name="edit_disabled">disabled="disabled"</tmpl_if>/>
+            </div>
+        </div>
+    </div>
+    <div class="form-group container-fluid">
+        <label class="control-label col-md-2" for="password">{tmpl_var name='password_txt'}</label>
+        <div class="col-md-6">
+            <div class="input-group">
+                <input class="form-control" name="password" id="password" value="{tmpl_var name='password'}"  type="password"  autocomplete="off" onkeyup="pass_check(this.value);checkPassMatch('password','repeat_password');"/>
+                <div class="input-group-addon"><a href="javascript:void(0);" onclick="generatePassword('password','repeat_password');">{tmpl_var name='generate_password_txt'}</a></div>
+            </div>
+        </div>
+    </div>
+    <div class="form-group container-fluid">
+        <label class="control-label col-md-2" for="passBar">{tmpl_var name='password_strength_txt'}</label>
+        <div class="col-md-6">
+            <div class="input-group">
+                <div id="passBar"></div> <span> </span>
+                <span class="help-block"><span id="passText">&nbsp;</span></span>
+            </div>
+        </div>
+    </div>
+    <div class="form-group container-fluid">
+        <label class="control-label col-md-2" for="repeat_password">{tmpl_var name='repeat_password_txt'}</label>
+        <div class="col-md-6">
+            <input class="form-control" name="repeat_password" id="repeat_password" value=""  type="password" autocomplete="off" onkeyup="checkPassMatch('password','repeat_password');" />
+        </div>
+    </div>
+
+    <div id="confirmpasswordError" style="display:none;" class="alert alert-warning">{tmpl_var name='password_mismatch_txt'}</div>
+    <div id="confirmpasswordOK" style="display:none;" class="alert alert-success">{tmpl_var name='password_match_txt'}</div>
+
+
+    <div class="form-group container-fluid">
+        <label class="col-md-2 control-label" for="active_cb">
+            {tmpl_var name='active_txt'}
+        </label>
+        <div class="col-md-10">
+            <div id="active_cb" class=" checkbox check-success">
+                {tmpl_var name='active'}
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group container-fluid">
+        <label class="control-label col-md-2" for="dir">{tmpl_var name='dir_txt'}</label>
+        <div class="col-md-6">
+            <div class="input-group">
+                <div class="input-group-addon">webdav/</div>
+                <input class="form-control" name="dir" id="dir" value="{tmpl_var name='dir'}"  type="text" <tmpl_if name="edit_disabled">disabled="disabled"</tmpl_if>/>
+            </div>
+        </div>
+    </div>
+
+
+    <input type="hidden" name="id" value="{tmpl_var name='id'}">
+
+    <div class="container-fluid form-group">
+        <div class="col-md-offset-2">
+            <button class="positive btn " type="button" value="{tmpl_var name='btn_save_txt'}" onclick="submitForm('pageForm','sites/webdav_user_edit.php');"><span><span class="glyphicon glyphicon-ok"></span> {tmpl_var name='btn_save_txt'}</span></button>
+            <button class="negative btn " type="button" value="{tmpl_var name='btn_cancel_txt'}" onclick="loadContent('sites/webdav_user_list.php');"><span><span class="glyphicon glyphicon-remove"></span> {tmpl_var name='btn_cancel_txt'}</span></button>
+        </div>
+    </div>
+
+</div>
+
+
+<!-- switchery script -->
+<script>
+    var elems = Array.prototype.slice.call(document.querySelectorAll('.switchery'));
+    // Success color: #10CFBD
+    elems.forEach(function(html) {
+        var switchery = new Switchery(html, {color: '#10CFBD'});
+    });
+</script>

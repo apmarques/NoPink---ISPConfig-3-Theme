@@ -1,0 +1,59 @@
+<div class="panel-heading separator">
+    <h2><tmpl_var name="list_head_txt"></h2>
+</div>
+
+<div class="panel-body">
+    <div class="panel panel-default">
+
+        <div class="panel-heading separator"><h4><tmpl_var name="list_head_txt"></h4></div>
+        <div class="container-fluid table-responsive">
+            <table class="table table-striped ">
+                <thead>
+                <tr class="caption">
+                    <th class="tbl_col_domain" scope="col"><tmpl_var name="domain_txt"></th>
+                    <th class="tbl_col_system_user" scope="col"><tmpl_var name="system_user_txt"></th>
+                    <th class="tbl_col_used_sort" scope="col"><tmpl_var name="used_txt"></th>
+                    <th class="tbl_col_soft tbl_col_nosort" scope="col"><tmpl_var name="soft_txt"></th>
+                    <th class="tbl_col_hard tbl_col_nosort" scope="col"><tmpl_var name="hard_txt"></th>
+                    <th class="tbl_col_files" scope="col"><tmpl_var name="files_txt"></th>
+                    <th class="tbl_col_limit" scope="col">{tmpl_var name='search_limit'}</th>
+                </tr>
+                </thead>
+                <tbody>
+                    <tr class="filter">
+                        <td class="tbl_col_domain"><input  class="form-control" type="text" name="search_domain" value="{tmpl_var name='search_domain'}" /></td>
+                        <td class="tbl_col_system_user"><input  class="form-control" type="text" name="search_system_user" value="{tmpl_var name='search_system_user'}" /></td>
+                        <td class="tbl_col_used">&nbsp;</td>
+                        <td class="tbl_col_soft">&nbsp;</td>
+                        <td class="tbl_col_hard">&nbsp;</td>
+                        <td class="tbl_col_files">&nbsp;</td>
+                        <td class="tbl_col_buttons">
+                            <button type="button" class="btn " name="Filter" id="Filter" value="{tmpl_var name='filter_txt'}" data-toggle="tooltip" title="{tmpl_var name='filter_txt'}" onclick="submitForm('pageForm','sites/user_quota_stats.php');"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
+                        </td>
+                    </tr>
+                    <tmpl_loop name="records">
+                        <tr>
+                            <td class="tbl_col_domain"><a href="#" onclick="loadContent('sites/web_domain_edit.php?id={tmpl_var name='id'}');">{tmpl_var name="domain"}</a></td>
+                            <td class="tbl_col_system_user"><a href="#" onclick="loadContent('sites/web_domain_edit.php?id={tmpl_var name='id'}');">{tmpl_var name="system_user"}</a></td>
+                            <td class="tbl_col_used"><a href="#" onclick="loadContent('sites/web_domain_edit.php?id={tmpl_var name='id'}');">{tmpl_var name="used"}</a></td>
+                            <td class="tbl_col_soft"><a href="#" onclick="loadContent('sites/web_domain_edit.php?id={tmpl_var name='id'}');">{tmpl_var name="soft"}</a></td>
+                            <td class="tbl_col_hard"><a href="#" onclick="loadContent('sites/web_domain_edit.php?id={tmpl_var name='id'}');">{tmpl_var name="hard"}</a></td>
+                            <td class="tbl_col_files"><a href="#" onclick="loadContent('sites/web_domain_edit.php?id={tmpl_var name='id'}');">{tmpl_var name="files"}</a></td>
+                            <td class="tbl_col_buttons"></td>
+                        </tr>
+                    </tmpl_loop>
+                    <tmpl_unless name="records">
+                        <tr class="tbl_row_noresults">
+                            <td class="text-center" colspan="7">{tmpl_var name='globalsearch_noresults_text_txt'}</td>
+                        </tr>
+                    </tmpl_unless>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td class="tbl_footer tbl_paging" colspan="7"><tmpl_var name="paging"></td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+    </div>
+</div>

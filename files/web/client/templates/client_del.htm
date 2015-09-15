@@ -1,0 +1,42 @@
+<h2><tmpl_var name="list_head_txt"></h2>
+<p><tmpl_var name="list_desc_txt"></p>
+
+<div class="container-fluid ">
+
+        <div id="OKMsg">
+			<tmpl_if name='number_records'>
+            <tmpl_var name="delete_explanation">:<br /><br />
+                <tmpl_loop name="records">
+                    <tmpl_var name="table">, 
+                </tmpl_loop>
+			</tmpl_else>
+				<tmpl_var name="confirm_client_delete_txt">
+			</tmpl_if>
+        </div>
+        <br />
+        <div class="container-fluid form-group">
+            <div class="col-md-4 col-sm-offset-2">
+                <input class="switchery" type="checkbox" name="confirm" value="yes" /> <b><tmpl_var name="confirm_action_txt"></b>
+            </div>
+        </div>
+
+        <input type="hidden" name="id" value="{tmpl_var name='id'}">
+
+        <div class="container-fluid form-group">
+            <div class="col-sm-offset-2">
+                <button class="positive btn " type="button" value="{tmpl_var name='btn_save_txt'}" onclick="submitForm('pageForm','client/client_del.php');"><span><span class="glyphicon glyphicon-ok"></span> {tmpl_var name='btn_save_txt'}</span></button>
+                <button class="negative btn " type="button" value="{tmpl_var name='btn_cancel_txt'}" onclick="loadContent('client/client_list.php');"><span><span class="glyphicon glyphicon-remove"></span> {tmpl_var name='btn_cancel_txt'}</span></button>
+            </div>
+        </div>
+
+</div>
+
+
+<!-- switchery script -->
+<script>
+    var elems = Array.prototype.slice.call(document.querySelectorAll('.switchery'));
+    // Success color: #10CFBD
+    elems.forEach(function(html) {
+        var switchery = new Switchery(html, {color: '#10CFBD'});
+    });
+</script>

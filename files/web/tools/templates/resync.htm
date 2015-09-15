@@ -1,0 +1,122 @@
+<div class="panel-heading separator">
+    <h2><tmpl_var name="head_txt"></h2>
+    <p><tmpl_var name="list_desc_txt"></p>
+</div>
+
+<div class="panel-body">
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <div class="container-fluid ">
+    
+              <legend>{tmpl_var name="legend_txt"}</legend>
+
+                <div class="form-group container-fluid">
+                    <label class="control-label col-md-2" for="resync_sites_cb">
+                        {tmpl_var name="resync_sites_txt"}
+                    </label>
+                    <div class="col-md-10">
+                        <div id="resync_sites_cb" class="checkbox check-success">
+                            <input class="switchery" id="resync_sites" type="checkbox" value="1" name="resync_sites" />
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group container-fluid">
+                    <label class="control-label col-md-2" for="resync_ftp_cb">
+                        {tmpl_var name="resync_ftp_txt"}
+                    </label>
+                    <div class="col-md-10">
+                        <div id="resync_ftp_cb" class="checkbox check-success">
+                            <input class="switchery" id="resync_ftp" type="checkbox" value="1" name="resync_ftp" />
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group container-fluid">
+                    <label class="control-label col-md-2" for="resync_shell_cb">
+                        {tmpl_var name="resync_shell_txt"}
+                    </label>
+                    <div class="col-md-10">
+                        <div id="resync_shell_cb" class="checkbox check-success">
+                            <input class="switchery" id="resync_shell" type="checkbox" value="1" name="resync_shell" />
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group container-fluid">
+                    <label class="control-label col-md-2" for="resync_cron_cb">
+                        {tmpl_var name="resync_cron_txt"}
+                    </label>
+                    <div class="col-md-10">
+                        <div id="resync_cron_cb" class="checkbox check-success">
+                            <input class="switchery" id="resync_cron" type="checkbox" value="1" name="resync_cron" />
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group container-fluid">
+                    <label class="control-label col-md-2" for="resync_db_cb">
+                        {tmpl_var name="resync_db_txt"}
+                    </label>
+                    <div class="col-md-10">
+                        <div id="resync_db_cb" class="checkbox check-success">
+                            <input class="switchery" id="resync_db" type="checkbox" value="1" name="resync_db" />
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group container-fluid">
+                    <label class="control-label col-md-2" for="resync_mailbox_cb">
+                        {tmpl_var name="resync_mailbox_txt"}
+                    </label>
+                    <div class="col-md-10">
+                        <div id="resync_mailbox_cb" class="checkbox check-success">
+                            <input class="switchery" id="resync_mailbox" type="checkbox" value="1" name="resync_mailbox" />
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group container-fluid">
+                    <label class="control-label col-md-2" for="resync_dns_cb">
+                        {tmpl_var name="resync_dns_txt"}
+                    </label>
+                    <div class="col-md-10">
+                        <div id="resync_dns_cb" class="checkbox check-success">
+                            <input class="switchery" id="resync_dns" type="checkbox" value="1" name="resync_dns" />
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group container-fluid">
+                    <label class="control-label col-md-2" for="resync_client_cb">
+                        {tmpl_var name="resync_client_txt"}
+                    </label>
+                    <div class="col-md-10">
+                        <div id="resync_client_cb" class="checkbox check-success">
+                            <input class="switchery" id="resync_client" type="checkbox" value="1" name="resync_client" />
+                        </div>
+                    </div>
+                </div>
+
+                <tmpl_if name="msg">
+                    <div id="OKMsg"><p><tmpl_var name="msg"></p></div>
+                </tmpl_if>
+                <tmpl_if name="error">
+                    <div class="alert alert-danger" id="errorMsg"><h3>ERROR</h3><ol><tmpl_var name="error"></ol></div>
+                </tmpl_if>
+
+                <input type="hidden" name="id" value="{tmpl_var name='id'}">
+
+                <div class="container-fluid form-group">
+                    <div class="col-sm-offset-2">
+                        <button class="positive btn " type="button" value="Import" onClick="submitForm('pageForm','tools/resync.php');"><span><span class="glyphicon glyphicon-ok"></span> {tmpl_var name="btn_start_txt"}</span></button>
+                        <button class="negative btn " type="button" value="Cancel" onClick="loadContent('tools/index.php');"><span><span class="glyphicon glyphicon-remove"></span> {tmpl_var name="btn_cancel_txt"}</span></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- switchery script -->
+<script>
+    var elems = Array.prototype.slice.call(document.querySelectorAll('.switchery'));
+    // Success color: #10CFBD
+    elems.forEach(function(html) {
+        var switchery = new Switchery(html, {color: '#10CFBD'});
+    });
+</script>

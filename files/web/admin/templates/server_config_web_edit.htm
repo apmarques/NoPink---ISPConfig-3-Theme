@@ -1,0 +1,476 @@
+<h2><tmpl_var name="list_head_txt"></h2>
+<p><tmpl_var name="list_desc_txt"></p>
+
+<div class="container-fluid ">
+  
+    <div class="form-group container-fluid">
+        <label class="col-md-2 control-label" for="server_type">{tmpl_var name='server_type_txt'}</label>
+        <div class="col-md-3 ">
+            <select name="server_type" id="server_type" class="form-control">
+                {tmpl_var name='server_type'}
+            </select>
+        </div>
+    </div>
+    <div class="form-group container-fluid">
+        <label class="col-md-2 control-label" for="website_basedir">{tmpl_var name='website_basedir_txt'}</label>
+        <div class="col-md-6">
+            <input class="form-control" name="website_basedir" id="website_basedir" value="{tmpl_var name='website_basedir'}"  type="text" />
+        </div>
+    </div>
+    <div class="form-group container-fluid">
+        <label class="col-md-2 control-label" for="website_path">{tmpl_var name='website_path_txt'}</label>
+        <div class="col-md-6">
+            <input class="form-control" name="website_path" id="website_path" value="{tmpl_var name='website_path'}"  type="text" />
+        </div>
+    </div>
+    <div class="form-group container-fluid">
+        <label class="col-md-2 control-label" for="website_symlinks">{tmpl_var name='website_symlinks_txt'}</label>
+        <div class="col-md-6">
+            <input class="form-control" name="website_symlinks" id="website_symlinks" value="{tmpl_var name='website_symlinks'}"  type="text" />
+        </div>
+    </div>
+    <div class="form-group container-fluid">
+        <label class="col-md-2 control-label" for="website_symlinks_rel_cb">
+            {tmpl_var name='website_symlinks_rel_txt'}
+        </label>
+        <div class="col-md-10">
+            <div id="website_symlinks_rel_cb" class="checkbox check-success ">
+                {tmpl_var name='website_symlinks_rel'}
+            </div>
+        </div>
+    </div>
+    <div class="form-group container-fluid">
+        <label class="col-md-2 control-label" for="network_filesystem_cb">
+            {tmpl_var name='network_filesystem_txt'}
+        </label>
+        <div class="col-md-10">
+            <div id="network_filesystem_cb" class="checkbox check-success ">
+                {tmpl_var name='network_filesystem'}
+            </div>
+        </div>
+    </div>
+    <div class="form-group container-fluid">
+        <label class="col-md-2 control-label" for="website_autoalias">{tmpl_var name='website_autoalias_txt'}</label>
+        <div class="col-md-6">
+            <input class="form-control" name="website_autoalias" id="website_autoalias" value="{tmpl_var name='website_autoalias'}" type="text" />
+            <div class="help-block">{tmpl_var name='website_autoalias_note_txt'} <a href="javascript:void(0);" class="addPlaceholder">[client_id]</a>, <a href="javascript:void(0);" class="addPlaceholder">[client_username]</a>, <a href="javascript:void(0);" class="addPlaceholder">[website_id]</a>, <a href="javascript:void(0);" class="addPlaceholder">[website_domain]</a></div>
+        </div>
+    </div>
+    <!--
+<div class="ctrlHolder apache">
+    <label for="vhost_rewrite_v6">{tmpl_var name='vhost_rewrite_v6_txt'}</label>
+    <div class="multiField">
+        {tmpl_var name='vhost_rewrite_v6'}
+    </div>
+</div>
+    -->
+    <div class="form-group container-fluid apache">
+        <label class="col-md-2 control-label" for="vhost_conf_dir">{tmpl_var name='vhost_conf_dir_txt'}</label>
+        <div class="col-md-6">
+            <input class="form-control" name="vhost_conf_dir" id="vhost_conf_dir" value="{tmpl_var name='vhost_conf_dir'}" type="text" />
+        </div>
+    </div>
+    <div class="form-group container-fluid apache">
+        <label class="col-md-2 control-label" for="vhost_conf_enabled_dir">{tmpl_var name='vhost_conf_enabled_dir_txt'}</label>
+        <div class="col-md-6">
+            <input class="form-control" name="vhost_conf_enabled_dir" id="vhost_conf_enabled_dir" value="{tmpl_var name='vhost_conf_enabled_dir'}"  type="text" />
+        </div>
+    </div>
+    <div class="form-group container-fluid nginx">
+        <label class="col-md-2 control-label" for="nginx_vhost_conf_dir">{tmpl_var name='nginx_vhost_conf_dir_txt'}</label>
+        <div class="col-md-6">
+            <input class="form-control" name="nginx_vhost_conf_dir" id="nginx_vhost_conf_dir" value="{tmpl_var name='nginx_vhost_conf_dir'}"  type="text" />
+        </div>
+    </div>
+    <div class="form-group container-fluid nginx">
+        <label class="col-md-2 control-label" for="nginx_vhost_conf_enabled_dir">{tmpl_var name='nginx_vhost_conf_enabled_dir_txt'}</label>
+        <div class="col-md-6">
+            <input class="form-control" name="nginx_vhost_conf_enabled_dir" id="nginx_vhost_conf_enabled_dir" value="{tmpl_var name='nginx_vhost_conf_enabled_dir'}" type="text" />
+        </div>
+    </div>
+    <div class="form-group container-fluid">
+        <label class="col-md-2 control-label" for="security_level">{tmpl_var name='security_level_txt'}</label>
+        <div class="col-md-3">
+            <select name="security_level" id="security_level" class="form-control">
+                {tmpl_var name='security_level'}
+            </select>
+        </div>
+    </div>
+    <div class="form-group container-fluid apache">
+        <label class="col-md-2 control-label" for="check_apache_config_cb">
+            {tmpl_var name='check_apache_config_txt'}
+        </label>
+        <div class="col-md-10">
+            <div id="check_apache_config_cb" class="checkbox check-success ">
+                {tmpl_var name='check_apache_config'}
+            </div>
+        </div>
+    </div>
+    <div class="form-group container-fluid apache">
+        <label class="col-md-2 control-label" for="user">{tmpl_var name='web_user_txt'}</label>
+        <div class="col-md-6">
+            <input class="form-control" name="user" id="user" value="{tmpl_var name='user'}" type="text" />
+        </div>
+    </div>
+    <div class="form-group container-fluid apache">
+        <label class="col-md-2 control-label" for="group">{tmpl_var name='web_group_txt'}</label>
+        <div class="col-md-6">
+            <input class="form-control" name="group" id="group" value="{tmpl_var name='group'}" type="text" />
+        </div>
+    </div>
+    <div class="form-group container-fluid nginx">
+        <label class="col-md-2 control-label" for="nginx_user">{tmpl_var name='nginx_user_txt'}</label>
+        <div class="col-md-6">
+            <input class="form-control" name="nginx_user" id="nginx_user" value="{tmpl_var name='nginx_user'}" type="text"/>
+        </div>
+    </div>
+    <div class="form-group container-fluid nginx">
+        <label class="col-md-2 control-label" for="nginx_group">{tmpl_var name='nginx_group_txt'}</label>
+        <div class="col-md-6">
+            <input class="form-control" name="nginx_group" id="nginx_group" value="{tmpl_var name='nginx_group'}" type="text" />
+        </div>
+    </div>
+    <div class="form-group container-fluid nginx">
+        <label class="col-md-2 control-label" for="nginx_cgi_socket">{tmpl_var name='nginx_cgi_socket_txt'}</label>
+        <div class="col-md-6">
+            <input class="form-control" name="nginx_cgi_socket" id="nginx_cgi_socket" value="{tmpl_var name='nginx_cgi_socket'}"  type="text" />
+        </div>
+    </div>
+    <div class="form-group container-fluid apache">
+        <label class="col-md-2 control-label" for="htaccess_allow_override">{tmpl_var name='htaccess_allow_override_txt'}</label>
+        <div class="col-md-6">
+            <input class="form-control" name="htaccess_allow_override" id="htaccess_allow_override" value="{tmpl_var name='htaccess_allow_override'}"  type="text" />
+        </div>
+    </div>
+    <div class="form-group container-fluid">
+        <label class="col-md-2 control-label" for="enable_ip_wildcard_cb">
+            {tmpl_var name='enable_ip_wildcard_txt'}
+        </label>
+        <div class="col-md-10">
+            <div id="enable_ip_wildcard_cb" class="checkbox check-success ">
+                {tmpl_var name='enable_ip_wildcard'}
+            </div>
+        </div>
+    </div>
+    <div class="form-group container-fluid">
+        <label class="col-md-2 control-label" for="overtraffic_notify_admin_cb">
+            {tmpl_var name='overtraffic_notify_admin_txt'}
+        </label>
+        <div class="col-md-10">
+            <div id="overtraffic_notify_admin_cb" class="checkbox check-success ">
+                {tmpl_var name='overtraffic_notify_admin'}
+            </div>
+        </div>
+    </div>
+    <div class="form-group container-fluid">
+        <label class="col-md-2 control-label" for="overtraffic_notify_client_cb">
+            {tmpl_var name='overtraffic_notify_client_txt'}
+        </label>
+        <div class="col-md-10">
+            <div id="overtraffic_notify_client_cb" class="checkbox check-success ">
+                {tmpl_var name='overtraffic_notify_client'}
+            </div>
+        </div>
+    </div>
+    <div class="form-group container-fluid">
+        <label class="col-md-2 control-label" for="overquota_notify_admin_cb">
+            {tmpl_var name='overquota_notify_admin_txt'}
+        </label>
+        <div class="col-md-10">
+            <div id="overquota_notify_admin_cb" class="checkbox check-success ">
+                {tmpl_var name='overquota_notify_admin'}
+            </div>
+        </div>
+    </div>
+    <div class="form-group container-fluid">
+        <label class="col-md-2 control-label" for="overquota_notify_client_cb">
+            {tmpl_var name='overquota_notify_client_txt'}
+        </label>
+        <div class="col-md-10">
+            <div id="overquota_notify_client_cb" class="checkbox check-success ">
+                {tmpl_var name='overquota_notify_client'}
+            </div>
+        </div>
+    </div>
+    <div class="form-group container-fluid">
+        <label class="col-md-2 control-label" for="overquota_notify_freq">{tmpl_var name='overquota_notify_freq_txt'}</label>
+        <div class="col-md-6">
+            <input class="form-control" name="overquota_notify_freq" id="overquota_notify_freq" value="{tmpl_var name='overquota_notify_freq'}"  type="text"/>
+            <div class="help-block">{tmpl_var name='overquota_notify_freq_note_txt'}</div>
+        </div>
+    </div>
+    <div class="form-group container-fluid">
+        <label class="col-md-2 control-label" for="overquota_notify_onok_cb">
+            {tmpl_var name='overquota_notify_onok_txt'}
+        </label>
+        <div class="col-md-10">
+            <div id="overquota_notify_onok_cb" class="checkbox check-success ">
+                {tmpl_var name='overquota_notify_onok'}
+            </div>
+        </div>
+    </div>
+    <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+        <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="headingOne">
+                <h4 class="panel-title">
+                    <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        {tmpl_var name='ssl_settings_txt'}
+                    </a>
+                </h4>
+            </div>
+            <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+                <div class="panel-body">
+                    <div class="form-group container-fluid">
+                        <label class="col-md-2 control-label" for="enable_sni_cb">
+                            {tmpl_var name='enable_sni_txt'}
+                        </label>
+                        <div class="col-md-10">
+                            <div id="enable_sni_cb" class="checkbox check-success ">
+                                {tmpl_var name='enable_sni'}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group container-fluid">
+                        <label class="col-md-2 control-label" for="CA_path">{tmpl_var name='CA_path_txt'}</label>
+                        <div class="col-md-6">
+                            <input class="form-control" name="CA_path" id="CA_path" value="{tmpl_var name='CA_path'}"  type="text" autocomplete="off" />
+                        </div>
+                    </div>
+                    <div class="form-group container-fluid">
+                        <label class="col-md-2 control-label" for="CA_pass">{tmpl_var name='CA_pass_txt'}</label>
+                        <div class="col-md-6">
+                            <input class="form-control" name="CA_pass" id="CA_pass" value="{tmpl_var name='CA_pass'}"  type="password" autocomplete="off" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="headingTwo">
+                <h4 class="panel-title">
+                    <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                        {tmpl_var name='permissions_txt'}
+                    </a>
+                </h4>
+            </div>
+            <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                <div class="panel-body">
+                    <div class="form-group container-fluid">
+                        <label class="col-md-2 control-label" for="set_folder_permissions_on_update_cb">
+                            {tmpl_var name='set_folder_permissions_on_update_txt'}
+                        </label>
+                        <div class="col-md-10">
+                            <div id="set_folder_permissions_on_update_cb" class="checkbox check-success ">
+                                {tmpl_var name='set_folder_permissions_on_update'}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group container-fluid">
+                        <label class="col-md-2 control-label" for="web_folder_protection_cb">
+                            {tmpl_var name='web_folder_protection_txt'}
+                        </label>
+                        <div class="col-md-10">
+                            <div id="web_folder_protection_cb" class="checkbox check-success ">
+                                {tmpl_var name='web_folder_protection'}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group container-fluid">
+                        <label class="col-md-2 control-label" for="add_web_users_to_sshusers_group_cb">
+                            {tmpl_var name='add_web_users_to_sshusers_group_txt'}
+                        </label>
+                        <div class="col-md-10">
+                            <div id="add_web_users_to_sshusers_group_cb" class="checkbox check-success ">
+                                {tmpl_var name='add_web_users_to_sshusers_group'}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group container-fluid">
+                        <label class="col-md-2 control-label" for="connect_userid_to_webid_cb">
+                            {tmpl_var name='connect_userid_to_webid_txt'}
+                        </label>
+                        <div class="col-md-10">
+                            <div id="connect_userid_to_webid_cb" class="checkbox check-success ">
+                                {tmpl_var name='connect_userid_to_webid'}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group container-fluid">
+                        <label class="col-md-2 control-label" for="connect_userid_to_webid_start">{tmpl_var name='connect_userid_to_webid_start_txt'}</label>
+                        <div class="col-md-6">
+                            <input class="form-control" name="connect_userid_to_webid_start" id="connect_userid_to_webid_start" value="{tmpl_var name='connect_userid_to_webid_start'}"  type="text" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="headingThree">
+                <h4 class="panel-title">
+                    <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
+                        {tmpl_var name='php_settings_txt'}
+                    </a>
+                </h4>
+            </div>
+            <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+                <div class="panel-body">
+                    <div class="form-group container-fluid apache">
+                        <label class="col-md-2 control-label" for="php_ini_path_apache">{tmpl_var name='php_ini_path_apache_txt'}</label>
+                        <div class="col-md-6">
+                            <input class="form-control" name="php_ini_path_apache" id="php_ini_path_apache" value="{tmpl_var name='php_ini_path_apache'}"  type="text" />
+                        </div>
+                    </div>
+                    <div class="form-group container-fluid apache">
+                        <label class="col-md-2 control-label" for="php_ini_path_cgi">{tmpl_var name='php_ini_path_cgi_txt'}</label>
+                        <div class="col-md-6">
+                            <input class="form-control" name="php_ini_path_cgi" id="php_ini_path_cgi" value="{tmpl_var name='php_ini_path_cgi'}"  type="text" />
+                        </div>
+                    </div>
+                    <div class="form-group container-fluid">
+                        <label class="col-md-2 control-label" for="php_fpm_init_script">{tmpl_var name='php_fpm_init_script_txt'}</label>
+                        <div class="col-md-6">
+                            <input class="form-control" name="php_fpm_init_script" id="php_fpm_init_script" value="{tmpl_var name='php_fpm_init_script'}"  type="text" />
+                        </div>
+                    </div>
+                    <div class="form-group container-fluid">
+                        <label class="col-md-2 control-label" for="php_fpm_ini_path">{tmpl_var name='php_fpm_ini_path_txt'}</label>
+                        <div class="col-md-6">
+                            <input class="form-control" name="php_fpm_ini_path" id="php_fpm_ini_path" value="{tmpl_var name='php_fpm_ini_path'}"  type="text" />
+                        </div>
+                    </div>
+                    <div class="form-group container-fluid">
+                        <label class="col-md-2 control-label" for="php_fpm_pool_dir">{tmpl_var name='php_fpm_pool_dir_txt'}</label>
+                        <div class="col-md-6">
+                            <input class="form-control" name="php_fpm_pool_dir" id="php_fpm_pool_dir" value="{tmpl_var name='php_fpm_pool_dir'}"  type="text" />
+                        </div>
+                    </div>
+                    <div class="form-group container-fluid">
+                        <label class="col-md-2 control-label" for="php_fpm_start_port">{tmpl_var name='php_fpm_start_port_txt'}</label>
+                        <div class="col-md-6">
+                            <input class="form-control" name="php_fpm_start_port" id="php_fpm_start_port" value="{tmpl_var name='php_fpm_start_port'}"  type="text" />
+                        </div>
+                    </div>
+                    <div class="form-group container-fluid">
+                        <label class="col-md-2 control-label" for="php_fpm_socket_dir">{tmpl_var name='php_fpm_socket_dir_txt'}</label>
+                        <div class="col-md-6">
+                            <input class="form-control" name="php_fpm_socket_dir" id="php_fpm_socket_dir" value="{tmpl_var name='php_fpm_socket_dir'}"  type="text" />
+                        </div>
+                    </div>
+                    <div class="form-group container-fluid">
+                        <label class="col-md-2 control-label" for="php_open_basedir">{tmpl_var name='php_open_basedir_txt'}</label>
+                        <div class="col-md-6">
+                            <input class="form-control" name="php_open_basedir" id="php_open_basedir" value="{tmpl_var name='php_open_basedir'}"  type="text" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="headingFour">
+                <h4 class="panel-title">
+                    <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="true" aria-controls="collapseFour">
+                        {tmpl_var name='apps_vhost_settings_txt'}
+                    </a>
+                </h4>
+            </div>
+            <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
+                <div class="panel-body">
+                    <div class="form-group container-fluid">
+                        <label class="col-md-2 control-label" for="apps_vhost_port">{tmpl_var name='apps_vhost_port_txt'}</label>
+                        <div class="col-md-6">
+                            <input class="form-control" name="apps_vhost_port" id="apps_vhost_port" value="{tmpl_var name='apps_vhost_port'}"  type="text" />
+                        </div>
+                    </div>
+                    <div class="form-group container-fluid">
+                        <label class="col-md-2 control-label" for="apps_vhost_ip">{tmpl_var name='apps_vhost_ip_txt'}</label>
+                        <div class="col-md-6">
+                            <input class="form-control" name="apps_vhost_ip" id="apps_vhost_ip" value="{tmpl_var name='apps_vhost_ip'}"  type="text"/>
+                        </div>
+                    </div>
+                    <div class="form-group container-fluid">
+                        <label class="col-md-2 control-label" for="apps_vhost_servername">{tmpl_var name='apps_vhost_servername_txt'}</label>
+                        <div class="col-md-6">
+                            <input class="form-control" name="apps_vhost_servername" id="apps_vhost_servername" value="{tmpl_var name='apps_vhost_servername'}"  type="text" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="headingFive">
+                <h4 class="panel-title">
+                    <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFive" aria-expanded="true" aria-controls="collapseFive">
+                        {tmpl_var name='awstats_settings_txt'}
+                    </a>
+                </h4>
+            </div>
+            <div id="collapseFive" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFive">
+                <div class="panel-body">
+                    <div class="form-group container-fluid">
+                        <label class="col-md-2 control-label" for="awstats_conf_dir">{tmpl_var name='awstats_conf_dir_txt'}</label>
+                        <div class="col-md-6">
+                            <input class="form-control" name="awstats_conf_dir" id="awstats_conf_dir" value="{tmpl_var name='awstats_conf_dir'}"  type="text" />
+                        </div>
+                    </div>
+                    <div class="form-group container-fluid">
+                        <label class="col-md-2 control-label" for="awstats_data_dir">{tmpl_var name='awstats_data_dir_txt'}</label>
+                        <div class="col-md-6">
+                            <input class="form-control" name="awstats_data_dir" id="awstats_data_dir" value="{tmpl_var name='awstats_data_dir'}"type="text"  />
+                        </div>
+                    </div>
+                    <div class="form-group container-fluid">
+                        <label class="col-md-2 control-label" for="awstats_pl">{tmpl_var name='awstats_pl_txt'}</label>
+                        <div class="col-md-6">
+                            <input class="form-control" name="awstats_pl" id="awstats_pl" value="{tmpl_var name='awstats_pl'}"  type="text" />
+                        </div>
+                    </div>
+                    <div class="form-group container-fluid">
+                        <label class="col-md-2 control-label" for="awstats_buildstaticpages_pl">{tmpl_var name='awstats_buildstaticpages_pl_txt'}</label>
+                        <div class="col-md-6">
+                            <input class="form-control" name="awstats_buildstaticpages_pl" id="awstats_buildstaticpages_pl" value="{tmpl_var name='awstats_buildstaticpages_pl'}" type="text"  />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+            </div>
+            
+    <input type="hidden" name="id" value="{tmpl_var name='id'}">
+        
+    <div class="container-fluid form-group">
+        <div class="col-md-offset-2">
+            <button class="positive btn " type="button" value="{tmpl_var name='btn_save_txt'}" onclick="submitForm('pageForm','admin/server_config_edit.php');"><span><span class="glyphicon glyphicon-ok"></span> {tmpl_var name='btn_save_txt'}</span></button>
+            <button class="negative btn " type="button" value="{tmpl_var name='btn_cancel_txt'}" onclick="loadContent('admin/server_config_list.php');"><span><span class="glyphicon glyphicon-remove"></span> {tmpl_var name='btn_cancel_txt'}</span></button>
+        </div>
+    </div>
+  
+</div>
+<script language="JavaScript" type="text/javascript">
+    var serverType = jQuery('#server_type').val();
+    jQuery('#server_type').replaceWith('<label for="server_Type">'+serverType+'</label><input type="hidden" name="server_type" value="'+serverType+'">');
+    adjustForm();
+    jQuery('#server_type').change(function(){
+        serverType = $(this).val();
+        adjustForm();
+    });
+    
+    function adjustForm(){
+        if(serverType == "nginx"){
+            jQuery('.nginx').show();
+            jQuery('.apache').hide();
+        } else {
+            jQuery('.nginx').hide();
+            jQuery('.apache').show();
+        }
+    }
+</script>
+
+
+<!-- switchery script -->
+<script>
+    var elems = Array.prototype.slice.call(document.querySelectorAll('.switchery'));
+    // Success color: #10CFBD
+    elems.forEach(function(html) {
+        var switchery = new Switchery(html, {color: '#10CFBD'});
+    });
+</script>

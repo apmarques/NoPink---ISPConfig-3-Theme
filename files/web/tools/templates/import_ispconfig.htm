@@ -1,0 +1,151 @@
+<div class="panel-heading separator">
+    <h2><tmpl_var name="head_txt"></h2>
+    <p><tmpl_var name="list_desc_txt"></p>
+</div>
+
+<div class="panel-body">
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <div class="container-fluid ">
+  
+              <legend>{tmpl_var name="legend_txt"}</legend>
+
+                <div class="form-group container-fluid">
+                    <label class="control-label col-md-2" for="remote_server">Remote API URL</label>
+                    <div class="col-md-6">
+                        <input class="form-control" id="remote_server" type="text" value="{tmpl_var name='remote_server'}" name="remote_server" />
+                        <div class="help-block">(e.g. https://www.example.com:8080/remote/ )</div>
+                    </div>
+                </div>
+                <div class="form-group container-fluid">
+                    <label class="control-label col-md-2" for="remote_user">Remote User</label>
+                    <div class="col-md-6">
+                        <input class="form-control" id="remote_user" type="text" value="{tmpl_var name='remote_user'}" name="remote_user" />
+                    </div>
+                </div>
+                <div class="form-group container-fluid">
+                    <label class="control-label col-md-2" for="remote_password">Remote password</label>
+                    <div class="col-md-6">
+                        <input class="form-control" id="remote_password" type="text" value="{tmpl_var name='remote_password'}" name="remote_password" />
+                    </div>
+                </div>
+
+                <tmpl_if name="connected">
+                    <legend>{tmpl_var name="legend2_txt"}</legend>
+                    <div class="form-group container-fluid">
+                        <label class="control-label col-md-2" for="mail_domain">{tmpl_var name='mail_domain_txt'}</label>
+                        <div class="col-md-3">
+                            <select class="selectize form-control" name="mail_domain" id="mail_domain" >
+                                {tmpl_var name='mail_domain'}
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group container-fluid">
+                        <label class="control-label col-md-2" for="client_group_id">{tmpl_var name='client_group_id_txt'}</label>
+                        <div class="col-md-3">
+                            <select class="selectize form-control" name="client_group_id" id="client_group_id" >
+                                {tmpl_var name='client_group_id'}
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group container-fluid">
+                        <label class="control-label col-md-2" for="import_mailbox_cb">
+                            {tmpl_var name="import_mailbox_txt"}
+                        </label>
+                        <div class="col-md-10">
+                            <div id="import_mailbox_cb" class="checkbox check-success">
+                                <input class="switchery" id="import_mailbox" type="checkbox" value="1" name="import_mailbox" checked="checked" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group container-fluid">
+                        <label class="control-label col-md-2" for="import_user_filter_cb">
+                            {tmpl_var name="import_user_filter_txt"}
+                        </label>
+                        <div class="col-md-10">
+                            <div id="import_user_filter_cb" class="checkbox check-success">
+                                <input class="switchery" id="import_user_filter" type="checkbox" value="1" name="import_user_filter" checked="checked" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group container-fluid">
+                        <label class="control-label col-md-2" for="import_spamfilter_cb">
+                            {tmpl_var name="import_spamfilter_txt"}
+                        </label>
+                        <div class="col-md-10">
+                            <div id="import_spamfilter_cb" class="checkbox check-success">
+                                <input class="switchery" id="import_spamfilter" type="checkbox" value="1" name="import_spamfilter" checked="checked" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group container-fluid">
+                        <label class="control-label col-md-2" for="import_alias_cb">
+                            {tmpl_var name="import_alias_txt"}
+                        </label>
+                        <div class="col-md-10">
+                            <div id="import_alias_cb" class="checkbox check-success">
+                                <input class="switchery" id="import_alias" type="checkbox" value="1" name="import_alias" checked="checked" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group container-fluid">
+                        <label class="control-label col-md-2" for="import_forward_cb">
+                            {tmpl_var name="import_forward_txt"}
+                        </label>
+                        <div class="col-md-10">
+                            <div id="import_forward_cb" class="checkbox check-success">
+                                <input class="switchery" id="import_forward" type="checkbox" value="1" name="import_forward" checked="checked" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group container-fluid">
+                        <label class="col-md-2 control-label" for="import_aliasdomain_cb">
+                            {tmpl_var name="import_aliasdomain_txt"}
+                        </label>
+                        <div class="col-md-10">
+                            <div id="import_aliasdomain_cb" class="checkbox check-success">
+                                <input class="switchery" id="import_aliasdomain" type="checkbox" value="1" name="import_aliasdomain" checked="checked" />
+                            </div>
+                        </div>
+                    </div>
+                </tmpl_if>
+
+                <tmpl_if name="msg">
+                    <div id="OKMsg"><p><tmpl_var name="msg"></p></div>
+                </tmpl_if>
+                <tmpl_if name="error">
+                    <div class="alert alert-danger" id="errorMsg"><h3>ERROR</h3><ol><tmpl_var name="error"></ol></div>
+                </tmpl_if>
+
+                <input type="hidden" name="remote_session_id" value="{tmpl_var name='remote_session_id'}">
+                <input type="hidden" name="connected" value="{tmpl_var name='connected'}">
+
+                <tmpl_if name="connected">
+                    <div class="container-fluid form-group">
+                        <div class="col-md-offset-2">
+                            <button class="positive btn " type="button" value="Import" onClick="submitForm('pageForm','tools/import_ispconfig.php');"><span><span class="glyphicon glyphicon-ok"></span> {tmpl_var name="btn_start_txt"}</span></button>
+                            <button class="negative btn " type="button" value="Cancel" onClick="loadContent('tools/index.php');"><span><span class="glyphicon glyphicon-remove"></span> {tmpl_var name="btn_cancel_txt"}</span></button>
+                        </div>
+                    </div>
+                <tmpl_else>
+                    <div class="container-fluid form-group">
+                        <div class="col-md-offset-2">
+                            <button class="positive btn " type="button" value="Import" onClick="submitForm('pageForm','tools/import_ispconfig.php');"><span><span class="glyphicon glyphicon-ok"></span> {tmpl_var name="btn_connect_txt"}</span></button>
+                            <button class="negative btn " type="button" value="Cancel" onClick="loadContent('tools/index.php');"><span><span class="glyphicon glyphicon-remove"></span> {tmpl_var name="btn_cancel_txt"}</span></button>
+                        </div>
+                    </div>
+                </tmpl_if>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- switchery script -->
+<script>
+    var elems = Array.prototype.slice.call(document.querySelectorAll('.switchery'));
+    // Success color: #10CFBD
+    elems.forEach(function(html) {
+        var switchery = new Switchery(html, {color: '#10CFBD'});
+    });
+</script>

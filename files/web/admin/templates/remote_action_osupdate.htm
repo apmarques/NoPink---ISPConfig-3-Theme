@@ -1,0 +1,33 @@
+<div class="panel-heading separator">
+    <h2><tmpl_var name="do_osupdate_caption"></h2>
+    <p><tmpl_var name="do_osupdate_desc"></p>
+</div>
+<div class="panel-body">
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <div class="container-fluid ">
+  
+                <legend>{tmpl_var name='do_osupdate_caption'}</legend>
+
+                <div class="form-group container-fluid">
+                    <label class="col-md-2 control-label" for="server_select">{tmpl_var name='select_server_txt'}</label>
+                    <div class="col-md-3">
+                        <select class="selectize form-control" name="server_select" id="server" onchange="$('#OKMsg').hide(); ">
+                            {tmpl_var name='server_option'}
+                        </select>
+                    </div>
+                </div>
+
+                <tmpl_if name="msg">
+                    <div id="OKMsg"><p><tmpl_var name="msg"></p></div>
+                </tmpl_if>
+
+                <div class="container-fluid form-group">
+                    <div class="col-md-offset-2">
+                        <button class="positive btn" type="button" value="{tmpl_var name='btn_do_txt'}" onclick="submitForm('pageForm','admin/remote_action_osupdate.php');"><span><span class="glyphicon glyphicon-ok"></span> {tmpl_var name='btn_do_txt'}</span></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

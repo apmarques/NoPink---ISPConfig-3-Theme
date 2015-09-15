@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US">
+<head>
+    <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+    <meta charset="<tmpl_var name="html_content_encoding">" />
+    <title><tmpl_var name="app_title"> <tmpl_var name="app_version"></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <link rel="apple-touch-icon" href="pages/ico/60.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="pages/ico/76.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="pages/ico/120.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="pages/ico/152.png">
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta content="" name="description" />
+    <meta content="" name="author" />
+    <link href="assets/plugins/boostrapv3/css/bootstrap.css" rel="stylesheet" type="text/css" />
+    <link href="assets/plugins/font-awesome/css/font-awesome.css" rel="stylesheet" type="text/css" />
+    <link href="assets/plugins/jquery-scrollbar/jquery.scrollbar.css" rel="stylesheet" type="text/css" media="screen" />
+    <link href="assets/plugins/switchery/css/switchery.min.css" rel="stylesheet" type="text/css" media="screen" />
+    <link href="assets/plugins/bootstrap-datepicker/css/datepicker3.css" rel="stylesheet" type="text/css" media="screen">
+    <link href="assets/plugins/selectize/selectize.bootstrap3.css" rel="stylesheet" type="text/css">
+    <link href="pages/css/pages-icons.css" rel="stylesheet" type="text/css">
+    <link class="main-stylesheet" href="pages/css/pages.css" rel="stylesheet" type="text/css" />
+    <!--[if lte IE 9]>
+    <link href="pages/css/ie9.css" rel="stylesheet" type="text/css" />
+    <![endif]-->
+    <!-- CSS ISPCONFIG -->
+    <link href="themes/default/css/print.css" rel="stylesheet" media="print" type="text/css" />
+    <!--[if lte IE 8]><script type="text/javascript" src="themes/default/js/html5shiv.js"></script><![endif]-->
+    <!--[if lte IE 7]><link href="themes/default/css/iehacks.css" rel="stylesheet" type="text/css" /><![endif]-->
+    <link href="themes/default/css/jquery-ui-1.8.16.custom.css" rel="stylesheet" type="text/css" />
+    <link rel="shortcut icon" href="/themes/default/images/favicon.ico" />
+    <!-- END CSS ISPCONFIG -->
+
+    <!-- Custom Style -->
+    <link href="assets/css/style.css" rel="stylesheet" type="text/css" media="screen" />
+    <!-- END Custom Style -->
+
+    <script type="text/javascript">
+        window.onload = function()
+        {
+            // fix for windows 8
+            if (navigator.appVersion.indexOf("Windows NT 6.2") != -1)
+                document.head.innerHTML += '<link rel="stylesheet" type="text/css" href="pages/css/windows.chrome.fix.css" />'
+        }
+    </script>
+
+
+</head>
+<body class="fixed-header menu-pin">
+
+
+<!-- begin: sideMenu -->
+<nav class="page-sidebar" data-pages="sidebar">
+    <div class="sidebar-header" id="header">
+        <a href="#"><div class="headerImage brand"></div></a>
+    </div>
+
+    <div id="topNav" class="sidebar-menu"><!-- AJAX MENU CONTENT --></div>
+
+</nav>
+<!-- end: sideMenu-->
+
+<div class="page-container"><!-- begin: Main -->
+
+    <!-- begin: Header -->
+    <div class="header ">
+
+        <!-- LEFT SIDE (Mobile Controls) -->
+        <div class="pull-left full-height visible-sm visible-xs">
+            <div class="sm-action-bar">
+                <a href="#" class="btn-link toggle-sidebar" data-toggle="sidebar">
+                    <span class="text-white glyphicon glyphicon-menu-hamburger" id="white"></span>
+                </a>
+            </div>
+        </div>
+
+        <!-- Right Side -->
+        <tmpl_if name="cpuser">
+            <div class=" pull-right">
+                <div class="header-inner">
+                    <a href="#" class="m-l-20 sm-no-margin text-white" onclick="loadContent('login/logout.php');">
+                        <tmpl_var format="strtoupper" name="logout_txt">
+                        <tmpl_var format="strtoupper" name="cpuser">
+                        <span class="sr-only">Logout</span>
+                        <span class="text-danger">
+                        <span class="glyphicon glyphicon-log-out" aria-hidden="true"></span>
+                        </span>
+                    </a>
+                </div>
+            </div>
+            <div class="pull-right">
+                <div class="header-inner">
+                    <tmpl_if name='usertype' op='==' value='normaluser'><input class="form-control" type="text" id="globalsearch" size="25" value="" /></tmpl_if>
+                </div>
+            </div>
+        </tmpl_if>
+
+    </div>
+    <!-- end: Header -->
+
+    <!-- begin: content -->
+    <div class="page-content-wrapper" >
+        <div class="content ">
+            <div class="container-fluid container-fixed">
+                <div class="panel panel-transparent">
+                    <form method="post" action="" id="pageForm" name="pageForm" enctype="multipart/form-data">
+                        <input type="text" style="display:none" /><input type="password" style="display:none"/>
+                        <div id="pageContent"><!-- AJAX MAIN CONTENT --></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+
+
+        <!-- begin: Footer -->
+        <div class="container-fluid container-fixed-lg footer">
+            <div class="copyright text-center">
+                <p class="small no-margin">
+                    <span>Powered by <a href="<tmpl_var name="app_link">" target="_blank"><tmpl_var name="app_title"></a></span>
+                </p>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+        <!-- end: Footer -->
+
+    </div>
+    <!-- end: content -->
+
+</div><!-- end: main -->
+
+<!-- what are the dummies for ????-->
+
+<div id="dummy_login" style="display:none;position:absolute;top:-1000px;left:-1000px;">
+    <form action="" method="post" target="dummy_login" id="dummy_login_form">
+        <input name="username" id="dummy_username" type="text" autocomplete="on" value="" />
+        <input name="passwort" id="dummy_passwort" type="password" autocomplete="on" value="" />
+        <input type="submit" value="Login" id="dummy_submit"/>
+    </form>
+    <iframe id="dummy_iframe" src="dummy_login.html" name="dummy_login" style="display:none;"></iframe>
+</div>
+
+
+
+
+
+<!-- begin: JQUERY -->
+
+<script src="assets/plugins/jquery/jquery-1.11.1.min.js" type="text/javascript"></script>
+<script src="assets/plugins/modernizr.custom.js" type="text/javascript"></script>
+<script src="assets/plugins/jquery-ui/jquery-ui.min.js" type="text/javascript"></script>
+<script src="assets/plugins/boostrapv3/js/bootstrap.min.js" type="text/javascript"></script>
+
+<script src="assets/plugins/switchery/js/switchery.min.js" type="text/javascript"></script>
+<!-- JQuery Pages -->
+<script src="pages/js/pages.min.js"></script>
+
+<!-- JQuery ISPCONFIG -->
+<script type="text/javascript" src="js/scrigo.js.php"></script>
+<script type="text/javascript" src="js/uni-form/uni-form.jquery.js"></script>
+<script type="text/javascript" src="js/jquery.ispconfigsearch.js"></script>
+<!-- END JQuery ISPCONFIG-->
+
+<script language="JavaScript" type="text/javascript">
+    jQuery(document).ready(function() {
+        loadInitContent();
+        /* BEGIN: I didn't remove this because I wasn't sure of what it was doing but I believe it Can be removed */
+         $('form').not('#dummy_login_form').attr('autocomplete','off');
+
+         $("#pageForm").submit(function(e){
+         //Prevent form submit: e.preventDefault() in lists
+         if ($(".panel #Filter").length > 0) {
+         e.preventDefault();
+         }
+         });
+
+         jQuery(document).on("click",'.subsectiontoggle',function(){
+         jQuery(this).children().toggleClass('showing').end().next().slideToggle();
+         });
+        /* END: Can be removed */
+        jQuery('#globalsearch').ispconfigSearch({
+            dataSrc: '/dashboard/ajax_get_json.php?type=globalsearch',
+            resultsLimit: '$ <tmpl_var name="globalsearch_resultslimit_of_txt"> % <tmpl_var name="globalsearch_resultslimit_results_txt">',
+            noResultsText: '<tmpl_var name="globalsearch_noresults_text_txt">',
+            noResultsLimit: '<tmpl_var name="globalsearch_noresults_limit_txt">',
+            searchFieldWatermark: '<tmpl_var name="globalsearch_searchfield_watermark_txt">'
+        });
+
+        // jQuery('.ttip').tipsy({live: true, gravity: 'ne', html: true});
+
+        tabChangeDiscard = '<tmpl_var name="tabchange_discard_enabled">';
+        tabChangeWarning = '<tmpl_var name="tabchange_warning_enabled">';
+        tabChangeWarningTxt = '<tmpl_var name="global_tabchange_warning_txt">';
+        tabChangeDiscardTxt = '<tmpl_var name="global_tabchange_discard_txt">';
+
+        /* BEGIN: I believe it Can be removed */
+         // Store password in browser; works in Firefox, but not Chrome
+         $(document).on("blur",'#username', function(){
+         if($('#username').val() == '') {         return true;
+         }
+         if($('#dummy_username').val() == '' || $('#dummy_username').val() != $(this).val()){
+         $('#dummy_login').show();
+         $('#dummy_username').attr('value', $(this).val()).trigger('focus').trigger('blur');
+         $('#dummy_login').hide();
+         }
+         if($('#dummy_username').val() == $(this).val() && $(this).val() != ''){
+         $('#passwort').val($('#dummy_passwort').val());
+         } else {
+         $('#passwort').val('');
+         }
+         $('#passwort').focus();
+         });
+
+         $(document).on("keyup", '#username', function(){
+         $('#dummy_username').val('');
+         $('#dummy_passwort').val('');
+         $('#passwort').val('');
+         });
+
+         });
+
+
+         jQuery(document).bind("change", function(event) {
+         var elName = event.target.localName;
+         if (jQuery(".panel #Filter").length > 0 && elName == 'select') {
+         event.preventDefault();
+         jQuery(".panel #Filter").trigger('click');
+         }
+         if(elName == 'select' || elName == 'input' || elName == 'textarea') {
+         if(jQuery(event.target).hasClass('no-page-form-change') == false) {
+         // set marker that something was changed
+         pageFormChanged = true;
+         }
+         }
+         });
+
+         jQuery(document).bind("keypress", function(event) {
+         //Use jQuery submit with keypress Enter in panel filterbar
+         if (event.which == '13' && jQuery(".panel #Filter").length > 0 && jQuery(event.target).hasClass('ui-autocomplete-input') == false ) {
+         event.preventDefault();
+         jQuery(".panel #Filter").trigger('click');
+         }
+         //Use jQuery submit with keypress Enter in forms
+         if (event.which == '13' && jQuery(".pnl_formsarea button.positive").length > 0 && event.target.localName != 'textarea' && jQuery(event.target).is(':input')) {
+         event.preventDefault();
+         jQuery(".pnl_formsarea button.positive:first").not("[disabled='disabled']").trigger('click');
+         }
+         });
+
+         jQuery(document).delegate('.pnl_listarea th', 'click', function(event) {
+         if(jQuery(this).attr('class').length > 0 && jQuery(".panel #Filter").length > 0 && jQuery(this).hasClass('tbl_col_buttons') == false && jQuery(this).hasClass('tbl_col_limit') == false && jQuery(this).hasClass('tbl_col_nosort') == false) {
+         event.preventDefault();
+         var clickevent = jQuery('#Filter').attr('onclick');
+         var element = jQuery(this).attr('class');
+         if(typeof clickevent == 'string') {
+         jQuery('#Filter').attr('onclick', clickevent.replace(".php')", ".php?orderby=" + element + "')"));
+         }
+         jQuery(".panel #Filter").trigger('click');
+
+         jQuery("#pageForm").ajaxComplete(function() {
+         if(jQuery("th."+element).css("background-position") == '0px -15px') {
+         if(jQuery("th."+element).css("text-align") == "right") {
+         jQuery("th."+element).css("text-align","left");
+         } else {
+         jQuery("th."+element).css("text-align","right");
+         }
+         } else {
+         jQuery(".pnl_listarea th").css("text-align","");
+         }
+         jQuery(".pnl_listarea th").css("background-position","0 0");
+         jQuery("th."+element).css("background-position","0 -15px");
+         });
+        }
+     /* END: Can be removed */
+    });
+
+</script>
+
+
+<tmpl_loop name="js_d_includes">
+    <script type="text/javascript" src="js/js.d/<tmpl_var name='file'>"></script>
+</tmpl_loop>
+
+
+
+</body>
+</html>

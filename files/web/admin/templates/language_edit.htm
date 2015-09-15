@@ -1,0 +1,37 @@
+<div class="panel-heading separator">
+    <h2><tmpl_var name="list_head_txt"></h2>
+    <p><tmpl_var name="list_desc_txt"></p>
+</div>
+<div class="panel-body">
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <div class="container-fluid ">
+
+                <legend>Language File Edit: {tmpl_var name="file_path"}</legend>
+
+                <span class="wf_oneField">
+                    <tmpl_loop name="records">
+                        <div class="form-group container-fluid">
+                            <label class="col-md-4 control-label" for="records[{tmpl_var name="key"}]" class="wf_preField">{tmpl_var name="key"}</label>
+                            <div class="col-md-6">
+                                <input class="form-control" type="text" id="records[{tmpl_var name="key"}]" name="records[{tmpl_var name="key"}]" value="{tmpl_var name='val'}" size="50" >
+                            </div>
+                        </div>
+                    </tmpl_loop>
+                </span>
+
+                <input type="hidden" name="id" value="{tmpl_var name='id'}">
+                <input type="hidden" name="lang" value="{tmpl_var name='lang'}">
+                <input type="hidden" name="lang_file" value="{tmpl_var name='lang_file'}">
+                <input type="hidden" name="module" value="{tmpl_var name='module'}">
+
+                <div class="wf_actions container-fluid form-group">
+                    <div class="col-md-offset-4">
+                        <button class="positive btn " type="button" value="{tmpl_var name='btn_save_txt'}" onclick="submitForm('pageForm','admin/language_edit.php');"><span><span class="glyphicon glyphicon-ok"></span> {tmpl_var name='btn_save_txt'}</span></button>
+                        <button class="negative btn " type="button" value="{tmpl_var name='btn_cancel_txt'}" onclick="loadContent('admin/language_list.php?lng_select={tmpl_var name='lang'}');"><span><span class="glyphicon glyphicon-remove"></span> {tmpl_var name='btn_cancel_txt'}</span></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

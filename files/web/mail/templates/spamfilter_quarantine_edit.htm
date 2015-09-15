@@ -1,0 +1,50 @@
+<h2><tmpl_var name="list_head_txt"></h2>
+<p><tmpl_var name="list_desc_txt"></p>
+
+<div class="container-fluid ">
+
+    <div class="container-fluid form-group">
+        <label class="control-label col-md-2" for="virus_quarantine_to">{tmpl_var name='virus_quarantine_to_txt'}</label>
+        <div class="col-md-6">
+            <input class="form-control" name="virus_quarantine_to" id="virus_quarantine_to" value="{tmpl_var name='virus_quarantine_to'}"  type="text"  />
+        </div>
+    </div>
+    <div class="container-fluid form-group">
+        <label class="control-label col-md-2" for="spam_quarantine_to">{tmpl_var name='spam_quarantine_to_txt'}</label>
+        <div class="col-md-6">
+            <input class="form-control" name="spam_quarantine_to" id="spam_quarantine_to" value="{tmpl_var name='spam_quarantine_to'}"  type="text"  />
+        </div>
+    </div>
+    <div class="container-fluid form-group">
+        <label class="control-label col-md-2" for="banned_quarantine_to">{tmpl_var name='banned_quarantine_to_txt'}</label>
+        <div class="col-md-6">
+            <input class="form-control" name="banned_quarantine_to" id="banned_quarantine_to" value="{tmpl_var name='banned_quarantine_to'}"  type="text"  />
+        </div>
+    </div>
+    <div class="container-fluid form-group">
+        <label class="control-label col-md-2" for="bad_header_quarantine_to">{tmpl_var name='bad_header_quarantine_to_txt'}</label>
+        <div class="col-md-6">
+            <input class="form-control" name="bad_header_quarantine_to" id="bad_header_quarantine_to" value="{tmpl_var name='bad_header_quarantine_to'}"  type="text"  />
+        </div>
+    </div>
+            <!--
+                  <div class="container-fluid form-group">
+                    <label class="control-label col-md-2" for="clean_quarantine_to">{tmpl_var name='clean_quarantine_to_txt'}</label>
+                    <input class="form-control" name="clean_quarantine_to" id="clean_quarantine_to" value="{tmpl_var name='clean_quarantine_to'}"  type="text"  />
+                                    </div>
+                  <div class="container-fluid form-group">
+                    <label class="control-label col-md-2" for="other_quarantine_to">{tmpl_var name='other_quarantine_to_txt'}</label>
+                    <input class="form-control" name="other_quarantine_to" id="other_quarantine_to" value="{tmpl_var name='other_quarantine_to'}"  type="text"  />
+                                    </div>
+            -->
+
+    <input type="hidden" name="id" value="{tmpl_var name='id'}">
+
+    <div class="container-fluid form-group ">
+        <div class="col-md-offset-2">
+            <button class="positive btn" type="button" value="{tmpl_var name='btn_save_txt'}" onclick="submitForm('pageForm','mail/spamfilter_policy_edit.php');"><span><span class="glyphicon glyphicon-ok"></span> {tmpl_var name='btn_save_txt'}</span></button>
+            <button class="negative btn" type="button" value="{tmpl_var name='btn_cancel_txt'}" onclick="loadContent('mail/spamfilter_policy_list.php');"><span><span class="glyphicon glyphicon-remove"></span> {tmpl_var name='btn_cancel_txt'}</span></button>
+        </div>
+    </div>
+
+</div>

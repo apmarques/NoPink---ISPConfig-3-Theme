@@ -1,0 +1,22 @@
+<div class="container-fluid ">
+
+ <legend>{tmpl_var name='faq_section_name_txt'}</legend>
+
+    <div class="form-group container-fluid">
+        <label class="col-md-2 control-label" for="hfs_name">{tmpl_var name='faq_section_name_txt'}</label>
+        <div class="col-md-6">
+            <input class="form-control" name="hfs_name" id="hfs_name" value="{tmpl_var name='hfs_name'}" type="text" />
+        </div>
+    </div>
+
+    <input type="hidden" name="id" value="{tmpl_var name='id'}">
+
+    <div class="container-fluid form-group">
+        <div class="col-md-offset-2">
+            <button class="positive btn " type="button" value="{tmpl_var name='btn_save_txt'}" onclick="submitForm('pageForm','help/faq_sections_edit.php');"><span><span class="glyphicon glyphicon-ok"></span> {tmpl_var name='btn_save_txt'}</span></button>
+            <button class="negative btn " type="button" value="{tmpl_var name='btn_cancel_txt'}" onclick="loadContent('help/faq_sections_list.php');"><span><span class="glyphicon glyphicon-remove"></span> {tmpl_var name='btn_cancel_txt'}</span></button>
+        </div>
+    </div>
+
+</div>
+

@@ -1,0 +1,153 @@
+<h2><tmpl_var name="list_head_txt"></h2>
+<p><tmpl_var name="list_desc_txt"></p>
+
+<div class="container-fluid ">
+
+    <legend>Settings</legend>
+
+    <tmpl_if name="is_admin">
+        <div class="form-group container-fluid">
+            <tmpl_if name="edit_disabled">
+                <label class="control-label col-md-2" for="server_id_disabled">{tmpl_var name='server_id_txt'}</label>
+                <div class="col-md-3">
+                    <select class="selectize form-control" name="server_id_disabled" id="server_id_disabled"  disabled="disabled">
+                        {tmpl_var name='server_id'}
+                    </select>
+                </div>
+                <input type="hidden" name="server_id" value="{tmpl_var name='server_id_value'}" />
+            <tmpl_else>
+                    <label class="control-label col-md-2" for="server_id">{tmpl_var name='server_id_txt'}</label>
+                    <div class="col-md-6">
+                        <select class="selectize form-control" name="server_id" id="server_id" onChange="loadOptionInto('ip_address','vm/ajax_get_ip.php?server_id='+document.getElementById('server_id').value)">
+                            {tmpl_var name='server_id'}
+                        </select>
+                    </div>
+            </tmpl_if>
+        </div>
+        
+        <div class="form-group container-fluid">
+            <label class="control-label col-md-2" for="client_group_id">{tmpl_var name='client_group_id_txt'}</label>
+            <div class="col-md-3">
+                <select class="selectize form-control" name="client_group_id" id="client_group_id" >
+                    {tmpl_var name='client_group_id'}
+                </select>
+            </div>
+        </div>
+    </tmpl_if>
+    <tmpl_if name="is_reseller">
+        <div class="form-group container-fluid">
+            <label class="control-label col-md-2" for="client_group_id">{tmpl_var name='client_group_id_txt'}</label>
+            <div class="col-md-3">
+                <select class="selectize form-control" name="client_group_id" id="client_group_id" >
+                    {tmpl_var name='client_group_id'}
+                </select>
+            </div>
+        </div>
+    </tmpl_if>
+    <tmpl_if name="edit_disabled">
+        <div class="form-group container-fluid">
+            <label class="control-label col-md-2" for="ostemplate_id_disabled">{tmpl_var name='ostemplate_id_txt'}</label>
+            <div class="col-md-3">
+                <select class="selectize form-control" name="ostemplate_id_disabled" id="ostemplate_id_disabled"  disabled="disabled">
+                    {tmpl_var name='ostemplate_id'}
+                </select>
+            </div>
+        </div>
+        <input type="hidden" name="ostemplate_id" value="{tmpl_var name='ostemplate_id_value'}">
+    <tmpl_else>
+        <div class="form-group container-fluid">
+            <label class="control-label col-md-2" for="ostemplate_id">{tmpl_var name='ostemplate_id_txt'}</label>
+            <div class="col-md-3">
+                <select class="selectize form-control" name="ostemplate_id" id="ostemplate_id" >
+                    {tmpl_var name='ostemplate_id'}
+                </select>
+            </div>
+        </div>
+    </tmpl_if>
+    <div class="form-group container-fluid">
+        <label class="control-label col-md-2" for="template_id">{tmpl_var name='template_id_txt'}</label>
+        <div class="col-md-3">
+            <select class="selectize form-control" name="template_id" id="template_id" >
+                {tmpl_var name='template_id_select'}
+            </select>
+        </div>
+    </div>
+    <div class="form-group container-fluid">
+        <label class="control-label col-md-2" for="ip_address">{tmpl_var name='ip_address_txt'}</label>
+        <div class="col-md-3">
+            <select class="selectize form-control" name="ip_address" id="ip_address" >
+                {tmpl_var name='ip_address'}
+            </select>
+        </div>
+    </div>
+    <div class="form-group container-fluid">
+        <label class="control-label col-md-2" for="hostname">{tmpl_var name='hostname_txt'}</label>
+        <div class="col-md-6">
+            <input class="form-control" name="hostname" id="hostname" value="{tmpl_var name='hostname'}"  type="text"  />
+        </div>
+    </div>
+    <div class="form-group container-fluid">
+        <label class="control-label col-md-2" for="vm_password">{tmpl_var name='vm_password_txt'}</label>
+        <div class="col-md-6">
+            <input class="form-control" name="vm_password" id="vm_password" value="{tmpl_var name='vm_password'}"  type="text"  />
+        </div>
+    </div>
+    <div class="form-group container-fluid">
+        <label class="control-label col-md-2" for="start_boot_cb">
+            {tmpl_var name='start_boot_txt'}
+        </label>
+        <div class="col-md-10">
+            <div id="start_boot_cb" class="checkbox check-success">
+                {tmpl_var name='start_boot'}
+            </div>
+        </div>
+    </div>
+    <div class="form-group container-fluid">
+        <label class="col-md-2 control-label" for="active_cb">
+            {tmpl_var name='active_txt'}
+        </label>
+        <div class="col-md-10">
+            <div id="active_cb" class=" checkbox check-success">
+                {tmpl_var name='active'}
+            </div>
+        </div>
+    </div>
+    <div class="form-group container-fluid">
+        <label class="control-label col-md-2" for="active_until_date">{tmpl_var name='active_until_date_txt'}</label>
+        <div class="col-md-6">
+            <input class="form-control" name="active_until_date" id="active_until_date" value="{tmpl_var name='active_until_date'}"  type="text"  />
+        </div>
+    </div>
+    <div class="form-group container-fluid">
+        <label class="control-label col-md-2" for="description">{tmpl_var name='description_txt'}</label>
+        <div class="col-md-6">
+            <textarea class="form-control" name="description" id="description">{tmpl_var name='description'}</textarea>
+        </div>
+    </div>
+
+    <input type="hidden" name="id" value="{tmpl_var name='id'}">
+
+    <div class="container-fluid form-group">
+        <div class="col-md-offset-2">
+            <button class="positive btn " type="button" value="{tmpl_var name='btn_save_txt'}" onclick="submitForm('pageForm','vm/openvz_vm_edit.php');"><span><span class="glyphicon glyphicon-ok"></span> {tmpl_var name='btn_save_txt'}</span></button>
+            <button class="negative btn " type="button" value="{tmpl_var name='btn_cancel_txt'}" onclick="loadContent('vm/openvz_vm_list.php');"><span><span class="glyphicon glyphicon-remove"></span> {tmpl_var name='btn_cancel_txt'}</span></button>
+        </div>
+    </div>
+  
+</div>
+
+<script type="text/javascript" src="../../assets/plugins/jquery-ui/jquery-ui_back.min.js"></script>
+<script language="JavaScript" type="text/javascript">
+    jQuery( "#active_until_date" ).datepicker({ dateFormat: '<tmpl_var name="date_format">', changeMonth: true, changeYear: true, yearRange: '-100:+100', dayNamesMin: ['<tmpl_var name="daynamesmin_su">','<tmpl_var name="daynamesmin_mo">','<tmpl_var name="daynamesmin_tu">','<tmpl_var name="daynamesmin_we">','<tmpl_var name="daynamesmin_th">','<tmpl_var name="daynamesmin_fr">','<tmpl_var name="daynamesmin_sa">'], dayNames: ['<tmpl_var name="daynames_sunday">','<tmpl_var name="daynames_monday">','<tmpl_var name="daynames_tuesday">','<tmpl_var name="daynames_wednesday">','<tmpl_var name="daynames_thursday">','<tmpl_var name="daynames_friday">','<tmpl_var name="daynames_saturday">'], monthNamesShort: ['<tmpl_var name="monthnamesshort_jan">','<tmpl_var name="monthnamesshort_feb">','<tmpl_var name="monthnamesshort_mar">','<tmpl_var name="monthnamesshort_apr">','<tmpl_var name="monthnamesshort_may">','<tmpl_var name="monthnamesshort_jun">','<tmpl_var name="monthnamesshort_jul">','<tmpl_var name="monthnamesshort_aug">','<tmpl_var name="monthnamesshort_sep">','<tmpl_var name="monthnamesshort_oct">','<tmpl_var name="monthnamesshort_nov">','<tmpl_var name="monthnamesshort_dec">'], nextText: '<tmpl_var name="datepicker_nextText">', prevText: '<tmpl_var name="datepicker_prevText">', firstDay: 1 });
+</script>
+
+
+
+<!-- switchery script -->
+<script>
+    var elems = Array.prototype.slice.call(document.querySelectorAll('.switchery'));
+    // Success color: #10CFBD
+    elems.forEach(function(html) {
+        var switchery = new Switchery(html, {color: '#10CFBD'});
+    });
+</script>

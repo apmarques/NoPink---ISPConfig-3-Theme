@@ -1,0 +1,29 @@
+<div class="panel-heading separator">
+    <h2><tmpl_var name="list_head_txt"></h2>
+    <p><tmpl_var name="list_desc_txt"></p>
+</div>
+
+<div class="panel-body">
+    <div class="panel panel-default">
+
+        <div class="container-fluid">
+            <fieldset id="wf_area_spamfilter_config">
+                <div class="wf_oneField form-group container-fluid">
+                    <label for="getmail_config_dir" class="wf_preField control-label col-md-2">
+                        {tmpl_var name='getmail_config_dir_txt'}
+                    </label>
+                    <div class="col-md-6">
+                        <input class="form-control" type="text" id="getmail_config_dir" name="getmail_config_dir" value="{tmpl_var name='getmail_config_dir'}">
+                    </div>
+                </div>
+            </fieldset>
+
+            <input type="hidden" name="id" value="{tmpl_var name='id'}">
+
+            <div class="wf_actions container-fluid">
+                <button class="positive btn" type="button" value="{tmpl_var name='btn_save_txt'}" onclick="submitForm('pageForm','mail/spamfilter_config_edit.php');"><span><span class="glyphicon glyphicon-ok"></span> <span>{tmpl_var name='btn_save_txt'}</span></button>
+                <button class="negative btn" type="button" value="{tmpl_var name='btn_cancel_txt'}" onclick="loadContent('mail/spamfilter_config_list.php');"><span><span class="glyphicon glyphicon-remove"></span> <span>{tmpl_var name='btn_cancel_txt'}</span></button>
+            </div>
+        </div>
+    </div>
+</div>

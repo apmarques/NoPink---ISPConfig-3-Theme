@@ -1,0 +1,15 @@
+<div class="panel-heading separator">
+	<h2>{tmpl_var name='limits_txt'}</h2>
+</div>
+<div class="panel-body">
+	<div class="table-responsive container-fluid col-md-12">
+		<table class="table table-hover">
+			<tmpl_loop name='rows'>
+				<tr >
+				  <td>{tmpl_var name='field_txt'}</td>
+				  <td>{tmpl_var name='usage'} {tmpl_var name='of_txt'} {tmpl_var name='value'}</td>
+				</tr>
+			</tmpl_loop>
+		</table>
+	</div>
+</div>

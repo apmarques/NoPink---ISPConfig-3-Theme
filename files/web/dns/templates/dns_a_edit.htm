@@ -1,0 +1,74 @@
+<h2><tmpl_var name="list_head_txt"></h2>
+<p><tmpl_var name="list_desc_txt"></p>
+
+<div class="container-fluid ">
+
+    <div class="form-group container-fluid">
+        <label class="control-label col-md-2" for="name">{tmpl_var name='name_txt'}</label>
+        <div class="col-md-6">
+            <input class="form-control" name="name" id="name" value="{tmpl_var name='name'}"  type="text" />
+            <div class="help-block">{tmpl_var name='name_hint_txt'}</div>
+        </div>
+    </div>
+    <div class="form-group container-fluid">
+        <label class="control-label col-md-2" for="data">{tmpl_var name='data_txt'}</label>
+        <div class="col-md-6">
+            <input class="form-control" name="data" id="data" value="{tmpl_var name='data'}" type="text"  />
+        </div>
+    </div>
+    <div class="form-group container-fluid">
+        <label class="control-label col-md-2" for="ttl">{tmpl_var name='ttl_txt'}</label>
+        <div class="col-md-6">
+            <input class="form-control" name="ttl" id="ttl" value="{tmpl_var name='ttl'}" type="text"  />
+        </div>
+    </div>
+    <div class="form-group container-fluid">
+        <label class="col-md-2 control-label" for="active_cb">
+            {tmpl_var name='active_txt'}
+        </label>
+        <div class="col-md-10">
+            <div id="active_cb" class=" checkbox check-success">
+                {tmpl_var name='active'}
+            </div>
+        </div>
+    </div>
+            
+    <input type="hidden" name="id" value="{tmpl_var name='id'}">
+    <input type="hidden" name="zone" value="{tmpl_var name='zone'}">
+    <input type="hidden" name="type" value="{tmpl_var name='type'}">
+            
+    <div class="container-fluid form-group">
+        <div class="col-md-offset-2">
+            <button class="positive btn " type="button" value="{tmpl_var name='btn_save_txt'}" onclick="submitForm('pageForm','dns/dns_a_edit.php');"><span><span class="glyphicon glyphicon-ok"></span> {tmpl_var name='btn_save_txt'}</span></button>
+            <button class="negative btn " type="button" value="{tmpl_var name='btn_cancel_txt'}" onclick="loadContent('dns/dns_soa_edit.php?id={tmpl_var name='zone'}');"><span><span class="glyphicon glyphicon-remove"></span> {tmpl_var name='btn_cancel_txt'}</span></button>
+        </div>
+    </div>
+  
+</div>
+
+<script type="text/javascript" src="../../js/jquery.ispconfigsearch.js"></script>
+<script language="JavaScript" type="text/javascript">
+    jQuery('#data').ispconfigSearch({
+        dataSrc: '/dns/ajax_get_json.php?type=get_ipv4',
+        resultsLimit: '$ <tmpl_var name="globalsearch_resultslimit_of_txt"> % <tmpl_var name="globalsearch_resultslimit_results_txt">',
+        ResultsTextPrefix: '<tmpl_var name="globalsearch_suggestions_text_txt">',
+        noResultsText: '<tmpl_var name="globalsearch_noresults_text_txt">',
+        noResultsLimit: '<tmpl_var name="globalsearch_noresults_limit_txt">',
+        minChars: 0,
+        cssPrefix: 'df-',
+        fillSearchField: true,
+        fillSearchFieldWith: 'fill_text',
+        searchFieldWatermark: '',
+        resultBoxPosition: 'e'
+    });	
+</script>
+
+
+<!-- switchery script -->
+<script>
+    var elems = Array.prototype.slice.call(document.querySelectorAll('.switchery'));
+    // Success color: #10CFBD
+    elems.forEach(function(html) {
+        var switchery = new Switchery(html, {color: '#10CFBD'});
+    });
+</script>

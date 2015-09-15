@@ -1,0 +1,271 @@
+<h2><tmpl_var name="list_head_txt"></h2>
+<p><tmpl_var name="list_desc_txt"></p>
+
+<div class="container-fluid">
+
+    <legend>Address</legend>
+    
+            <div class="form-group container-fluid">
+                <label class="control-label col-md-2" for="company_name">{tmpl_var name='company_name_txt'}</label>
+                <div class="col-md-6">
+                    <input class="form-control" name="company_name" id="company_name" value="{tmpl_var name='company_name'}"  type="text" />
+                </div>
+            </div>
+            <div class="form-group container-fluid">
+                <label class="control-label col-md-2" for="gender">{tmpl_var name='gender_txt'}</label>
+                <div class="col-md-3">
+                    <select class="selectize form-control" name="gender" id="gender">
+                        {tmpl_var name='gender'}
+                    </select>
+                </div>
+            </div>
+            <div class="form-group container-fluid">
+                <label class="control-label col-md-2" for="contact_name">{tmpl_var name='contact_name_txt'}*</label>
+                <div class="col-md-6">
+                    <input class="form-control" name="contact_name" id="contact_name" value="{tmpl_var name='contact_name'}"  type="text" />
+                </div>
+            </div>
+            <div class="form-group container-fluid">
+                <label class="control-label col-md-2" for="customer_no">{tmpl_var name='customer_no_txt'}</label>
+                <div class="col-md-6">
+                    <input class="form-control" name="customer_no" id="customer_no" value="{tmpl_var name='customer_no'}"  type="text" />
+                </div>
+				<input class="form-control" name="customer_no_org" id="customer_no_org" value="{tmpl_var name='customer_no'}" type="hidden" />
+            </div>
+            <div class="form-group container-fluid">
+                <label class="control-label col-md-2" for="username">{tmpl_var name='username_txt'}*</label>
+                <div class="col-md-6">
+                    <input class="form-control" name="username" id="username" value="{tmpl_var name='username'}"  type="text"  />
+                </div>
+            </div>
+            <div class="form-group container-fluid">
+                <label class="control-label col-md-2" for="password">{tmpl_var name='password_txt'}</label>
+                <div class="col-md-6">
+                    <div class="input-group">
+                        <input class="form-control" name="password" id="password" value="{tmpl_var name='password'}"  type="password" autocomplete="off" onkeyup="pass_check(this.value);checkPassMatch('password','repeat_password');" />
+                        <div class="input-group-addon"><a href="javascript:void(0);" onclick="generatePassword('password','repeat_password');">{tmpl_var name='generate_password_txt'}</a></div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group container-fluid">
+                <label class="col-md-2 control-label" for="passBar">{tmpl_var name='password_strength_txt'}</label>
+                <div class="col-md-6">
+                    <div class="input-group">
+                        <div id="passBar"></div><span> </span>
+                        <span class="help-block"><span id="passText">&nbsp;</span></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group container-fluid">
+                <label class="control-label col-md-2" for="repeat_password">{tmpl_var name='repeat_password_txt'}</label>
+                <div class="col-md-6">
+                    <input class="form-control" name="repeat_password" id="repeat_password" value=""  type="password" autocomplete="off" onkeyup="checkPassMatch('password','repeat_password');" />
+                </div>
+            </div>
+
+            <div id="confirmpasswordError" style="display:none;" class="alert alert-warning">{tmpl_var name='password_mismatch_txt'}</div>
+            <div id="confirmpasswordOK" style="display:none;" class="alert alert-success">{tmpl_var name='password_match_txt'}</div>
+
+            <div class="form-group container-fluid">
+                <label class="control-label col-md-2" for="language">{tmpl_var name='language_txt'}</label>
+                <div class="col-md-3">
+                    <select class="flags selectize form-control " name="language" id="language">
+                        {tmpl_var name='language'}
+                    </select>
+                </div>
+            </div>
+            <div class="form-group container-fluid">
+                <label class="control-label col-md-2" for="usertheme">{tmpl_var name='usertheme_txt'}</label>
+                <div class="col-md-3">
+                    <select class="selectize form-control" name="usertheme" id="usertheme">
+                        {tmpl_var name='usertheme'}
+                    </select>
+                </div>
+            </div>
+            <div class="form-group container-fluid">
+                <label class="control-label col-md-2" for="street">{tmpl_var name='street_txt'}</label>
+                <div class="col-md-6">
+                    <input class="form-control" name="street" id="street" value="{tmpl_var name='street'}"  type="text"  />
+                </div>
+            </div>
+            <div class="form-group container-fluid">
+                <label class="control-label col-md-2" for="zip">{tmpl_var name='zip_txt'}</label>
+                <div class="col-md-6">
+                    <input class="form-control" name="zip" id="zip" value="{tmpl_var name='zip'}"  type="text" />
+                </div>
+            </div>
+            <div class="form-group container-fluid">
+                <label class="control-label col-md-2" for="city">{tmpl_var name='city_txt'}</label>
+                <div class="col-md-6">
+                    <input class="form-control" name="city" id="city" value="{tmpl_var name='city'}"  type="text"  />
+                </div>
+            </div>
+            <div class="form-group container-fluid">
+                <label class="control-label col-md-2" for="state">{tmpl_var name='state_txt'}</label>
+                <div class="col-md-6">
+                    <input class="form-control" name="state" id="state" value="{tmpl_var name='state'}"  type="text"  />
+                </div>
+            </div>
+            <div class="form-group container-fluid">
+                <label class="control-label col-md-2" for="country">{tmpl_var name='country_txt'}</label>
+                <div class="col-md-3">
+                    <select class="selectize form-control flags" name="country" id="country">
+                        {tmpl_var name='country'}
+                    </select>
+                </div>
+            </div>
+            <div class="form-group container-fluid">
+                <label class="control-label col-md-2" for="telephone">{tmpl_var name='telephone_txt'}</label>
+                <div class="col-md-6">
+                    <input class="form-control" name="telephone" id="telephone" value="{tmpl_var name='telephone'}"  type="text" />
+                </div>
+            </div>
+            <div class="form-group container-fluid">
+                <label class="control-label col-md-2" for="mobile">{tmpl_var name='mobile_txt'}</label>
+                <div class="col-md-6">
+                    <input class="form-control" name="mobile" id="mobile" value="{tmpl_var name='mobile'}"  type="text" />
+                </div>
+            </div>
+            <div class="form-group container-fluid">
+                <label class="control-label col-md-2" for="fax">{tmpl_var name='fax_txt'}</label>
+                <div class="col-md-6">
+                    <input class="form-control" name="fax" id="fax" value="{tmpl_var name='fax'}"  type="text"  />
+                </div>
+            </div>
+            <div class="form-group container-fluid">
+                <label class="control-label col-md-2" for="email">{tmpl_var name='email_txt'}</label>
+                <div class="col-md-6">
+                    <input class="form-control" name="email" id="email" value="{tmpl_var name='email'}"  type="text"  />
+                </div>
+            </div>
+            <div class="form-group container-fluid">
+                <label class="control-label col-md-2" for="internet">{tmpl_var name='internet_txt'}</label>
+                <div class="col-md-6">
+                    <input class="form-control" name="internet" id="internet" value="{tmpl_var name='internet'}"  type="text" />
+                </div>
+            </div>
+            <div class="form-group container-fluid">
+                <label class="control-label col-md-2" for="icq">{tmpl_var name='icq_txt'}</label>
+                <div class="col-md-6">
+                    <input class="form-control" name="icq" id="icq" value="{tmpl_var name='icq'}"  type="text" />
+                </div>
+            </div>
+            <div class="form-group container-fluid">
+                <label class="control-label col-md-2" for="vat_id">{tmpl_var name='vat_id_txt'}</label>
+                <div class="col-md-6">
+                    <input class="form-control" name="vat_id" id="vat_id" value="{tmpl_var name='vat_id'}"  type="text" />
+                </div>
+            </div>
+            <div class="form-group container-fluid">
+                <label class="control-label col-md-2" for="company_id">{tmpl_var name='company_id_txt'}</label>
+                <div class="col-md-6">
+                    <input class="form-control" name="company_id" id="company_id" value="{tmpl_var name='company_id'}"  type="text"  />
+                </div>
+            </div>
+            <div class="form-group container-fluid">
+                <label class="control-label col-md-2" for="bank_account_owner">{tmpl_var name='bank_account_owner_txt'}</label>
+                <div class="col-md-6">
+                    <input class="form-control" name="bank_account_owner" id="bank_account_owner" value="{tmpl_var name='bank_account_owner'}"  type="text"  />
+                </div>
+            </div>
+            <div class="form-group container-fluid">
+                <label class="control-label col-md-2" for="bank_account_number">{tmpl_var name='bank_account_number_txt'}</label>
+                <div class="col-md-6">
+                    <input class="form-control" name="bank_account_number" id="bank_account_number" value="{tmpl_var name='bank_account_number'}"  type="text" />
+                </div>
+            </div>
+            <div class="form-group container-fluid">
+                <label class="control-label col-md-2" for="bank_code">{tmpl_var name='bank_code_txt'}</label>
+                <div class="col-md-6">
+                    <input class="form-control" name="bank_code" id="bank_code" value="{tmpl_var name='bank_code'}"  type="text"  />
+                </div>
+            </div>
+            <div class="form-group container-fluid">
+                <label class="control-label col-md-2" for="bank_name">{tmpl_var name='bank_name_txt'}</label>
+                <div class="col-md-6">
+                    <input class="form-control" name="bank_name" id="bank_name" value="{tmpl_var name='bank_name'}"  type="text"  />
+                </div>
+            </div>
+            <div class="form-group container-fluid">
+                <label class="control-label col-md-2" for="bank_account_iban">{tmpl_var name='bank_account_iban_txt'}</label>
+                <div class="col-md-6">
+                    <input class="form-control" name="bank_account_iban" id="bank_account_iban" value="{tmpl_var name='bank_account_iban'}"  type="text"  />
+                </div>
+            </div>
+            <div class="form-group container-fluid">
+                <label class="control-label col-md-2" for="bank_account_swift">{tmpl_var name='bank_account_swift_txt'}</label>
+                <div class="col-md-6">
+                    <input class="form-control" name="bank_account_swift" id="bank_account_swift" value="{tmpl_var name='bank_account_swift'}"  type="text"  />
+                </div>
+            </div>
+			<div class="form-group container-fluid">
+                <label class="control-label col-md-2" for="paypal_email">{tmpl_var name='paypal_email_txt'}</label>
+                <div class="col-md-6">
+                    <input class="form-control" name="paypal_email" id="paypal_email" value="{tmpl_var name='paypal_email'}"  type="text"  />
+                </div>
+            </div>
+			<div class="form-group container-fluid">
+                <label class="control-label col-md-2" for="added_date">{tmpl_var name='added_date_txt'}</label>
+                <div class="col-md-6">
+                    <input class="form-control" name="added_date" id="added_date" value="{tmpl_var name='added_date'}"  type="text" />
+                </div>
+            </div>
+			<div class="form-group container-fluid">
+                <label class="control-label col-md-2" for="added_by">{tmpl_var name='added_by_txt'}</label>
+                <div class="col-md-6">
+                    <input class="form-control" name="added_by" id="added_by" value="{tmpl_var name='added_by'}"  type="text"  />
+                </div>
+            </div>
+            <div class="form-group container-fluid">
+                <label class="control-label col-md-2" for="notes">
+                    {tmpl_var name='notes_txt'}
+                </label>
+                <div class="col-md-6">
+                    <textarea class="form-control">{tmpl_var name='notes'}</textarea>
+                </div>
+            </div>
+            <div class="form-group container-fluid">
+                <label class="control-label col-md-2" for="locked_cb">
+                    {tmpl_var name='locked_txt'}
+                </label>
+                <div class="col-md-10">
+                    <div id="locked_cb" class="checkbox check-success">
+                        {tmpl_var name='locked'}
+                    </div>
+                </div>
+            </div>
+            <div class="form-group container-fluid">
+                <label class="control-label col-md-2" for="canceled_cb">
+                    {tmpl_var name='canceled_txt'}
+                </label>
+                <div class="col-md-10">
+                    <div id="canceled_cb" class="checkbox check-success">
+                        {tmpl_var name='canceled'}
+                    </div>
+                </div>
+            </div>
+            <div class="container-fluid">
+                <label class="col-md-2 control-label">{tmpl_var name='required_fields_txt'}</label>
+            </div>
+
+    <input type="hidden" name="id" value="{tmpl_var name='id'}">
+
+    <div class="container-fluid form-group">
+        <div class="col-sm-offset-2">
+            <button class="positive btn " type="button" value="{tmpl_var name='btn_save_txt'}" onclick="submitForm('pageForm','client/client_edit.php');"><span><span class="glyphicon glyphicon-ok"></span> {tmpl_var name='btn_save_txt'}</span></button>
+            <button class="negative btn " type="button" value="{tmpl_var name='btn_cancel_txt'}" onclick="loadContent('client/client_list.php');"><span><span class="glyphicon glyphicon-remove"></span> {tmpl_var name='btn_cancel_txt'}</span></button>
+        </div>
+    </div>
+
+</div>
+
+
+<!-- switchery script -->
+<script>
+    var elems = Array.prototype.slice.call(document.querySelectorAll('.switchery'));
+    // Success color: #10CFBD
+    elems.forEach(function(html) {
+        var switchery = new Switchery(html, {color: '#10CFBD'});
+    });
+</script>

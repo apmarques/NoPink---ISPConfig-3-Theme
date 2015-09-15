@@ -1,0 +1,91 @@
+<h2><tmpl_var name="list_head_txt"></h2>
+<p><tmpl_var name="list_desc_txt"></p>
+
+<div class="panel panel_mail_get">
+
+            <div class="container-fluid form-group">
+                <label class="control-label col-md-2" for="type">{tmpl_var name='type_txt'}</label>
+                <div class="col-md-3">
+                    <select class="selectize form-control" name="type" id="type" >
+                        {tmpl_var name='type'}
+                    </select>
+                </div>
+            </div>
+            <div class="container-fluid form-group">
+                <label class="control-label col-md-2" for="source_server">{tmpl_var name='source_server_txt'}</label>
+                <div class="col-md-6">
+                    <input class="form-control" name="source_server" id="source_server" value="{tmpl_var name='source_server'}"  type="text"  />
+                </div>
+            </div>
+            <div class="container-fluid form-group">
+                <label class="control-label col-md-2" for="source_username">{tmpl_var name='source_username_txt'}</label>
+                <div class="col-md-6">
+                    <input class="form-control" name="source_username" id="source_username" value="{tmpl_var name='source_username'}"  type="text"  />
+                </div>
+            </div>
+            <div class="container-fluid form-group">
+                <label class="control-label col-md-2" for="source_password">{tmpl_var name='source_password_txt'}</label>
+                <div class="col-md-6">
+                    <input class="form-control" name="source_password" id="source_password" value="{tmpl_var name='source_password'}"  type="password"  />
+                </div>
+            </div>
+            <div class="container-fluid form-group">
+                <label class="control-label col-md-2" for="source_delete_cb">
+                    {tmpl_var name='source_delete_txt'}
+                </label>
+                <div class="col-md-10">
+                    <div id="source_delete_cb" class="checkbox check-success">
+                        {tmpl_var name='source_delete'}
+                        <span>{tmpl_var name="source_delete_note_txt"}</span>
+                    </div>
+                </div>
+            </div>
+            <div class="container-fluid form-group">
+                <label class="control-label col-md-2" for="source_read_all_cb">
+                    {tmpl_var name='source_read_all_txt'}
+                </label>
+                <div class="col-md-10">
+                    <div id="source_read_all_cb" class="checkbox check-success">
+                        {tmpl_var name='source_read_all'}
+                    </div>
+                </div>
+            </div>
+            <div class="container-fluid form-group">
+                <label class="control-label col-md-2" for="destination">{tmpl_var name='destination_txt'}</label>
+                <div class="col-md-3">
+                    <select class="selectize form-control" name="destination" id="destination" >
+                        {tmpl_var name='destination'}
+                    </select>
+                </div>
+            </div>
+            <div class="container-fluid form-group">
+                <label class="control-label col-md-2" for="active_cb">
+                    {tmpl_var name='active_txt'}
+                </label>
+                <div class="col-md-10">
+                    <div id="active_cb" class="checkbox check-success">
+                        {tmpl_var name='active'}
+                    </div>
+                </div>
+            </div>
+
+        <input type="hidden" name="id" value="{tmpl_var name='id'}">
+
+        <div class="container-fluid form-group ">
+            <div class="col-md-offset-2">
+                <button class="positive  btn" type="button" value="{tmpl_var name='btn_save_txt'}" onclick="submitForm('pageForm','mail/mail_get_edit.php');"><span><span class="glyphicon glyphicon-ok"></span> {tmpl_var name='btn_save_txt'}</span></button>
+                <button class="negative btn" type="button" value="{tmpl_var name='btn_cancel_txt'}" onclick="loadContent('mail/mail_get_list.php');"><span><span class="glyphicon glyphicon-remove"></span> {tmpl_var name='btn_cancel_txt'}</span></button>
+            </div>
+        </div>
+
+</div>
+
+
+<!-- switchery script -->
+<script>
+    var elems = Array.prototype.slice.call(document.querySelectorAll('.switchery'));
+    // Success color: #10CFBD
+    elems.forEach(function(html) {
+        var switchery = new Switchery(html, {color: '#10CFBD'});
+    });
+</script>

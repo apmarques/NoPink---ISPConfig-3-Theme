@@ -1,0 +1,88 @@
+<h2><tmpl_var name="list_head_txt"></h2>
+<p><tmpl_var name="list_desc_txt"></p>
+
+<div class="container-fluid ">
+
+            <div class="form-group container-fluid">
+                <label class="control-label col-md-2" for="ssl_state">{tmpl_var name='ssl_state_txt'}</label>
+                <div class="col-md-6">
+                    <input class="form-control" name="ssl_state" id="ssl_state" value="{tmpl_var name='ssl_state'}"  type="text" />
+                </div>
+            </div>
+            <div class="form-group container-fluid">
+                <label class="control-label col-md-2" for="ssl_locality">{tmpl_var name='ssl_locality_txt'}</label>
+                <div class="col-md-6">
+                    <input class="form-control" name="ssl_locality" id="ssl_locality" value="{tmpl_var name='ssl_locality'}"  type="text" />
+                </div>
+            </div>
+            <div class="form-group container-fluid">
+                <label class="control-label col-md-2" for="ssl_organisation">{tmpl_var name='ssl_organisation_txt'}</label>
+                <div class="col-md-6">
+                    <input class="form-control" name="ssl_organisation" id="ssl_organisation" value="{tmpl_var name='ssl_organisation'}"  type="text"  />
+                </div>
+            </div>
+            <div class="form-group container-fluid">
+                <label class="control-label col-md-2" for="ssl_organisation_unit">{tmpl_var name='ssl_organisation_unit_txt'}</label>
+                <div class="col-md-6">
+                    <input class="form-control" name="ssl_organisation_unit" id="ssl_organisation_unit" value="{tmpl_var name='ssl_organisation_unit'}"  type="text"  />
+                </div>
+            </div>
+            <div class="form-group container-fluid">
+                <label class="control-label col-md-2" for="ssl_country">{tmpl_var name='ssl_country_txt'}</label>
+                <div class="col-md-3">
+                    <select class="selectize form-control flags" name="ssl_country" id="ssl_country">
+                        {tmpl_var name='ssl_country'}
+                    </select>
+                </div>
+            </div>
+            <div class="form-group container-fluid">
+                <label class="control-label col-md-2" for="ssl_domain">{tmpl_var name='ssl_domain_txt'}</label>
+                <div class="col-md-3">
+                    <select class="selectize form-control" name="ssl_domain" id="ssl_domain" >
+                        {tmpl_var name='ssl_domain'}
+                    </select>
+                </div>
+            </div>
+			<div class="form-group container-fluid">
+                <label class="control-label col-md-2" for="ssl_request">{tmpl_var name='ssl_key_txt'}</label>
+                <div class="col-md-6">
+                    <textarea name="ssl_key" id="ssl_key" class="form-control">{tmpl_var name='ssl_key'}</textarea>
+                </div>
+            </div>
+            <div class="form-group container-fluid">
+                <label class="control-label col-md-2" for="ssl_request">{tmpl_var name='ssl_request_txt'}</label>
+                <div class="col-md-6">
+                    <textarea name="ssl_request" id="ssl_request" class="form-control">{tmpl_var name='ssl_request'}</textarea>
+                </div>
+            </div>
+            <div class="form-group container-fluid">
+                <label class="control-label col-md-2" for="ssl_cert">{tmpl_var name='ssl_cert_txt'}</label>
+                <div class="col-md-6">
+                    <textarea name="ssl_cert" id="ssl_cert" class="form-control">{tmpl_var name='ssl_cert'}</textarea>
+                </div>
+            </div>
+            <div class="form-group container-fluid">
+                <label class="control-label col-md-2" for="ssl_bundle">{tmpl_var name='ssl_bundle_txt'}</label>
+                <div class="col-md-6">
+                    <textarea name="ssl_bundle" id="ssl_bundle" class="form-control">{tmpl_var name='ssl_bundle'}</textarea>
+                </div>
+            </div>
+            <div class="form-group container-fluid">
+                <label class="control-label col-md-2" for="ssl_action">{tmpl_var name='ssl_action_txt'}</label>
+                <div class="col-md-3">
+                    <select class="selectize form-control" name="ssl_action" id="ssl_action" >
+                        {tmpl_var name='ssl_action'}
+                    </select>
+                </div>
+            </div>
+
+        <input type="hidden" name="id" value="{tmpl_var name='id'}">
+
+        <div class="container-fluid form-group">
+            <div class="col-md-offset-2">
+                <button class="positive btn " type="button" value="{tmpl_var name='btn_save_txt'}" onclick="submitForm('pageForm','sites/web_vhost_subdomain_edit.php');"><span><span class="glyphicon glyphicon-ok"></span> {tmpl_var name='btn_save_txt'}</span></button>
+                <button class="negative btn " type="button" value="{tmpl_var name='btn_cancel_txt'}" onclick="loadContent('sites/web_vhost_subdomain_list.php');"><span><span class="glyphicon glyphicon-remove"></span> {tmpl_var name='btn_cancel_txt'}</span></button>
+            </div>
+        </div>
+
+</div>

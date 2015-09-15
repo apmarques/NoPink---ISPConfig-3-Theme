@@ -1,0 +1,31 @@
+<h2><tmpl_var name="head_txt"></h2>
+<p><tmpl_var name="desc_txt"></p>
+
+<div class="container-fluid ">
+    <tmpl_if name="message_err">
+        <div id="errorMsg"><tmpl_var name="message_err"></div>
+    </tmpl_if>
+    <tmpl_if name="message_ok">
+        <div id="OKMsg"><tmpl_var name="message_ok"></div>
+    </tmpl_if>
+    <tmpl_if name="insert_key">
+                <p>&nbsp;</p>
+                <div class="form-group container-fluid">
+                    <label class="col-md-2 control-label" for="install_key">{tmpl_var name='install_key_txt'}</label>
+                    <div class="col-md-6">
+                        <input class="form-control" name="install_key" id="install_key" value="{tmpl_var name='install_key'}"  type="text" />
+                    </div>
+                </div>
+                    
+                <input type="hidden" name="package" value="{tmpl_var name='package_name'}">
+                <input type="hidden" name="server_id" value="{tmpl_var name='server_id'}">
+                <p>&nbsp;</p>
+
+                <div class="container-fluid form-group">
+                    <div class="col-sm-offset-2">
+                        <button class="positive btn " type="button" value="{tmpl_var name='btn_save_txt'}" onclick="submitForm('pageForm','admin/software_package_install.php');"><span><span class="glyphicon glyphicon-ok"></span> {tmpl_var name='btn_save_txt'}</span></button>
+                        <button class="negative btn " type="button" value="{tmpl_var name='btn_cancel_txt'}" onclick="loadContent('admin/software_package_list.php');"><span><span class="glyphicon glyphicon-remove"></span> {tmpl_var name='btn_cancel_txt'}</span></button>
+                    </div>
+                </div>
+    </tmpl_if>
+</div>

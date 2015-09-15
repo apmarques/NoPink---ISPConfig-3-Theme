@@ -1,0 +1,51 @@
+<div class="panel-heading separator">
+    <h2><tmpl_var name="list_head_txt"></h2>
+    <p><tmpl_var name="list_desc_txt"></p>
+</div>
+
+<div class="panel-body">
+    <div class="panel panel-default">
+
+        <div class="container-fluid">
+            <fieldset id="wf_area_spamfilter_config">
+                <div class="form-group wf_oneField container-fluid">
+                    <label class="control-label col-md-2 wf_preField" for="ip_address">{tmpl_var name='ip_address_txt'}</label>
+                    <div class="col-md-6">
+                        <input class="form-control" type="text" id="ip_address" name="ip_address" value="{tmpl_var name='ip_address'}" >
+                    </div>
+                </div>
+                <div class="form-group wf_oneField">
+                    <label class="control-label col-md-2 wf_preField" for="netmask">{tmpl_var name='netmask_txt'}</label>
+                    <div class="col-md-6">
+                        <input class="form-control" type="text" id="netmask" name="netmask" value="{tmpl_var name='netmask'}" >
+                    </div>
+                </div>
+                <div class="form-group wf_oneField">
+                    <label class="control-label col-md-2 wf_preField" for="gateway">{tmpl_var name='gateway_txt'}</label>
+                    <div class="col-md-6">
+                        <input class="form-control" type="text" id="gateway" name="gateway" value="{tmpl_var name='gateway'}" >
+                    </div>
+                </div>
+                <div class="form-group wf_oneField">
+                    <label class="control-label col-md-2 wf_preField" for="hostname">{tmpl_var name='hostname_txt'}</label>
+                    <div class="col-md-6">
+                        <input class="form-control" type="text" id="hostname" name="hostname" value="{tmpl_var name='hostname'}" >
+                    </div>
+                </div>
+                <div class="form-group wf_oneField">
+                    <label class="control-label col-md-2 wf_preField" for="nameservers">{tmpl_var name='nameservers_txt'}</label>
+                    <div class="col-md-6">
+                        <input class="form-control" type="text" id="nameservers" name="nameservers" value="{tmpl_var name='nameservers'}" >
+                    </div>
+                </div>
+            </fieldset>
+    
+            <input type="hidden" name="id" value="{tmpl_var name='id'}">
+    
+            <div class="wf_actions container-fluid">
+                <button class="positive btn" type="button" value="{tmpl_var name='btn_save_txt'}" onclick="submitForm('pageForm','mail/spamfilter_config_edit.php');"><span class="glyphicon glyphicon-ok"></span> <span>{tmpl_var name='btn_save_txt'}</span></button>
+                <button class="negative btn" type="button" value="{tmpl_var name='btn_cancel_txt'}" onclick="loadContent('mail/spamfilter_config_list.php');"><span class="glyphicon glyphicon-remove"></span> <span>{tmpl_var name='btn_cancel_txt'}</span></button>
+            </div>
+        </div>
+    </div>
+</div>

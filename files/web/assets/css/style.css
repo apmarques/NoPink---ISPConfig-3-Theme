@@ -1,0 +1,872 @@
+.page-sidebar .sidebar-header {
+    color: #2251A3;
+    background: #fff;
+    border-bottom: 0 none;
+    border-top: 5px solid #2251A3;
+}
+
+.page-sidebar .sidebar-menu {
+    background: #fff;
+    color: #56565A;
+    padding-top:20px;
+}
+
+
+.page-sidebar .sidebar-header .brand {
+    width: 210px;
+}
+
+body.fixed-header .header {
+    border-top: 5px solid #2251A3;
+    border-bottom: 0 none;
+    background: #2251A3 !important;
+}
+
+.page-sidebar a:visited,
+.page-sidebar button:visited,
+.page-sidebar a:focus,
+.page-sidebar button:focus {
+    color: #56565A;
+}
+
+.page-sidebar a,
+.page-sidebar button {
+    color: #56565A;
+}
+.page-sidebar a:hover,
+.page-sidebar button:hover,
+.page-sidebar a:active,
+.page-sidebar button:active {
+    color: #2251A3;
+}
+.page-sidebar a:visited,
+.page-sidebar button:visited,
+.page-sidebar a:focus,
+.page-sidebar button:focus {
+
+}
+
+@media only screen and (min-width: 980px) {
+    body.menu-pin .page-sidebar .menu-items .icon-thumbnail {
+        transform: translate3d(0, 0, 0);
+        -webkit-transform: -webkit-translate3d(0, 0, 0);
+    }
+}
+
+.page-sidebar .sidebar-menu .menu-items li a {
+    border-left: 0px solid transparent;
+    position: relative;
+    z-index: 2;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+.page-sidebar .sidebar-menu .menu-items li a:hover{ border-bottom: 0px; color: #fff;}
+
+
+.page-sidebar .sidebar-menu .menu-items li a:after {
+    content: "";
+    height: 100%;
+    left: 0;
+    top: 0;
+    width: 0px;
+    position: absolute;
+    transition: all 0.5s ease 0s;
+    -webkit-transition: all 0.5s ease 0s;
+    z-index: -1;
+}
+
+.page-sidebar .sidebar-menu .menu-items li a:hover:after{ width: 5%; }
+.page-sidebar .sidebar-menu .menu-items li a:after{ background: #2251A3; }
+
+.page-sidebar .sidebar-menu .menu-items li ul.sub-menu a:hover:after{ width: 12%; }
+
+.page-sidebar .sidebar-menu .menu-items li ul.sub-menu > li ul.sub-menu a:hover:after{ width: 19%; }
+
+
+.page-sidebar .sidebar-menu .menu-items li:hover > .icon-thumbnail,
+.page-sidebar .sidebar-menu .menu-items li.open > .icon-thumbnail,
+.page-sidebar .sidebar-menu .menu-items li.active > .icon-thumbnail {
+    color: #2251A3;
+}
+.page-sidebar .sidebar-menu .menu-items li:hover > a,
+.page-sidebar .sidebar-menu .menu-items li.open > a,
+.page-sidebar .sidebar-menu .menu-items li.active > a {
+    color: #2251A3;
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+.page-sidebar .sidebar-menu .menu-items li:hover > a:after,
+.page-sidebar .sidebar-menu .menu-items li.open > a:after,
+.page-sidebar .sidebar-menu .menu-items li.active > a:after {
+    width: 5%;
+    background: #2251A3;
+}
+
+.page-sidebar .sidebar-menu .menu-items li.open > a {
+
+}
+
+.page-sidebar .sidebar-menu .menu-items > li > a {
+    padding-left: 35px;
+}
+
+.page-sidebar .sidebar-menu .menu-items li > a {
+    width: 100%;
+}
+
+.page-sidebar .sidebar-menu .menu-items > li > a > .title {
+    float: left;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    width: 70%;
+    text-transform: uppercase;
+}
+
+.page-sidebar .sidebar-menu .menu-items > li > a > .menu-services {
+    text-transform: uppercase;
+}
+
+
+body.menu-pin .page-sidebar .menu-items .icon-thumbnail .halflings, body.menu-pin .page-sidebar .menu-items .icon-thumbnail .glyphicons {
+    transform: translate3d(0, 11px, 0);
+}
+
+body.menu-pin .page-sidebar .menu-items ul.sub-menu .icon-thumbnail .halflings, body.menu-pin .page-sidebar .menu-items ul.sub-menu .icon-thumbnail .glyphicons {
+
+    color: #56565A;
+    opacity: 0.7;
+}
+
+
+body.menu-pin .page-sidebar .menu-items .icon-thumbnail .halflings, body.menu-pin .page-sidebar .menu-items .icon-thumbnail .continent-icon {
+    height: 24px;
+    fill: #ccc;
+}
+
+.page-sidebar .sidebar-menu .menu-items > li ul.sub-menu {
+    background-color: rgba(0, 0, 0, 0);
+    padding: 0;
+}
+
+.page-sidebar .sidebar-menu .menu-items > li ul.sub-menu > li .icon-thumbnail {
+    background-color: transparent;
+}
+
+.page-sidebar .sidebar-menu .menu-items > li ul.sub-menu > li .icon-thumbnail:hover {
+    color: #2251A3;
+}
+
+.page-sidebar .sidebar-menu .menu-items > li ul.sub-menu > li > a {
+    display: inline-block;
+    padding: 10px 0px;
+    white-space: normal;
+}
+
+.page-sidebar .sidebar-menu .menu-items li.category p {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 11px !important;
+    font-weight: 600;
+    color: #56565A;
+    margin: 0;
+    opacity: 0.5;
+    text-transform: uppercase;
+    padding-left: 20px;
+    line-height: 40px;
+    height: 40px;
+}
+
+.page-sidebar .sidebar-menu .menu-items ul.sub-menu li.category p {
+    padding-left: 40px;
+}
+
+.page-sidebar .sidebar-menu .menu-items > li > a {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+    font-size: 12px;
+}
+
+.page-sidebar .sidebar-menu .menu-items > li > a > .arrow {
+    float: right;
+    padding-right: 20px;
+}
+
+.page-sidebar .sidebar-menu .menu-items > li > a > .arrow:before {
+    content: "\f105";
+}
+
+.page-sidebar .sidebar-menu .menu-items > li ul.sub-menu > li {
+    padding: 0;
+}
+
+.page-sidebar .sidebar-menu .menu-items > li ul.sub-menu > li > a {
+    background: none;
+    padding: 0px 10px 0 55px;
+    margin-top: 1px;
+}
+
+.page-sidebar .sidebar-menu .menu-items > li ul.sub-menu > li ul.sub-menu li > a {
+    background: none;
+    padding: 0px 10px 0 65px;
+    margin-top: 1px;
+}
+.page-sidebar .sidebar-menu .menu-items > li > ul.sub-menu > li ul.sub-menu li {
+    padding-left: 0px;
+}
+
+.page-sidebar .sidebar-menu .menu-items > li ul.sub-menu > li > a > .title {
+    line-height: 40px;
+    height: 40px;
+}
+
+.page-sidebar .sidebar-menu .menu-items > li ul.sub-menu > li > a > .icon-thumbnail {
+    float: right;
+}
+
+.page-sidebar .sidebar-menu .menu-items ul.sub-menu li:hover > a,
+.page-sidebar .sidebar-menu .menu-items ul.sub-menu li.open > a,
+.page-sidebar .sidebar-menu .menu-items ul.sub-menu li.active > a {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+
+/*******************************************************************************************************
+********************************************************************************************************
+********************************************** Not Bootstrap *******************************************
+********************************************************************************************************
+*******************************************************************************************************/
+
+.gap{
+    margin-bottom: 10px;
+}
+
+
+
+.table-hover tbody tr:hover td {
+    background: lightgrey;
+}
+
+
+
+#header {
+    /* Header Blue Gradient*/
+    background: #2251A3;
+    /*End of gradient*/
+    padding-top:15px;
+}
+
+/* Password Strength*/
+#passBar {
+    width: 101px; height: 10px;
+    background: url("../../themes/default/images/meter_bg.gif") repeat-x bottom left;
+    margin: 2px 0;
+    float: left;
+}
+
+/* Dashboard */
+.dashboard-modules {
+    float:left;
+    width:60px;
+    height: 60px;
+    border:1px dotted #888888;
+    border-radius:5px;
+    background-color: #cccccc;
+    margin:10px;
+    background-position: center 5px;
+    background-repeat: no-repeat;
+    text-align: center;
+}
+.dashboard-modules a,
+.dashboard-modules a:hover {
+    background: url("../../themes/default/icons/x32_sprite.png") no-repeat transparent;
+    color:Black;
+    display:block;
+    font-weight:bold;
+    height:30px;
+    padding-top:42px;
+    width:60px;
+    text-decoration: none;
+}
+.dashboard-modules.tools a { background-position: 12px -9px; }
+.dashboard-modules.admin a { background-position: 12px -73px; }
+.dashboard-modules.sites a { background-position: 12px -520px; }
+.dashboard-modules.monitor a { background-position: 13px -585px; }
+.dashboard-modules.help a { background-position: 13px -716px; }
+.dashboard-modules.mail a { background-position: 12px -776px; }
+.dashboard-modules.vm a { background-position: 14px -842px; }
+.dashboard-modules.domain a { background-position: 12px -905px; }
+.dashboard-modules.dns a { background-position: 12px -970px; }
+.dashboard-modules.client a { background-position: 13px -1096px; }
+.dashboard-modules.billing a { background-position: 14px -1162px; }
+
+.panel_dashboard h2 { font-size:20px; }
+
+/* BUTTONS POSITIVE */
+button.positive,
+.buttons a.positive { color:#529214; }
+.buttons a.positive:hover,
+button.positive:hover {
+    background-color:#E6EFC2;
+    border:1px solid #C6D880;
+    color:#529214;
+}
+.buttons a.positive:active {
+    background-color:#529214;
+    border:1px solid #529214;
+    color:#fff;
+}
+
+/* BUTTONS NEGATIVE */
+.buttons a.negative,
+button.negative {
+    color:#d12f19;
+}
+.buttons a.negative:hover,
+button.negative:hover {
+    background-color:#fbe3e4;
+    border:1px solid #fbc2c4;
+    color:#d12f19;
+}
+.buttons a.negative:active {
+    background-color:#d12f19;
+    border:1px solid #d12f19;
+    color:#fff;
+}
+
+/*Header Image*/
+.headerImage {
+    background-repeat:no-repeat;
+    background-image: url("../../themes/default/images/header_logo.png");
+    height:32px;
+    margin:0 0 0.2em;
+}
+
+
+/*  Menu with Images */
+.withicons div.flags > div > div.option {
+    background-repeat:no-repeat;
+    background-position: 1px;
+    padding-left:24px;
+}
+div[class^=country-] {
+    background-image: url("../../themes/default/icons/flags_sprite.png");
+    background-repeat: no-repeat;
+    height: 20px;
+    width: 26px;
+}
+li[class^=country-] {
+    background-image: url("../../themes/default/icons/flags_sprite.png");
+    background-repeat: no-repeat;
+    text-indent: 24px;
+}
+li[class^=country-] a.ui-state-hover { background: transparent; }
+div[class^=country-] span {
+    display: none;
+}
+div.flags > div > div.option{
+    background-image: url("../../themes/default/icons/flags_sprite.png");
+    background-repeat: no-repeat;
+    padding-left: 30px !important;
+    line-height: 1.5em !important;
+    height: 1.5em !important;
+}
+
+
+div.search_country{
+    min-width: 200px;
+}
+
+
+div.flags > div > div.option[data-value=EL] {background-position:0 -1475px}
+div.flags > div > div.option[data-value=AD], div.flags > div > div.option[data-value=ad], .country-AD {background-position:0 -1px}
+div.flags > div > div.option[data-value=AE], div.flags > div > div.option[data-value=ae], .country-AE {background-position:0 -23px}
+div.flags > div > div.option[data-value=AF], div.flags > div > div.option[data-value=af], .country-AF {background-position:0 -45px}
+div.flags > div > div.option[data-value=AG], div.flags > div > div.option[data-value=ag], .country-AG {background-position:0 -67px}
+div.flags > div > div.option[data-value=AI], div.flags > div > div.option[data-value=ai], .country-AI {background-position:0 -89px}
+div.flags > div > div.option[data-value=AL], div.flags > div > div.option[data-value=al], .country-AL {background-position:0 -111px}
+div.flags > div > div.option[data-value=AM], div.flags > div > div.option[data-value=am], .country-AM {background-position:0 -133px}
+div.flags > div > div.option[data-value=AN], div.flags > div > div.option[data-value=an], .country-AN {background-position:0 -155px}
+div.flags > div > div.option[data-value=AO], div.flags > div > div.option[data-value=ao], .country-AO {background-position:0 -177px}
+div.flags > div > div.option[data-value=AQ], div.flags > div > div.option[data-value=aq], .country-AQ {background-position:0 -199px}
+div.flags > div > div.option[data-value=AR], div.flags > div > div.option[data-value=ar], .country-AR {background-position:0 -221px}
+div.flags > div > div.option[data-value=AS], div.flags > div > div.option[data-value=as], .country-AS {background-position:0 -243px}
+div.flags > div > div.option[data-value=AT], div.flags > div > div.option[data-value=at], .country-AT {background-position:0 -265px}
+div.flags > div > div.option[data-value=AU], div.flags > div > div.option[data-value=au], .country-AU {background-position:0 -287px}
+div.flags > div > div.option[data-value=AW], div.flags > div > div.option[data-value=aw], .country-AW {background-position:0 -309px}
+div.flags > div > div.option[data-value=AX], div.flags > div > div.option[data-value=ax], .country-AX {background-position:0 -331px}
+div.flags > div > div.option[data-value=AZ], div.flags > div > div.option[data-value=az], .country-AZ {background-position:0 -353px}
+div.flags > div > div.option[data-value=BA], div.flags > div > div.option[data-value=ba], .country-BA {background-position:0 -375px}
+div.flags > div > div.option[data-value=BB], div.flags > div > div.option[data-value=bb], .country-BB {background-position:0 -397px}
+div.flags > div > div.option[data-value=BD], div.flags > div > div.option[data-value=bd], .country-BD {background-position:0 -419px}
+div.flags > div > div.option[data-value=BE], div.flags > div > div.option[data-value=be], .country-BE {background-position:0 -441px}
+div.flags > div > div.option[data-value=BF], div.flags > div > div.option[data-value=bf], .country-BF {background-position:0 -463px}
+div.flags > div > div.option[data-value=BG], div.flags > div > div.option[data-value=bg], .country-BG {background-position:0 -485px}
+div.flags > div > div.option[data-value=BH], div.flags > div > div.option[data-value=bh], .country-BH {background-position:0 -507px}
+div.flags > div > div.option[data-value=BI], div.flags > div > div.option[data-value=bi], .country-BI {background-position:0 -529px}
+div.flags > div > div.option[data-value=BJ], div.flags > div > div.option[data-value=bj], .country-BJ {background-position:0 -551px}
+div.flags > div > div.option[data-value=BM], div.flags > div > div.option[data-value=bm], .country-BM {background-position:0 -573px}
+div.flags > div > div.option[data-value=BN], div.flags > div > div.option[data-value=bn], .country-BN {background-position:0 -595px}
+div.flags > div > div.option[data-value=BO], div.flags > div > div.option[data-value=bo], .country-BO {background-position:0 -617px}
+div.flags > div > div.option[data-value=BR], div.flags > div > div.option[data-value=br], .country-BR {background-position:0 -639px}
+div.flags > div > div.option[data-value=BS], div.flags > div > div.option[data-value=bs], .country-BS {background-position:0 -661px}
+div.flags > div > div.option[data-value=BT], div.flags > div > div.option[data-value=bt], .country-BT {background-position:0 -683px}
+div.flags > div > div.option[data-value=BV], div.flags > div > div.option[data-value=bv], .country-BV {background-position:0 -705px}
+div.flags > div > div.option[data-value=BW], div.flags > div > div.option[data-value=bw], .country-BW {background-position:0 -727px}
+div.flags > div > div.option[data-value=BY], div.flags > div > div.option[data-value=by], .country-BY {background-position:0 -749px}
+div.flags > div > div.option[data-value=BZ], div.flags > div > div.option[data-value=bz], .country-BZ {background-position:0 -771px}
+div.flags > div > div.option[data-value=CA], div.flags > div > div.option[data-value=ca], .country-CA {background-position:0 -793px}
+div.flags > div > div.option[data-value=CC], div.flags > div > div.option[data-value=cc], .country-CC {background-position:0 -837px}
+div.flags > div > div.option[data-value=CD], div.flags > div > div.option[data-value=cd], .country-CD {background-position:0 -859px}
+div.flags > div > div.option[data-value=CF], div.flags > div > div.option[data-value=cf], .country-CF {background-position:0 -881px}
+div.flags > div > div.option[data-value=CG], div.flags > div > div.option[data-value=cg], .country-CG {background-position:0 -903px}
+div.flags > div > div.option[data-value=CH], div.flags > div > div.option[data-value=ch], .country-CH {background-position:0 -925px}
+div.flags > div > div.option[data-value=CI], div.flags > div > div.option[data-value=ci], .country-CI {background-position:0 -947px}
+div.flags > div > div.option[data-value=CK], div.flags > div > div.option[data-value=ck], .country-CK {background-position:0 -969px}
+div.flags > div > div.option[data-value=CL], div.flags > div > div.option[data-value=cl], .country-CL {background-position:0 -991px}
+div.flags > div > div.option[data-value=CM], div.flags > div > div.option[data-value=cm], .country-CM {background-position:0 -1013px}
+div.flags > div > div.option[data-value=CN], div.flags > div > div.option[data-value=cn], .country-CN {background-position:0 -1035px}
+div.flags > div > div.option[data-value=CO], div.flags > div > div.option[data-value=co], .country-CO {background-position:0 -1057px}
+div.flags > div > div.option[data-value=CR], div.flags > div > div.option[data-value=cr], .country-CR {background-position:0 -1079px}
+div.flags > div > div.option[data-value=CS], div.flags > div > div.option[data-value=cs], .country-CS {background-position:0 -1101px}
+div.flags > div > div.option[data-value=CU], div.flags > div > div.option[data-value=cu], .country-CU {background-position:0 -1123px}
+div.flags > div > div.option[data-value=CV], div.flags > div > div.option[data-value=cv], .country-CV {background-position:0 -1145px}
+div.flags > div > div.option[data-value=CX], div.flags > div > div.option[data-value=cx], .country-CX {background-position:0 -1167px}
+div.flags > div > div.option[data-value=CY], div.flags > div > div.option[data-value=cy], .country-CY {background-position:0 -1189px}
+div.flags > div > div.option[data-value=CZ], div.flags > div > div.option[data-value=cz], .country-CZ {background-position:0 -1211px}
+div.flags > div > div.option[data-value=DE], div.flags > div > div.option[data-value=de], .country-DE {background-position:0 -1233px}
+div.flags > div > div.option[data-value=DJ], div.flags > div > div.option[data-value=dj], .country-DJ {background-position:0 -1255px}
+div.flags > div > div.option[data-value=DK], div.flags > div > div.option[data-value=dk], .country-DK {background-position:0 -1277px}
+div.flags > div > div.option[data-value=DM], div.flags > div > div.option[data-value=dm], .country-DM {background-position:0 -1299px}
+div.flags > div > div.option[data-value=DO], div.flags > div > div.option[data-value=do], .country-DO {background-position:0 -1321px}
+div.flags > div > div.option[data-value=DZ], div.flags > div > div.option[data-value=dz], .country-DZ {background-position:0 -1343px}
+div.flags > div > div.option[data-value=EC], div.flags > div > div.option[data-value=ec], .country-EC {background-position:0 -1365px}
+div.flags > div > div.option[data-value=EE], div.flags > div > div.option[data-value=ee], .country-EE {background-position:0 -1387px}
+div.flags > div > div.option[data-value=EG], div.flags > div > div.option[data-value=eg], .country-EG {background-position:0 -1409px}
+div.flags > div > div.option[data-value=EH], div.flags > div > div.option[data-value=eh], .country-EH {background-position:0 -1431px}
+div.flags > div > div.option[data-value=ER], div.flags > div > div.option[data-value=er], .country-ER {background-position:0 -1475px}
+div.flags > div > div.option[data-value=ES], div.flags > div > div.option[data-value=es], .country-ES {background-position:0 -1497px}
+div.flags > div > div.option[data-value=ET], div.flags > div > div.option[data-value=ET], div.flags > div > div.option[data-value=et], .country-ET {background-position:0 -1519px}
+div.flags > div > div.option[data-value=FI], div.flags > div > div.option[data-value=fi], .country-FI {background-position:0 -1585px}
+div.flags > div > div.option[data-value=FJ], div.flags > div > div.option[data-value=fj], .country-FJ {background-position:0 -1607px}
+div.flags > div > div.option[data-value=FK], div.flags > div > div.option[data-value=fk], .country-FK {background-position:0 -1629px}
+div.flags > div > div.option[data-value=FM], div.flags > div > div.option[data-value=fm], .country-FM {background-position:0 -1651px}
+div.flags > div > div.option[data-value=FO], div.flags > div > div.option[data-value=fo], .country-FO {background-position:0 -1673px}
+div.flags > div > div.option[data-value=FR], div.flags > div > div.option[data-value=fr], .country-FR {background-position:0 -1695px}
+div.flags > div > div.option[data-value=GA], div.flags > div > div.option[data-value=ga], .country-GA {background-position:0 -1717px}
+div.flags > div > div.option[data-value=GB], div.flags > div > div.option[data-value=en], div.flags > div > div.option[data-value=gb], .country-GB, .country-EN {background-position:0 -1739px}
+div.flags > div > div.option[data-value=GD], div.flags > div > div.option[data-value=gd], .country-GD {background-position:0 -1761px}
+div.flags > div > div.option[data-value=GE], div.flags > div > div.option[data-value=ge], .country-GE {background-position:0 -1783px}
+div.flags > div > div.option[data-value=GF], div.flags > div > div.option[data-value=gf], .country-GF {background-position:0 -1805px}
+div.flags > div > div.option[data-value=GH], div.flags > div > div.option[data-value=gh], .country-GH {background-position:0 -1827px}
+div.flags > div > div.option[data-value=GI], div.flags > div > div.option[data-value=gi], .country-GI {background-position:0 -1849px}
+div.flags > div > div.option[data-value=GL], div.flags > div > div.option[data-value=gl], .country-GL {background-position:0 -1871px}
+div.flags > div > div.option[data-value=GM], div.flags > div > div.option[data-value=gm], .country-GM {background-position:0 -1893px}
+div.flags > div > div.option[data-value=GN], div.flags > div > div.option[data-value=gn], .country-GN {background-position:0 -1915px}
+div.flags > div > div.option[data-value=GP], div.flags > div > div.option[data-value=gp], .country-GP {background-position:0 -1937px}
+div.flags > div > div.option[data-value=GQ], div.flags > div > div.option[data-value=gq], .country-GQ {background-position:0 -1959px}
+div.flags > div > div.option[data-value=GR], div.flags > div > div.option[data-value=el], div.flags > div > div.option[data-value=gr], .country-GR, .country-EL {background-position:0 -1981px}
+div.flags > div > div.option[data-value=GS], div.flags > div > div.option[data-value=gs], .country-GS {background-position:0 -2003px}
+div.flags > div > div.option[data-value=GT], div.flags > div > div.option[data-value=gt], .country-GT {background-position:0 -2025px}
+div.flags > div > div.option[data-value=GU], div.flags > div > div.option[data-value=gu], .country-GU {background-position:0 -2047px}
+div.flags > div > div.option[data-value=GW], div.flags > div > div.option[data-value=gw], .country-GW {background-position:0 -2069px}
+div.flags > div > div.option[data-value=GY], div.flags > div > div.option[data-value=gy], .country-GY {background-position:0 -2091px}
+div.flags > div > div.option[data-value=HK], div.flags > div > div.option[data-value=hk], .country-HK {background-position:0 -2113px}
+div.flags > div > div.option[data-value=HM], div.flags > div > div.option[data-value=hm], .country-HM {background-position:0 -2135px}
+div.flags > div > div.option[data-value=HN], div.flags > div > div.option[data-value=hn], .country-HN {background-position:0 -2157px}
+div.flags > div > div.option[data-value=HR], div.flags > div > div.option[data-value=hr], .country-HR {background-position:0 -2179px}
+div.flags > div > div.option[data-value=HT], div.flags > div > div.option[data-value=ht], .country-HT {background-position:0 -2201px}
+div.flags > div > div.option[data-value=HU], div.flags > div > div.option[data-value=hu], .country-HU {background-position:0 -2223px}
+div.flags > div > div.option[data-value=ID], div.flags > div > div.option[data-value=id], .country-ID {background-position:0 -2245px}
+div.flags > div > div.option[data-value=IE], div.flags > div > div.option[data-value=ie], .country-IE {background-position:0 -2267px}
+div.flags > div > div.option[data-value=IL], div.flags > div > div.option[data-value=il], .country-IL {background-position:0 -2289px}
+div.flags > div > div.option[data-value=IN], div.flags > div > div.option[data-value=in], .country-IN {background-position:0 -2311px}
+div.flags > div > div.option[data-value=IO], div.flags > div > div.option[data-value=io], .country-IO {background-position:0 -2333px}
+div.flags > div > div.option[data-value=IQ], div.flags > div > div.option[data-value=iq], .country-IQ {background-position:0 -2355px}
+div.flags > div > div.option[data-value=IR], div.flags > div > div.option[data-value=ir], .country-IR {background-position:0 -2377px}
+div.flags > div > div.option[data-value=IS], div.flags > div > div.option[data-value=is], .country-IS {background-position:0 -2399px}
+div.flags > div > div.option[data-value=IT], div.flags > div > div.option[data-value=it], .country-IT {background-position:0 -2421px}
+div.flags > div > div.option[data-value=JM], div.flags > div > div.option[data-value=jm], .country-JM {background-position:0 -2443px}
+div.flags > div > div.option[data-value=JO], div.flags > div > div.option[data-value=jo], .country-JO {background-position:0 -2465px}
+div.flags > div > div.option[data-value=JP], div.flags > div > div.option[data-value=ja], div.flags > div > div.option[data-value=jp], .country-JP, .country-JA {background-position:0 -2487px}
+div.flags > div > div.option[data-value=KE], div.flags > div > div.option[data-value=ke], .country-KE {background-position:0 -2509px}
+div.flags > div > div.option[data-value=KG], div.flags > div > div.option[data-value=kg], .country-KG {background-position:0 -2531px}
+div.flags > div > div.option[data-value=KH], div.flags > div > div.option[data-value=kh], .country-KH {background-position:0 -2553px}
+div.flags > div > div.option[data-value=KI], div.flags > div > div.option[data-value=ki], .country-KI {background-position:0 -2575px}
+div.flags > div > div.option[data-value=KM], div.flags > div > div.option[data-value=km], .country-KM {background-position:0 -2597px}
+div.flags > div > div.option[data-value=KN], div.flags > div > div.option[data-value=kn], .country-KN {background-position:0 -2619px}
+div.flags > div > div.option[data-value=KP], div.flags > div > div.option[data-value=kp], .country-KP {background-position:0 -2641px}
+div.flags > div > div.option[data-value=KR], div.flags > div > div.option[data-value=kr], .country-KR {background-position:0 -2663px}
+div.flags > div > div.option[data-value=KW], div.flags > div > div.option[data-value=kw], .country-KW {background-position:0 -2685px}
+div.flags > div > div.option[data-value=KY], div.flags > div > div.option[data-value=ky], .country-KY {background-position:0 -2707px}
+div.flags > div > div.option[data-value=KZ], div.flags > div > div.option[data-value=kz], .country-KZ {background-position:0 -2729px}
+div.flags > div > div.option[data-value=LA], div.flags > div > div.option[data-value=la], .country-LA {background-position:0 -2751px}
+div.flags > div > div.option[data-value=LB], div.flags > div > div.option[data-value=lb], .country-LB {background-position:0 -2773px}
+div.flags > div > div.option[data-value=LC], div.flags > div > div.option[data-value=lc], .country-LC {background-position:0 -2795px}
+div.flags > div > div.option[data-value=LI], div.flags > div > div.option[data-value=li], .country-LI {background-position:0 -2817px}
+div.flags > div > div.option[data-value=LK], div.flags > div > div.option[data-value=lk], .country-LK {background-position:0 -2839px}
+div.flags > div > div.option[data-value=LR], div.flags > div > div.option[data-value=lr], .country-LR {background-position:0 -2861px}
+div.flags > div > div.option[data-value=LS], div.flags > div > div.option[data-value=ls], .country-LS {background-position:0 -2883px}
+div.flags > div > div.option[data-value=LT], div.flags > div > div.option[data-value=lt], .country-LT {background-position:0 -2905px}
+div.flags > div > div.option[data-value=LU], div.flags > div > div.option[data-value=lu], .country-LU {background-position:0 -2927px}
+div.flags > div > div.option[data-value=LV], div.flags > div > div.option[data-value=lv], .country-LV {background-position:0 -2949px}
+div.flags > div > div.option[data-value=LY], div.flags > div > div.option[data-value=ly], .country-LY {background-position:0 -2971px}
+div.flags > div > div.option[data-value=MA], div.flags > div > div.option[data-value=ma], .country-MA {background-position:0 -2993px}
+div.flags > div > div.option[data-value=MC], div.flags > div > div.option[data-value=mc], .country-MC {background-position:0 -3015px}
+div.flags > div > div.option[data-value=MD], div.flags > div > div.option[data-value=md], .country-MD {background-position:0 -3037px}
+div.flags > div > div.option[data-value=ME], div.flags > div > div.option[data-value=me], .country-ME {background-position:0 -3059px}
+div.flags > div > div.option[data-value=MG], div.flags > div > div.option[data-value=mg], .country-MG {background-position:0 -3081px}
+div.flags > div > div.option[data-value=MH], div.flags > div > div.option[data-value=mh], .country-MH {background-position:0 -3103px}
+div.flags > div > div.option[data-value=MK], div.flags > div > div.option[data-value=mk], .country-MK {background-position:0 -3125px}
+div.flags > div > div.option[data-value=ML], div.flags > div > div.option[data-value=ml], .country-ML {background-position:0 -3147px}
+div.flags > div > div.option[data-value=MM], div.flags > div > div.option[data-value=mm], .country-MM {background-position:0 -3169px}
+div.flags > div > div.option[data-value=MN], div.flags > div > div.option[data-value=mn], .country-MN {background-position:0 -3191px}
+div.flags > div > div.option[data-value=MO], div.flags > div > div.option[data-value=mo], .country-MO {background-position:0 -3213px}
+div.flags > div > div.option[data-value=MP], div.flags > div > div.option[data-value=mp], .country-MP {background-position:0 -3235px}
+div.flags > div > div.option[data-value=MQ], div.flags > div > div.option[data-value=mq], .country-MQ {background-position:0 -3257px}
+div.flags > div > div.option[data-value=MR], div.flags > div > div.option[data-value=mr], .country-MR {background-position:0 -3279px}
+div.flags > div > div.option[data-value=MS], div.flags > div > div.option[data-value=ms], .country-MS {background-position:0 -3301px}
+div.flags > div > div.option[data-value=MT], div.flags > div > div.option[data-value=mt], .country-MT {background-position:0 -3323px}
+div.flags > div > div.option[data-value=MU], div.flags > div > div.option[data-value=mu], .country-MU {background-position:0 -3345px}
+div.flags > div > div.option[data-value=MV], div.flags > div > div.option[data-value=mv], .country-MV {background-position:0 -3367px}
+div.flags > div > div.option[data-value=MW], div.flags > div > div.option[data-value=mw], .country-MW {background-position:0 -3389px}
+div.flags > div > div.option[data-value=MX], div.flags > div > div.option[data-value=mx], .country-MX {background-position:0 -3411px}
+div.flags > div > div.option[data-value=MY], div.flags > div > div.option[data-value=my], .country-MY {background-position:0 -3433px}
+div.flags > div > div.option[data-value=MZ], div.flags > div > div.option[data-value=mz], .country-MZ {background-position:0 -3455px}
+div.flags > div > div.option[data-value=NA], div.flags > div > div.option[data-value=na], .country-NA {background-position:0 -3477px}
+div.flags > div > div.option[data-value=NC], div.flags > div > div.option[data-value=nc], .country-NC {background-position:0 -3499px}
+div.flags > div > div.option[data-value=NE], div.flags > div > div.option[data-value=ne], .country-NE {background-position:0 -3521px}
+div.flags > div > div.option[data-value=NF], div.flags > div > div.option[data-value=nf], .country-NF {background-position:0 -3543px}
+div.flags > div > div.option[data-value=NG], div.flags > div > div.option[data-value=ng], .country-NG {background-position:0 -3565px}
+div.flags > div > div.option[data-value=NI], div.flags > div > div.option[data-value=ni], .country-NI {background-position:0 -3587px}
+div.flags > div > div.option[data-value=NL], div.flags > div > div.option[data-value=nl], .country-NL {background-position:0 -3609px}
+div.flags > div > div.option[data-value=NO], div.flags > div > div.option[data-value=no], .country-NO {background-position:0 -3631px}
+div.flags > div > div.option[data-value=NP], div.flags > div > div.option[data-value=np], .country-NP {background-position:0 -3653px}
+div.flags > div > div.option[data-value=NR], div.flags > div > div.option[data-value=nr], .country-NR {background-position:0 -3675px}
+div.flags > div > div.option[data-value=NU], div.flags > div > div.option[data-value=nu], .country-NU {background-position:0 -3697px}
+div.flags > div > div.option[data-value=NZ], div.flags > div > div.option[data-value=nz], .country-NZ {background-position:0 -3719px}
+div.flags > div > div.option[data-value=OM], div.flags > div > div.option[data-value=om], .country-OM {background-position:0 -3741px}
+div.flags > div > div.option[data-value=PA], div.flags > div > div.option[data-value=pa], .country-PA {background-position:0 -3763px}
+div.flags > div > div.option[data-value=PE], div.flags > div > div.option[data-value=pe], .country-PE {background-position:0 -3785px}
+div.flags > div > div.option[data-value=PF], div.flags > div > div.option[data-value=pf], .country-PF {background-position:0 -3807px}
+div.flags > div > div.option[data-value=PG], div.flags > div > div.option[data-value=pg], .country-PG {background-position:0 -3829px}
+div.flags > div > div.option[data-value=PH], div.flags > div > div.option[data-value=ph], .country-PH {background-position:0 -3851px}
+div.flags > div > div.option[data-value=PK], div.flags > div > div.option[data-value=pk], .country-PK {background-position:0 -3873px}
+div.flags > div > div.option[data-value=PL], div.flags > div > div.option[data-value=pl], .country-PL {background-position:0 -3895px}
+div.flags > div > div.option[data-value=PM], div.flags > div > div.option[data-value=pm], .country-PM {background-position:0 -3917px}
+div.flags > div > div.option[data-value=PN], div.flags > div > div.option[data-value=pn], .country-PN {background-position:0 -3939px}
+div.flags > div > div.option[data-value=PR], div.flags > div > div.option[data-value=pr], .country-PR {background-position:0 -3961px}
+div.flags > div > div.option[data-value=PS], div.flags > div > div.option[data-value=ps], .country-PS {background-position:0 -3983px}
+div.flags > div > div.option[data-value=PT], div.flags > div > div.option[data-value=pt], .country-PT {background-position:0 -4005px}
+div.flags > div > div.option[data-value=PW], div.flags > div > div.option[data-value=pw], .country-PW {background-position:0 -4027px}
+div.flags > div > div.option[data-value=PY], div.flags > div > div.option[data-value=py], .country-PY {background-position:0 -4049px}
+div.flags > div > div.option[data-value=QA], div.flags > div > div.option[data-value=qa], .country-QA {background-position:0 -4071px}
+div.flags > div > div.option[data-value=RE], div.flags > div > div.option[data-value=re], .country-RE {background-position:0 -4093px}
+div.flags > div > div.option[data-value=RO], div.flags > div > div.option[data-value=ro], .country-RO {background-position:0 -4115px}
+div.flags > div > div.option[data-value=RS], div.flags > div > div.option[data-value=rs], .country-RS {background-position:0 -4137px}
+div.flags > div > div.option[data-value=RU], div.flags > div > div.option[data-value=ru], .country-RU {background-position:0 -4159px}
+div.flags > div > div.option[data-value=RW], div.flags > div > div.option[data-value=rw], .country-RW {background-position:0 -4181px}
+div.flags > div > div.option[data-value=SA], div.flags > div > div.option[data-value=sa], .country-SA {background-position:0 -4203px}
+div.flags > div > div.option[data-value=SB], div.flags > div > div.option[data-value=sb], .country-SB {background-position:0 -4225px}
+div.flags > div > div.option[data-value=SC], div.flags > div > div.option[data-value=sc], .country-SC {background-position:0 -4247px}
+div.flags > div > div.option[data-value=SD], div.flags > div > div.option[data-value=sd], .country-SD {background-position:0 -4291px}
+div.flags > div > div.option[data-value=SE], div.flags > div > div.option[data-value=se], .country-SE {background-position:0 -4313px}
+div.flags > div > div.option[data-value=SG], div.flags > div > div.option[data-value=sg], .country-SG {background-position:0 -4335px}
+div.flags > div > div.option[data-value=SH], div.flags > div > div.option[data-value=sh], .country-SH {background-position:0 -4357px}
+div.flags > div > div.option[data-value=SI], div.flags > div > div.option[data-value=si], .country-SI {background-position:0 -4379px}
+div.flags > div > div.option[data-value=SJ], div.flags > div > div.option[data-value=sj], .country-SJ {background-position:0 -4401px}
+div.flags > div > div.option[data-value=SK], div.flags > div > div.option[data-value=sk], .country-SK {background-position:0 -4423px}
+div.flags > div > div.option[data-value=SL], div.flags > div > div.option[data-value=sl], .country-SL {background-position:0 -4445px}
+div.flags > div > div.option[data-value=SM], div.flags > div > div.option[data-value=sm], .country-SM {background-position:0 -4467px}
+div.flags > div > div.option[data-value=SN], div.flags > div > div.option[data-value=sn], .country-SN {background-position:0 -4489px}
+div.flags > div > div.option[data-value=SO], div.flags > div > div.option[data-value=so], .country-SO {background-position:0 -4511px}
+div.flags > div > div.option[data-value=SR], div.flags > div > div.option[data-value=sr], .country-SR {background-position:0 -4533px}
+div.flags > div > div.option[data-value=ST], div.flags > div > div.option[data-value=st], .country-ST {background-position:0 -4555px}
+div.flags > div > div.option[data-value=SV], div.flags > div > div.option[data-value=sv], .country-SV {background-position:0 -4577px}
+div.flags > div > div.option[data-value=SY], div.flags > div > div.option[data-value=sy], .country-SY {background-position:0 -4599px}
+div.flags > div > div.option[data-value=SZ], div.flags > div > div.option[data-value=sz], .country-SZ {background-position:0 -4621px}
+div.flags > div > div.option[data-value=TC], div.flags > div > div.option[data-value=tc], .country-TC {background-position:0 -4643px}
+div.flags > div > div.option[data-value=TD], div.flags > div > div.option[data-value=td], .country-TD {background-position:0 -4665px}
+div.flags > div > div.option[data-value=TF], div.flags > div > div.option[data-value=tf], .country-TF {background-position:0 -4687px}
+div.flags > div > div.option[data-value=TG], div.flags > div > div.option[data-value=tg], .country-TG {background-position:0 -4709px}
+div.flags > div > div.option[data-value=TH], div.flags > div > div.option[data-value=th], .country-TH {background-position:0 -4731px}
+div.flags > div > div.option[data-value=TJ], div.flags > div > div.option[data-value=tj], .country-TJ {background-position:0 -4753px}
+div.flags > div > div.option[data-value=TK], div.flags > div > div.option[data-value=tk], .country-TK {background-position:0 -4775px}
+div.flags > div > div.option[data-value=TL], div.flags > div > div.option[data-value=tl], .country-TL {background-position:0 -4797px}
+div.flags > div > div.option[data-value=TM], div.flags > div > div.option[data-value=tm], .country-TM {background-position:0 -4819px}
+div.flags > div > div.option[data-value=TN], div.flags > div > div.option[data-value=tn], .country-TN {background-position:0 -4841px}
+div.flags > div > div.option[data-value=TO], div.flags > div > div.option[data-value=to], .country-TO {background-position:0 -4863px}
+div.flags > div > div.option[data-value=TR], div.flags > div > div.option[data-value=tr], .country-TR {background-position:0 -4885px}
+div.flags > div > div.option[data-value=TT], div.flags > div > div.option[data-value=tt], .country-TT {background-position:0 -4907px}
+div.flags > div > div.option[data-value=TV], div.flags > div > div.option[data-value=tv], .country-TV {background-position:0 -4929px}
+div.flags > div > div.option[data-value=TW], div.flags > div > div.option[data-value=tw], .country-TW {background-position:0 -4951px}
+div.flags > div > div.option[data-value=TZ], div.flags > div > div.option[data-value=tz], .country-TZ {background-position:0 -4973px}
+div.flags > div > div.option[data-value=UA], div.flags > div > div.option[data-value=ua], .country-UA {background-position:0 -4995px}
+div.flags > div > div.option[data-value=UG], div.flags > div > div.option[data-value=ug], .country-UG {background-position:0 -5017px}
+div.flags > div > div.option[data-value=UM], div.flags > div > div.option[data-value=um], .country-UM {background-position:0 -5039px}
+div.flags > div > div.option[data-value=US], div.flags > div > div.option[data-value=us], .country-US {background-position:0 -5061px}
+div.flags > div > div.option[data-value=UY], div.flags > div > div.option[data-value=uy], .country-UY {background-position:0 -5083px}
+div.flags > div > div.option[data-value=UZ], div.flags > div > div.option[data-value=uz], .country-UZ {background-position:0 -5105px}
+div.flags > div > div.option[data-value=VA], div.flags > div > div.option[data-value=va], .country-VA {background-position:0 -5127px}
+div.flags > div > div.option[data-value=VC], div.flags > div > div.option[data-value=vc], .country-VC {background-position:0 -5149px}
+div.flags > div > div.option[data-value=VE], div.flags > div > div.option[data-value=ve], .country-VE {background-position:0 -5171px}
+div.flags > div > div.option[data-value=VG], div.flags > div > div.option[data-value=vg], .country-VG {background-position:0 -5193px}
+div.flags > div > div.option[data-value=VI], div.flags > div > div.option[data-value=vi], .country-VI {background-position:0 -5215px}
+div.flags > div > div.option[data-value=VN], div.flags > div > div.option[data-value=vn], .country-VN {background-position:0 -5237px}
+div.flags > div > div.option[data-value=VU], div.flags > div > div.option[data-value=vu], .country-VU {background-position:0 -5259px}
+div.flags > div > div.option[data-value=WF], div.flags > div > div.option[data-value=wf], .country-WF {background-position:0 -5303px}
+div.flags > div > div.option[data-value=WS], div.flags > div > div.option[data-value=ws], .country-WS {background-position:0 -5325px}
+div.flags > div > div.option[data-value=YE], div.flags > div > div.option[data-value=ye], .country-YE {background-position:0 -5347px}
+div.flags > div > div.option[data-value=YT], div.flags > div > div.option[data-value=yt], .country-YT {background-position:0 -5369px}
+div.flags > div > div.option[data-value=ZA], div.flags > div > div.option[data-value=za], .country-ZA {background-position:0 -5391px}
+div.flags > div > div.option[data-value=ZM], div.flags > div > div.option[data-value=zm], .country-ZM {background-position:0 -5413px}
+div.flags > div > div.option[data-value=ZW], div.flags > div > div.option[data-value=zw], .country-ZW {background-position:0 -5435px}
+
+
+div.group-icon {
+    float: left;
+    padding: 2px 0;
+}
+
+.group-admin,
+.group-user {
+    height: 20px;
+    width: 20px;
+    padding: 0;
+    float: left;
+    background: url("../../themes/default/icons/x16_sprite.png") no-repeat transparent;
+
+}
+.group-admin { background-position: 0 -380px; }
+.group-user { background-position: 0 -400px; }
+
+.current-page {
+    font-weight: bold;
+}
+
+.ui-datepicker-month,
+.ui-datepicker-year{
+    color: black;
+}
+
+
+
+/* GlobalSearch */
+ul.gs-resultbox {
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 300px;
+    z-index: 999999;
+    border: 1px solid #777;
+    font-size: 11px;
+    background: #fff;
+    -moz-box-shadow: 2px 2px 5px 0 #c5c5c5;
+    -webkit-box-shadow: 2px 2px 5px 0 #c5c5c5;
+    -khtml-box-shadow: 2px 2px 5px 0 #c5c5c5;
+    -o-box-shadow: 2px 2px 5px 0 #c5c5c5;
+    -ms-box-shadow: 2px 2px 5px 0 #c5c5c5;
+    box-shadow: 2px 2px 5px 0 #c5c5c5;
+    list-style: none;
+    -moz-border-radius:5px;
+    -webkit-border-radius:5px;
+    -khtml-border-radius:5px;
+    -o-border-radius:5px;
+    -ms-border-radius:5px;
+    border-radius:5px;
+    max-height:500px;
+    overflow:auto;
+}
+ul.gs-resultbox li {
+    float: left;
+    width: 100%;
+    clear: both;
+    cursor: pointer;
+}
+ul.gs-resultbox li.gs-cheader {
+    height: 13px;
+    overflow: hidden;
+    padding: 5px 0;
+    color: #fff;
+    background: #2251A3;
+    cursor:default;
+    padding-bottom:30px;
+}
+ul.gs-resultbox li.gs-cheader p.gs-cheader-title {
+    margin: 0 !important;
+    padding: 0 0 0 10px !important;
+    float: left;
+    font-size: 12px;
+    font-weight: bold;
+}
+ul.gs-resultbox li.gs-cheader p.gs-cheader-limit {
+    margin: 0 !important;
+    padding: 0 10px 0 0 !important;
+    float: right;
+    font-size: 11px;
+    font-weight: normal;
+}
+ul.gs-resultbox li.gs-cdata {
+    margin: 0 !important;
+    padding: 0 !important;
+    border-bottom: 1px solid #c5c5c5;
+}
+ul.gs-resultbox li.gs-cdata:last-child {
+    border-bottom: none;
+}
+ul.gs-resultbox li.gs-cdata:hover {
+    background: #eaf4fd;
+}
+ul.gs-resultbox li.gs-cdata a {
+    display: block;
+    padding: 5px 10px;
+    text-decoration: none !important;
+    background: #fff;
+}
+ul.gs-resultbox li.gs-cdata a:hover {
+    background: #cde0ff;
+}
+ul.gs-resultbox li.gs-cdata img {
+    margin-right: 12px;
+}
+ul.gs-resultbox li.gs-cdata p {
+    margin: 0 !important;
+    padding: 0 !important;
+    color: #444;
+    font-size: 10px;
+    min-height:30px;
+}
+ul.gs-resultbox li.gs-cdata p span.gs-cdata-title {
+    display: inline !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    font-size: 11px;
+    font-weight: bold;
+    color: #000;
+}
+ul.gs-resultbox li:first-child {
+    -moz-border-radius:5px 5px 0 0;
+    -webkit-border-radius:5px 5px 0 0;
+    -khtml-border-radius:5px 5px 0 0;
+    -o-border-radius:5px 5px 0 0;
+    -ms-border-radius:5px 5px 0 0;
+    border-radius:5px 5px 0 0;
+}
+ul.gs-resultbox li:last-child {
+    -moz-border-radius:0 0 5px 5px;
+    -webkit-border-radius:0 0 5px 5px;
+    -khtml-border-radius:0 0 5px 5px;
+    -o-border-radius:0 0 5px 5px;
+    -ms-border-radius:0 0 5px 5px;
+    border-radius:0 0 5px 5px;
+}
+/* END GlobalSearch */
+
+/* Suggestion Box (like DNS zone Wizard - IP Address)*/
+ul.df-resultbox {
+    margin: 0 !important;
+    padding: 0 !important;
+    min-width: 250px;
+    max-width: 500px;
+    z-index: 999999;
+    border: 1px solid #777;
+    font-size: 11px;
+    background: #fff;
+    -moz-box-shadow: 2px 2px 5px 0 #c5c5c5;
+    -webkit-box-shadow: 2px 2px 5px 0 #c5c5c5;
+    -khtml-box-shadow: 2px 2px 5px 0 #c5c5c5;
+    -o-box-shadow: 2px 2px 5px 0 #c5c5c5;
+    -ms-box-shadow: 2px 2px 5px 0 #c5c5c5;
+    box-shadow: 2px 2px 5px 0 #c5c5c5;
+    list-style: none;
+    -moz-border-radius:5px;
+    -webkit-border-radius:5px;
+    -khtml-border-radius:5px;
+    -o-border-radius:5px;
+    -ms-border-radius:5px;
+    border-radius:5px;
+}
+ul.df-resultbox li {
+    float: left;
+    width: 100%;
+    clear: both;
+    cursor: pointer;
+}
+ul.df-resultbox li.df-cheader {
+    height: 13px;
+    overflow: hidden;
+    padding: 5px 0;
+    color: #fff;
+    background: #2251A3;
+    cursor:default;
+    padding-bottom:30px;
+}
+ul.df-resultbox li.df-cheader p.df-cheader-title {
+    margin: 0 !important;
+    padding: 0 0 0 10px !important;
+    float: left;
+    font-size: 12px;
+    font-weight: bold;
+}
+ul.df-resultbox li.df-cheader p.df-cheader-limit {
+    margin: 0 !important;
+    padding: 0 10px 0 0 !important;
+    float: right;
+    font-size: 11px;
+    font-weight: normal;
+}
+ul.df-resultbox li.df-cdata {
+    margin: 0 !important;
+    padding: 0 !important;
+    border-bottom: 1px solid #c5c5c5;
+}
+ul.df-resultbox li.df-cdata:last-child {
+    border-bottom: none;
+}
+ul.df-resultbox li.df-cdata:hover {
+    background: #eaf4fd;
+}
+ul.df-resultbox li.df-cdata a {
+    display: block;
+    padding: 5px 10px;
+    text-decoration: none !important;
+    background: #fff;
+}
+ul.df-resultbox li.df-cdata a:hover {
+    background: #cde0ff;
+}
+ul.df-resultbox li.df-cdata img {
+    margin-right: 12px;
+}
+ul.df-resultbox li.df-cdata p {
+    margin: 0 !important;
+    padding: 0 !important;
+    color: #444;
+    font-size: 10px;
+    min-height:30px;
+}
+ul.df-resultbox li.df-cdata p span.df-cdata-title {
+    display: inline !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    font-size: 11px;
+    font-weight: bold;
+    color: #000;
+}
+ul.df-resultbox li:first-child {
+    -moz-border-radius:5px 5px 0 0;
+    -webkit-border-radius:5px 5px 0 0;
+    -khtml-border-radius:5px 5px 0 0;
+    -o-border-radius:5px 5px 0 0;
+    -ms-border-radius:5px 5px 0 0;
+    border-radius:5px 5px 0 0;
+}
+ul.df-resultbox li:last-child {
+    -moz-border-radius:0 0 5px 5px;
+    -webkit-border-radius:0 0 5px 5px;
+    -khtml-border-radius:0 0 5px 5px;
+    -o-border-radius:0 0 5px 5px;
+    -ms-border-radius:0 0 5px 5px;
+    border-radius:0 0 5px 5px;
+}
+/* END Suggestion Box */

@@ -1,0 +1,60 @@
+<h2><tmpl_var name="list_head_txt"></h2>
+<p><tmpl_var name="list_desc_txt"></p>
+
+<div class="container-fluid ">
+  
+            <div class="form-group container-fluid">
+                <label class="control-label col-md-2" for="repo_name">{tmpl_var name='repo_name_txt'}</label>
+                <div class="col-md-6">
+                    <input class="form-control" name="repo_name" id="repo_name" value="{tmpl_var name='repo_name'}" type="text" />
+                </div>
+            </div>
+            <div class="form-group container-fluid">
+                <label class="control-label col-md-2" for="repo_url">{tmpl_var name='repo_url_txt'}</label>
+                <div class="col-md-6">
+                    <input class="form-control" name="repo_url" id="repo_url" value="{tmpl_var name='repo_url'}" type="text"  />
+                </div>
+            </div>
+            <div class="form-group container-fluid">
+                <label class="control-label col-md-2" for="repo_username">{tmpl_var name='repo_username_txt'}</label>
+                <div class="col-md-6">
+                    <input class="form-control" name="repo_username" id="repo_username" value="{tmpl_var name='repo_username'}"  type="text" autocomplete="off" />
+                </div>
+            </div>
+            <div class="form-group container-fluid">
+                <label class="control-label col-md-2" for="repo_password">{tmpl_var name='repo_password_txt'}</label>
+                <div class="col-md-6">
+                    <input class="form-control" name="repo_password" id="repo_password" value="{tmpl_var name='repo_password'}" type="password" autocomplete="off" />
+                </div>
+            </div>
+            <div class="form-group container-fluid">
+                <label class="control-label col-md-2" for="active_cb">
+                    {tmpl_var name='active_txt'}
+                </label>
+                <div class="col-md-10">
+                    <div id="active_cb" class="checkbox check-success">
+                        {tmpl_var name='active'}
+                    </div>
+                </div>
+            </div>
+            
+        <input type="hidden" name="id" value="{tmpl_var name='id'}">
+            
+        <div class="container-fluid form-group">
+            <div class="col-sm-offset-2">
+                <button class="positive btn " type="button" value="{tmpl_var name='btn_save_txt'}" onclick="submitForm('pageForm','admin/software_repo_edit.php');"><span><span class="glyphicon glyphicon-ok"></span> {tmpl_var name='btn_save_txt'}</span></button>
+                <button class="negative btn " type="button" value="{tmpl_var name='btn_cancel_txt'}" onclick="loadContent('admin/software_repo_list.php');"><span><span class="glyphicon glyphicon-remove"></span> {tmpl_var name='btn_cancel_txt'}</span></button>
+            </div>
+        </div>
+  
+</div>
+
+
+<!-- switchery script -->
+<script>
+    var elems = Array.prototype.slice.call(document.querySelectorAll('.switchery'));
+    // Success color: #10CFBD
+    elems.forEach(function(html) {
+        var switchery = new Switchery(html, {color: '#10CFBD'});
+    });
+</script>

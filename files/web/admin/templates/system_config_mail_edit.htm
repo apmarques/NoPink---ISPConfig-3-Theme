@@ -1,0 +1,123 @@
+<h2><tmpl_var name="list_head_txt"></h2>
+<p><tmpl_var name="list_desc_txt"></p>
+
+<div class="container-fluid ">
+  
+    <div class="form-group container-fluid">
+        <label class="control-label col-md-2" for="enable_custom_login_cb">
+            {tmpl_var name='enable_custom_login_txt'}
+        </label>
+        <div class="col-md-10">
+            <div id="enable_custom_login_cb" class="checkbox check-success">
+                {tmpl_var name='enable_custom_login'}
+            </div>
+        </div>
+    </div>
+    <div class="form-group container-fluid">
+        <label class="control-label col-md-2" for="mailboxlist_webmail_link_cb">
+            {tmpl_var name='mailboxlist_webmail_link_txt'}
+        </label>
+        <div class="col-md-10">
+            <div id="mailboxlist_webmail_link_cb" class="checkbox check-success">
+                {tmpl_var name='mailboxlist_webmail_link'}
+            </div>
+        </div>
+    </div>
+    <div class="form-group container-fluid">
+        <label class="control-label col-md-2" for="webmail_url">{tmpl_var name='webmail_url_txt'}</label>
+        <div class="col-md-6">
+            <input class="form-control" name="webmail_url" id="webmail_url" value="{tmpl_var name='webmail_url'}" type="text"  />
+            <div class="help-block">{tmpl_var name='webmail_url_note_txt'} <a href="javascript:void(0);" class="addPlaceholder">[SERVERNAME]</a></div>
+        </div>
+    </div>
+    <div class="form-group container-fluid">
+        <label class="control-label col-md-2" for="mailmailinglist_link_cb">
+            {tmpl_var name='mailmailinglist_link_txt'}
+        </label>
+        <div class="col-md-10">
+            <div id="mailmailinglist_link_cb" class="checkbox check-success">
+                {tmpl_var name='mailmailinglist_link'}
+            </div>
+        </div>
+    </div>
+    <div class="form-group container-fluid">
+        <label class="control-label col-md-2" for="mailmailinglist_url">{tmpl_var name='mailmailinglist_url_txt'}</label>
+        <div class="col-md-6">
+            <input class="form-control" name="mailmailinglist_url" id="mailmailinglist_url" value="{tmpl_var name='mailmailinglist_url'}"  type="text"  />
+        </div>
+    </div>
+    <div class="form-group container-fluid">
+        <label class="control-label col-md-2" for="admin_mail">{tmpl_var name='admin_mail_txt'}</label>
+        <div class="col-md-6">
+            <input class="form-control" name="admin_mail" id="admin_mail" value="{tmpl_var name='admin_mail'}" type="text" />
+        </div>
+    </div>
+    <div class="form-group container-fluid">
+        <label class="control-label col-md-2" for="admin_name">{tmpl_var name='admin_name_txt'}</label>
+        <div class="col-md-6">
+            <input class="form-control" name="admin_name" id="admin_name" value="{tmpl_var name='admin_name'}"  type="text" />
+        </div>
+    </div>
+    <div class="form-group container-fluid">
+        <label class="control-label col-md-2" for="smtp_enabled_cb">
+            {tmpl_var name='smtp_enabled_txt'}
+        </label>
+        <div class="col-md-10">
+            <div id="smtp_enabled_cb" class="checkbox check-success">
+                {tmpl_var name='smtp_enabled'}
+            </div>
+        </div>
+    </div>
+    <div class="form-group container-fluid">
+        <label class="control-label col-md-2" for="smtp_host">{tmpl_var name='smtp_host_txt'}</label>
+        <div class="col-md-6">
+            <input class="form-control" name="smtp_host" id="smtp_host" value="{tmpl_var name='smtp_host'}"  type="text" />
+        </div>
+    </div>
+    <div class="form-group container-fluid">
+        <label class="control-label col-md-2" for="smtp_port">{tmpl_var name='smtp_port_txt'}</label>
+        <div class="col-md-6">
+            <input class="form-control" name="smtp_port" id="smtp_port" value="{tmpl_var name='smtp_port'}"  type="text"  />
+        </div>
+    </div>
+    <div class="form-group container-fluid">
+        <label class="control-label col-md-2" for="smtp_user">{tmpl_var name='smtp_user_txt'}</label>
+        <div class="col-md-6">
+            <input class="form-control" name="smtp_user" id="smtp_user" value="{tmpl_var name='smtp_user'}"  type="text" autocomplete="off"  />
+        </div>
+    </div>
+    <div class="form-group container-fluid">
+        <label class="control-label col-md-2" for="smtp_pass">{tmpl_var name='smtp_pass_txt'}</label>
+        <div class="col-md-6">
+            <input class="form-control" name="smtp_pass" id="smtp_pass" value=""  type="password" autocomplete="off"  />
+        </div>
+    </div>
+    <div class="form-group container-fluid">
+        <label class="control-label col-md-2" for="smtp_crypt">{tmpl_var name='smtp_crypt_txt'}</label>
+        <div class="col-md-3">
+            <select class="selectize form-control" name="smtp_crypt" id="smtp_crypt" class=" formLengthHalf">
+                {tmpl_var name='smtp_crypt'}
+            </select>
+        </div>
+    </div>
+            
+    <input type="hidden" name="id" value="{tmpl_var name='id'}">
+
+    <div class="container-fluid form-group">
+        <div class="col-sm-offset-2">
+            <button class="positive btn " type="button" value="{tmpl_var name='btn_save_txt'}" onclick="submitForm('pageForm','admin/system_config_edit.php');"><span><span class="glyphicon glyphicon-ok"></span> {tmpl_var name='btn_save_txt'}</span></button>
+            <button class="negative btn " type="button" value="{tmpl_var name='btn_cancel_txt'}" onclick="loadContent('admin/users_list.php');"><span><span class="glyphicon glyphicon-remove"></span> {tmpl_var name='btn_cancel_txt'}</span></button>
+        </div>
+    </div>
+  
+</div>
+
+
+<!-- switchery script -->
+<script>
+    var elems = Array.prototype.slice.call(document.querySelectorAll('.switchery'));
+    // Success color: #10CFBD
+    elems.forEach(function(html) {
+        var switchery = new Switchery(html, {color: '#10CFBD'});
+    });
+</script>

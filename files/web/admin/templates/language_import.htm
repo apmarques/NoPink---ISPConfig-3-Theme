@@ -1,0 +1,68 @@
+<div class="panel-heading separator">
+    <h2><tmpl_var name="list_head_txt"></h2>
+    <p><tmpl_var name="list_desc_txt"></p>
+</div>
+<div class="panel-body">
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <div class="container-fluid">
+
+                <legend>Language Import</legend>
+
+                <div class="form-group container-fluid">
+                    <label class="control-label col-md-2" for="lng_select">{tmpl_var name='language_import_txt'}</label>
+                    <div class="col-md-6">
+                        <input name="file" id="file" type="file" class="fileUpload" />
+                    </div>
+                </div>
+                <div class="form-group container-fluid">
+                    <label class="control-label col-md-2" for="language_overwrite_cb" >
+                        {tmpl_var name='language_overwrite_txt'}
+                    </label>
+                    <div class="col-md-10">
+                        <div id="language_overwrite_cb" class="checkbox check-success">
+                            <input class="switchery" id="overwrite" type="checkbox" value="1" name="overwrite"/>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group container-fluid">
+                    <label class="control-label col-md-2" for="ignore_version_cb">
+                        {tmpl_var name='ignore_version_txt'}
+                    </label>
+                    <div class="col-md-10">
+                        <div id="ignore_version_cb" class="checkbox check-success">
+                            <input class="switchery" id="ignore_version" type="checkbox" value="1" name="ignore_version"/>
+                        </div>
+                    </div>
+                </div>
+
+
+                <tmpl_if name="msg">
+                    <div id="OKMsg"><p><tmpl_var name="msg"></p></div>
+                </tmpl_if>
+                <tmpl_if name="error">
+                    <div id="errorMsg"><h3>ERROR</h3><ol><tmpl_var name="error"></ol></div>
+                </tmpl_if>
+
+                <input type="hidden" name="id" value="{tmpl_var name='id'}">
+
+                <div class="container-fluid form-group">
+                    <div class="col-sm-offset-2">
+                        <button class="positive btn " type="button" value="{tmpl_var name='btn_save_txt'}" onclick="submitUploadForm('pageForm','admin/language_import.php');"><span><span class="glyphicon glyphicon-ok"></span> {tmpl_var name='btn_save_txt'}</span></button>
+                        <button class="negative btn " type="button" value="{tmpl_var name='btn_cancel_txt'}" onclick="loadContent('admin/language_list.php');"><span><span class="glyphicon glyphicon-remove"></span> {tmpl_var name='btn_cancel_txt'}</span></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- switchery script -->
+<script>
+    var elems = Array.prototype.slice.call(document.querySelectorAll('.switchery'));
+    // Success color: #10CFBD
+    elems.forEach(function(html) {
+        var switchery = new Switchery(html, {color: '#10CFBD'});
+    });
+</script>

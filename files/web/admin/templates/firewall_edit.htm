@@ -1,0 +1,56 @@
+<h2><tmpl_var name="list_head_txt"></h2>
+<p><tmpl_var name="list_desc_txt"></p>
+
+<div class="container-fluid ">
+  
+    <div class="form-group container-fluid">
+        <label class="control-label col-md-2" for="server_id">{tmpl_var name='server_id_txt'}</label>
+        <div class="col-md-3">
+            <select class="selectize form-control" name="server_id" id="server_id" >
+                {tmpl_var name='server_id'}
+            </select>
+        </div>
+    </div>
+    <div class="form-group container-fluid">
+        <label class="control-label col-md-2" for="tcp_port">{tmpl_var name='tcp_port_txt'}</label>
+        <div class="col-md-6">
+            <input class="form-control" name="tcp_port" id="tcp_port" value="{tmpl_var name='tcp_port'}"  type="text" />
+        </div>
+    </div>
+    <div class="form-group container-fluid">
+        <label class="control-label col-md-2" for="udp_port">{tmpl_var name='udp_port_txt'}</label>
+        <div class="col-md-6">
+            <input class="form-control" name="udp_port" id="udp_port" value="{tmpl_var name='udp_port'}"  type="text" />
+        </div>
+    </div>
+    <div class="form-group  container-fluid">
+        <label class="control-label col-md-2" for="active_cb">
+             {tmpl_var name='active_txt'}
+        </label>
+        <div class="col-md-10">
+            <div id="active_cb" class="checkbox check-success">
+                {tmpl_var name='active'}
+            </div>
+        </div>
+    </div>
+            
+    <input type="hidden" name="id" value="{tmpl_var name='id'}">
+        
+    <div class="container-fluid form-group">
+        <div class="col-sm-offset-2">
+            <button class="positive btn " type="button" value="{tmpl_var name='btn_save_txt'}" onclick="submitForm('pageForm','admin/firewall_edit.php');"><span><span class="glyphicon glyphicon-ok"></span> {tmpl_var name='btn_save_txt'}</span></button>
+            <button class="negative btn " type="button" value="{tmpl_var name='btn_cancel_txt'}" onclick="loadContent('admin/firewall_list.php');"><span><span><span class="glyphicon glyphicon-remove"></span> {tmpl_var name='btn_cancel_txt'}</span></button>
+        </div>
+    </div>
+  
+</div>
+
+
+<!-- switchery script -->
+<script>
+    var elems = Array.prototype.slice.call(document.querySelectorAll('.switchery'));
+    // Success color: #10CFBD
+    elems.forEach(function(html) {
+        var switchery = new Switchery(html, {color: '#10CFBD'});
+    });
+</script>

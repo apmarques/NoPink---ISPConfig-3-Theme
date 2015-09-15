@@ -1,0 +1,22 @@
+<div class="panel panel-default">
+	<div class="panel-heading" role="tab" id="headingOne">
+		<h4 class="panel-title">
+			<a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne" class="collapsed">
+				{tmpl_var name='available_modules_txt'}
+			</a>
+		</h4>
+	</div>
+	<div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+		<div class="panel-body">
+			<div class="container-fluid col-md-10">
+				<tmpl_loop name='modules'>
+					<div class="dashboard-modules {tmpl_var name='modules_name'}">
+						<a href="#" onclick="capp('{tmpl_var name='modules_name'}')">
+							{tmpl_var name='modules_title'}
+						</a>
+					</div>
+				</tmpl_loop>
+			</div>
+		</div>
+	</div>
+</div>

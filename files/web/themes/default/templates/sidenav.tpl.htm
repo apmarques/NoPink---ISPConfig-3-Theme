@@ -1,0 +1,23 @@
+<tmpl_loop name="nav_left">
+    <li class="">
+        <a href="javascript:;">
+            <span class="title"><tmpl_var name="title"></span>
+            <span class="arrow"></span>
+        </a>
+        <ul class="sub-menu" >
+            <tmpl_loop name="items">
+                    <li class="">
+                        <tmpl_if name="link">
+                            <a href="#"  onclick="loadContent('<tmpl_var name='link'>')">
+                        <tmpl_else>
+                            <a >
+                        </tmpl_if>
+                            <span class="title">
+                                <tmpl_var name="title">
+                            </span>
+                        </a>
+                    </li>
+            </tmpl_loop>
+        </ul>
+    </li>
+</tmpl_loop>

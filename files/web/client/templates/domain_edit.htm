@@ -1,0 +1,41 @@
+<p><tmpl_var name="list_desc_txt"></p>
+
+<div class="container-fluid ">
+
+    <div class="form-group container-fluid">
+        <label class="control-label col-md-2" for="domain">{tmpl_var name='domain_txt'}</label>
+        <div class="col-md-6">
+            <tmpl_if name="edit_disabled">
+            <input class="form-control" name="domain" id="domain" value="{tmpl_var name='domain'}" type="text"  disabled="disabled" />
+            <tmpl_else>
+            <input class="form-control" name="domain" id="domain" value="{tmpl_var name='domain'}"  type="text"  />
+            </tmpl_if>
+        </div>
+    </div>
+
+    <div class="form-group container-fluid">
+        <label class="control-label col-md-2" for="client_group_id">{tmpl_var name='client_txt'}</label>
+        <div class="col-md-3">
+            <tmpl_if name="edit_disabled">
+            <select class="selectize form-control" name="client_group_id" id="client_group_id"  disabled="disabled">
+                {tmpl_var name='client_group_id'}
+            </select>
+            <tmpl_else>
+            <select class="selectize form-control" name="client_group_id" id="client_group_id" >
+                {tmpl_var name='client_group_id'}
+            </select>
+            </tmpl_if>
+        </div>
+    </div>
+
+    <input type="hidden" name="id" value="{tmpl_var name='id'}">
+    <input type="hidden" name="type" value="local">
+
+    <div class="container-fluid form-group">
+        <div class="col-sm-offset-2">
+            <button class="positive btn " type="button" value="{tmpl_var name='btn_save_txt'}" onclick="submitForm('pageForm','client/domain_edit.php');"><span><span class="glyphicon glyphicon-ok"></span> {tmpl_var name='btn_save_txt'}</span></button>
+            <button class="negative btn " type="button" value="{tmpl_var name='btn_cancel_txt'}" onclick="loadContent('client/domain_list.php');"><span><span class="glyphicon glyphicon-remove"></span> {tmpl_var name='btn_cancel_txt'}</span></button>
+        </div>
+    </div>
+
+</div>

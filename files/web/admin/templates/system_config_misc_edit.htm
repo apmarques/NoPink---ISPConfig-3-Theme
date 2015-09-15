@@ -1,0 +1,197 @@
+<h2><tmpl_var name="list_head_txt"></h2>
+<p><tmpl_var name="list_desc_txt"></p>
+
+<div class="container-fluid ">
+    <legend>Misc</legend>
+    
+    <div class="form-group container-fluid">
+        <label class="control-label col-md-2" for="dashboard_atom_url_admin">{tmpl_var name='dashboard_atom_url_admin_txt'}</label>
+        <div class="col-md-6">
+            <input class="form-control" name="dashboard_atom_url_admin" id="dashboard_atom_url_admin" value="{tmpl_var name='dashboard_atom_url_admin'}" type="text" />
+        </div>
+    </div>
+    <div class="form-group container-fluid">
+        <label class="control-label col-md-2" for="dashboard_atom_url_reseller">{tmpl_var name='dashboard_atom_url_reseller_txt'}</label>
+        <div class="col-md-6">
+            <input class="form-control" name="dashboard_atom_url_reseller" id="dashboard_atom_url_reseller" value="{tmpl_var name='dashboard_atom_url_reseller'}" type="text"  />
+        </div>
+    </div>
+    <div class="form-group container-fluid">
+        <label class="control-label col-md-2" for="dashboard_atom_url_client">{tmpl_var name='dashboard_atom_url_client_txt'}</label>
+        <div class="col-md-6">
+            <input class="form-control" name="dashboard_atom_url_client" id="dashboard_atom_url_client" value="{tmpl_var name='dashboard_atom_url_client'}" type="text"  />
+        </div>
+    </div>
+    <div class="form-group container-fluid">
+        <label class="control-label col-md-2" for="monitor_key">{tmpl_var name='monitor_key_txt'}</label>
+        <div class="col-md-6">
+            <input class="form-control" name="monitor_key" id="monitor_key" value="{tmpl_var name='monitor_key'}" type="text" />
+        </div>
+    </div>
+    <div class="form-group container-fluid">
+        <label class="control-label col-md-2" for="admin_dashlets_left">{tmpl_var name='admin_dashlets_left_txt'}</label>
+        <div class="col-md-6">
+            <input class="form-control" name="admin_dashlets_left" id="admin_dashlets_left" value="{tmpl_var name='admin_dashlets_left'}" type="text"  />
+            <div class="help-block">
+                {tmpl_var name='available_dashlets_note_txt'}
+                {tmpl_var name="available_dashlets_txt"}
+            </div>
+        </div>
+    </div>
+    <div class="form-group container-fluid">
+        <label class="control-label col-md-2" for="admin_dashlets_right">{tmpl_var name='admin_dashlets_right_txt'}</label>
+        <div class="col-md-6">
+            <input class="form-control" name="admin_dashlets_right" id="admin_dashlets_right" value="{tmpl_var name='admin_dashlets_right'}" type="text"  />
+            <div class="help-block">{tmpl_var name='available_dashlets_note_txt'} {tmpl_var name="available_dashlets_txt"}</div>
+        </div>
+    </div>
+    <div class="form-group container-fluid">
+        <label class="control-label col-md-2" for="reseller_dashlets_left">{tmpl_var name='reseller_dashlets_left_txt'}</label>
+        <div class="col-md-6">
+            <input class="form-control" name="reseller_dashlets_left" id="reseller_dashlets_left" value="{tmpl_var name='reseller_dashlets_left'}" type="text"  />
+            <div class="help-block">{tmpl_var name='available_dashlets_note_txt'} {tmpl_var name="available_dashlets_txt"}</div>
+        </div>
+    </div>
+    <div class="form-group container-fluid">
+        <label class="control-label col-md-2" for="reseller_dashlets_right">{tmpl_var name='reseller_dashlets_right_txt'}</label>
+        <div class="col-md-6">
+            <input class="form-control" name="reseller_dashlets_right" id="reseller_dashlets_right" value="{tmpl_var name='reseller_dashlets_right'}" type="text" />
+            <div class="help-block">{tmpl_var name='available_dashlets_note_txt'} {tmpl_var name="available_dashlets_txt"}</div>
+        </div>
+    </div>
+    <div class="form-group container-fluid">
+        <label class="control-label col-md-2" for="client_dashlets_left">{tmpl_var name='client_dashlets_left_txt'}</label>
+        <div class="col-md-6">
+            <input class="form-control" name="client_dashlets_left" id="client_dashlets_left" value="{tmpl_var name='client_dashlets_left'}"  type="text" />
+            <div class="help-block">{tmpl_var name='available_dashlets_note_txt'} {tmpl_var name="available_dashlets_txt"}</div>
+        </div>
+    </div>
+    <div class="form-group container-fluid">
+        <label class="control-label col-md-2" for="client_dashlets_right">{tmpl_var name='client_dashlets_right_txt'}</label>
+        <div class="col-md-6">
+            <input class="form-control" name="client_dashlets_right" id="client_dashlets_right" value="{tmpl_var name='client_dashlets_right'}"  type="text" />
+            <div class="help-block">{tmpl_var name='available_dashlets_note_txt'} {tmpl_var name="available_dashlets_txt"}</div>
+        </div>
+    </div>
+    <div class="form-group container-fluid">
+        <label class="control-label col-md-2" for="tab_change_discard_cb">
+            {tmpl_var name='tab_change_discard_txt'}
+        </label>
+        <div class="col-md-10">
+            <div id="tab_change_discard_cb" class="checkbox check-success">
+                {tmpl_var name='tab_change_discard'}
+            </div>
+        </div>
+    </div>
+    <div class="form-group container-fluid">
+        <label class="control-label col-md-2" for="tab_change_warning_cb">
+            {tmpl_var name='tab_change_warning_txt'}
+        </label>
+        <div class="col-md-10">
+            <div id="tab_change_warning_cb" class="checkbox check-success">
+                {tmpl_var name='tab_change_warning'}
+                <span>{tmpl_var name='tab_change_warning_note_txt'}</span>
+            </div>
+        </div>
+    </div>
+    <div class="form-group container-fluid">
+        <label class="control-label col-md-2" for="use_loadindicator_cb">
+            {tmpl_var name='use_loadindicator_txt'}
+        </label>
+        <div class="col-md-10">
+            <div id="use_loadindicator_cb" class="checkbox check-success">
+                {tmpl_var name='use_loadindicator'}
+                <span>{tmpl_var name='f5_to_reload_js_txt'}</span>
+            </div>
+        </div>
+    </div>
+    <div class="form-group container-fluid">
+        <label class="control-label col-md-2" for="use_combobox_cb">
+            {tmpl_var name='use_combobox_txt'}
+        </label>
+        <div class="col-md-10">
+            <div id="use_combobox_cb" class="checkbox check-success">
+                {tmpl_var name='use_combobox'}
+                <span>{tmpl_var name='f5_to_reload_js_txt'}</span>
+            </div>
+        </div>
+    </div>
+    <div class="form-group container-fluid">
+        <label class="control-label col-md-2" for="customer_no_template">{tmpl_var name='customer_no_template_txt'}</label>
+        <div class="col-md-6">
+            <input class="form-control" name="customer_no_template" id="customer_no_template" value="{tmpl_var name='customer_no_template'}"  type="text"  />
+        </div>
+    </div>
+    <div class="form-group container-fluid">
+        <label class="control-label col-md-2" for="customer_no_start">{tmpl_var name='customer_no_start_txt'}</label>
+        <div class="col-md-6">
+            <input class="form-control" name="customer_no_start" id="customer_no_start" value="{tmpl_var name='customer_no_start'}"  type="text"  />
+        </div>
+    </div>
+    <div class="form-group container-fluid">
+        <label class="control-label col-md-2" for="customer_no_counter">{tmpl_var name='customer_no_counter_txt'}</label>
+        <div class="col-md-6">
+            <input class="form-control" name="customer_no_counter" id="customer_no_counter" value="{tmpl_var name='customer_no_counter'}"  type="text"  />
+        </div>
+    </div>
+    <div class="form-group container-fluid">
+        <label class="control-label col-md-2" for="session_timeout">{tmpl_var name='session_timeout_txt'}</label>
+        <div class="col-md-6">
+            <input class="form-control" name="session_timeout" id="session_timeout" value="{tmpl_var name='session_timeout'}"  type="text"  />
+        </div>
+    </div>
+    <div class="form-group container-fluid">
+        <label class="control-label col-md-2" for="session_allow_endless_cb">
+            {tmpl_var name='session_allow_endless_txt'}
+        </label>
+        <div class="col-md-10">
+            <div id="session_allow_endless_cb" class="checkbox check-success">
+                {tmpl_var name='session_allow_endless'}
+            </div>
+        </div>
+    </div>
+    <div class="form-group container-fluid">
+        <label class="control-label col-md-2" for="min_password_length">{tmpl_var name='min_password_length_txt'}</label>
+        <div class="col-md-6">
+            <input class="form-control" name="min_password_length" id="min_password_length" value="{tmpl_var name='min_password_length'}"  type="text" />
+        </div>
+    </div>
+    <div class="form-group container-fluid">
+        <label class="control-label col-md-2" for="min_password_strength">{tmpl_var name='min_password_strength_txt'}</label>
+        <div class="col-md-3">
+            <select class="selectize form-control" name="min_password_strength" id="min_password_strength">
+                {tmpl_var name='min_password_strength'}
+            </select>
+        </div>
+    </div>
+    <div class="form-group container-fluid">
+        <label class="control-label col-md-2" for="maintenance_mode_cb">
+            {tmpl_var name='maintenance_mode_txt'}
+        </label>
+        <div class="col-md-10">
+            <div id="maintenance_mode_cb" class="checkbox check-success">
+                {tmpl_var name='maintenance_mode'}
+            </div>
+        </div>
+    </div>
+    
+    <input type="hidden" name="id" value="{tmpl_var name='id'}">
+
+    <div class="container-fluid form-group">
+        <div class="col-sm-offset-2">
+            <button class="positive btn " type="button" value="{tmpl_var name='btn_save_txt'}" onclick="submitForm('pageForm','admin/system_config_edit.php');"><span><span class="glyphicon glyphicon-ok"></span> {tmpl_var name='btn_save_txt'}</span></button>
+            <button class="negative btn " type="button" value="{tmpl_var name='btn_cancel_txt'}" onclick="loadContent('admin/server_list.php');"><span><span class="glyphicon glyphicon-remove"></span> {tmpl_var name='btn_cancel_txt'}</span></button>
+        </div>
+    </div>
+    
+</div>
+
+
+<!-- switchery script -->
+<script>
+    var elems = Array.prototype.slice.call(document.querySelectorAll('.switchery'));
+    // Success color: #10CFBD
+    elems.forEach(function(html) {
+        var switchery = new Switchery(html, {color: '#10CFBD'});
+    });
+</script>
