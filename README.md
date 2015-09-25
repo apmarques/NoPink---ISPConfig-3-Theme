@@ -49,4 +49,4 @@ Comments and suggestions for improvements are most welcome.
 ## About the Author
 
 GitHub Username: apmarques
-Note: This theme was a project for my first internship as a Web-Programmer.
+* Note: This theme was a project for my first internship as a Web-Programmer.
